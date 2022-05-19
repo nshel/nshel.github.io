@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>List file in a directory - Python</title>
+        <meta name="http-equiv" content="Content-Type: text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <link rel="stylesheet" href="../../index.css">
+        <link rel="stylesheet" href="../../boxes.css">
+    </head>
+    <body style="margin: 0;">
+        <!-- <div class="side-nav" id="sNav">
+            <span class="close-btn" onclick="closeNav()" title="Close" id="cl">&times;</span>
+            <a href="number_guess_game.html">Number guess game</a>
+            <a href="list_files.html" id="active">List files in a directory</a>
+            <a href="encryption_decryption.html">Encrypting/Decrypting a file</a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div> -->
+        <nav class="top-nav">
+            <!-- <span class="open-btn" onclick="openNav()" id="opener">&#9776;</span> -->
+            <a href="../../index.html">Home</a>
+            <a href="index.html" id="active">Python</a> 
+            <a href="../c/index.html">C</a>
+            <a href="../c++/index.html">C++</a>
+            <a href="../java/index.html">Java</a>
+            <a href="#about" id="about">About</a>
+        </nav> 
+        <h1 class="domain">NSH</h1>
+        <div class="main">             
+            <section class="content1" id="contentID"> 
+                <header>
+                    <h1><span class="howto">How to </span>List files in a directory in Python </h1>
+                </header>
+                <article>
+                    <p> 
+                        Getting a list of files in a directory is pretty easy in python, and 
+                        gladly there isn’t just one way of doing it.
+                        In this tutorial I’ll show you 3 to 4 ways of doing that.
+ 
+                    </p><br>
+                    <h2>Method 1: <i>using <b>os.listdir()</b> function</i></h2>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            import os<br><br>
+
+                        # Path to the directory you wish to list<br>
+                        path = &quot;.&quot;<br><br>
+
+                        # get the list of files in path<br>
+                        dir_list = os.listdir(path)<br><br>
+
+                        for file in dir_list:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(file)<br>
+                        </div>
+                    </div>
+                    <br>
+                    <p>
+                        The <b>listdir()</b> function returns a list of files in the
+                        specified path.
+                    </p>
+                    <h2>Filtering specific files</h2>
+                    <p>
+                        There may be times when you only want to get list of all ".txt", ".py" etc.
+                        files in a directory, you can achieve that by using the <b>endswith()</b> function.
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            import os<br><br>
+
+                        # Path to the directory you wish to list<br>
+                        path = &quot;.&quot;<br><br>
+
+                        # get the list of files in path<br>
+                        dir_list = os.listdir(path)<br><br>
+
+                        for file in dir_list:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if(file.endswith(".txt")):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(file)<br>
+                        </div>
+                    </div>
+                    <p>
+                        You can see we just made a bit of edition to our code.
+                    </p>
+                    <h2>Method 2: <i>using <b>os.scandir()</b> function</i></h2>
+                    <p>
+                        <b>os.scandir()</b> function returns an iterator of <b>DirEntry</b> objects for
+                        a given path.
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            import os<br><br>
+
+                        # Path to the directory you wish to list<br>
+                        path = &quot;.&quot;<br><br>
+
+                        obj = os.scandir(path)<br><br>
+
+                        for entry in obj:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;print(entry.name)<br>
+                        </div>
+                    </div>
+                    <h2>Method 3: <i>using <b>os.walk()</b> function</i></h2>
+                    <p>
+                        The <b>os.walk()</b> is a directory tree generator, it takes a path argument and then returns
+                        a 3-tuple.<br>
+                        <ul>
+                            <li><b>dirpath -</b> a string, representing a path to the directory.</li>
+                            <li><b>dirnames -</b> a list of names of subdirectories in <b>dirpath</b>.</li>
+                            <li><b>filenames -</b> a list of file names in <b>dirpath</b>.</li>
+                        </ul>
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            import os<br><br>
+
+                        # Path to the directory you wish to list<br>
+                        path = &quot;.&quot;<br><br>
+
+    for (dirpath, dirnames, filenames) in os.walk(path):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print(f&quot;directory path: {dirpath}&quot;)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print(f&quot;subdirectories: {dirnames}&quot;)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print(f&quot;files: {filenames}&quot;)<br>    
+                        </div>
+                    </div>
+                    <h2>Method 4: <i>using <b>pathlib</b> module</i></h2>
+                    <p>
+                    				The <b>pathlib</b> is a filesystem module, it has classes that allows you to work with filesystem. The <b>Path</b> is the most very common.<br>
+                    				The <b>Path</b> class has bunch of methods that allows you to work with filesystem, such as <b>mkdir()</b>, <b>rmdir()</b>, <b>globe()</b>, <b>rename()</b>. etc, you can read more about the <b>pathlib</b> module from the <a href="https://docs.python.org/3/library/pathlib.html">Python Documentation</a><br>
+                    In this example we'll only be using the <b>globe()</b> method.<br>			
+                    </p>
+                    <div class="code">
+                    			 <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            from pathlib import Path<br><br>
+                        # Initialize an object of Path with a directory path<br>
+                        path = Path(&quot;.&quot;)<br><br>
+                        for file in path.globe(&quot;*&quot;):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(file.name)    
+                        </div>
+                    </div><br>
+                    <p>
+                    				In the code above we used the <b>globe()</b> function to get a list of <i>specific files</i>, the <b>globe()</b> function takes a pattern as an argument, you can see we used an asterisk "*"  which means that we want the list of all files in the directory.<br>
+                    				Using the <b>globe()</b> method makes it easy to filter files, for example example you want the list of all files with <i>.py</i> extension, see example below:<br>
+                    </p>
+                    <div class="code">
+                    			 <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        
+                        <div id="py-code">
+                            from pathlib import Path<br><br>
+                        # Initialize an object of Path with a directory path<br>
+                        path = Path(&quot;.&quot;)<br><br>
+                        for file in path.globe(&quot;*.py&quot;):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(file.name)
+                        </div>
+                    </div><br>
+                    <p>
+                    	In the above example, <b><i>*.py</i></b> means all files with <i>.py</i> extension.<br>
+                    </p>
+                </article>
+            </section>
+            <div class="sep"></div>
+            <footer>
+                <span class="txt">
+                    NSH is an educational platform for learning programming, ethical hacking, 
+                    networking and other related content.<br>
+                    This website is still under development!<br><br>
+                    <span>Copyright &copy; <span id="year">2022</span>
+                </span>
+            </footer>
+        </div>
+        <script src="../../index.js"></script>
+        <script src="py.js"></script>
+    </body>
+</html>

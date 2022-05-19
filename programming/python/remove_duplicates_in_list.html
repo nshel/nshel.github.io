@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Remove Duplicates in a List - Python</title>
+        <meta name="http-equiv" content="Content-Type: text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Remove duplicates in a list, python duplicate, duplicates python, python duplicates, python duplicates list, rm duplicate list in python,
+        duplicate list, python, list, get unique values, get unique values in a list, how to remove duplicates in a list, how to get unique values in a list,
+        how to get unique values in a python list, python3 list duplicate, python, list, duplicate, duplicates">
+        <link rel="stylesheet" href="../../index.css">
+        <link rel="stylesheet" href="../../boxes.css">
+    </head>
+    <body style="margin: 0;">
+        <!-- <div class="side-nav" id="sNav">
+            <span class="close-btn" onclick="closeNav()" title="Close" id="cl">&times;</span>
+            <a href="number_guess_game.html">Number guess game</a>
+            <a href="list_files.html">List files in a directory</a>
+            <a href="encryption_decryption.html">Encrypting/Decrypting a file</a>
+            <a href="remove_duplicates_in_list.html" id="active">Remove duplicates in a list</a>
+        </div> -->
+        <nav class="top-nav">
+            <!-- <span class="open-btn" onclick="openNav()" id="opener">&#9776;</span> -->
+            <a href="../../index.html">Home</a>
+            <a href="index.html" id="active">Python</a> 
+            <a href="../c/index.html">C</a>
+            <a href="../c++/index.html">C++</a>
+            <a href="../java/index.html">Java</a>
+            <a href="#about" id="about">About</a>
+        </nav> 
+        <h1 class="domain">NSH</h1>
+        <div class="main">             
+            <section class="content1" id="contentID"> 
+                <header>
+                    <h1><span class="howto">How to </span>Remove Duplicates in a List - Python</h1>
+                </header>
+                <article>
+
+                    <p>
+                        In this article you'll learn how to remove duplicate values
+                        in a python list.
+                    </p>
+                    <br>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            # x is a list that contains many duplicates<br>
+x = [12, 2, 5, 65, 2, 9, 5, 2, 9, 12]<br>
+# a variable that'll hold the unique values<br>
+uniques = []<br><br>
+
+# loop through all the lists checking to make sure<br>
+# that a specific value is not present in uniques variable,<br>
+# if not append the value otherwise continue looping through<br>
+
+for i in x:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if i not in uniques:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uniques.append(i)<br><br>
+
+print(f&quot;Duplicate list: {x}&quot;)<br>
+print(f&quot;Unique values: {uniques}&quot;)<br>
+
+                        </div>
+                    </div>
+                    <p>
+                        You can see how easy that was, we just define two varaibles, the 1st one we set it
+                        to a list that has many duplicates, and the 2nd one, we use it to store the List
+                        of unique values in <b>x</b>. Then we use for loop, to check all the values,
+                        if a specific value is not in the varaible <b>uniques</b> then we append the value.
+                    </p>
+                    <!-- <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                        </div>
+                    </div> -->
+                </article>
+            </section>
+            <div class="sep"></div>
+            <footer>
+                <span class="txt">
+                    NSH is an educational platform for learning programming, ethical hacking, 
+                    networking and other related content.<br>
+                    This website is still under development!<br><br>
+                    <span>Copyright &copy; <span id="year">2022</span>
+                </span>
+            </footer>
+        </div>
+        <script src="../../index.js"></script>
+        <script src="py.js"></script>
+    </body>
+</html>

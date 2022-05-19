@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Encrypting & Decrypting a file - Python</title>
+        <meta name="http-equiv" content="Content-Type: text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <link rel="stylesheet" href="../../index.css">
+        <link rel="stylesheet" href="../../boxes.css">
+    </head>
+    <body style="margin: 0;">
+         <!-- <div class="side-nav" id="sNav">
+            <span class="close-btn" onclick="closeNav()" title="Close" id="cl">&times;</span>
+            <a href="number_guess_game.html">Number guess game</a>
+            <a href="list_files.html">List files in a directory</a>
+            <a href="encryption_decryption.html" id="active">Encrypting/Decrypting a file</a>
+            <a href="#"></a>
+        </div> -->
+        <nav class="top-nav">
+            <!-- <span class="open-btn" onclick="openNav()" id="opener">&#9776;</span> -->
+            <a href="../../index.html">Home</a>
+            <a href="index.html" id="active">Python</a> 
+            <a href="../c/index.html">C</a>
+            <a href="../c++/index.html">C++</a>
+            <a href="../java/index.html">Java</a>
+            <a href="#about" id="about">About</a>
+        </nav> 
+        <h1 class="domain">NSH</h1>
+        <div class="main">             
+            <section class="content1" id="contentID"> 
+                <header>
+                    <h1><span class="howto">How to </span>Encrypt/Decrypt a file in Python </h1>
+                </header>
+                <article>
+                				<p>
+                                <b>Cryptography</b> is the study of application and techniques that hide the real meaning of information by transmitting it into a non-human readable format and vice versa.<br>
+                                For cryptography to take place two process needs to get involved namely:
+                                <ul>
+                                    <li><b>Encryption</b></li>
+                                    <li><b>Decryption</b></li><br>
+                                    <li><b>Encryption:</b> is the process of transforming information into a non-human readable form. while</li>
+                                    <li><b>Decryption:</b> is the process of transforming information into a human readable form.</li>
+                                </ul>
+                                </p>
+                                <p>
+                					A key(secret key) is needed for encryption and decryption to take place. this key is unique.
+                                    <br> In <a href="https://en.m.wikipedia.org/wiki/Symmetric-key_algorithm">symmetric encryption scheme</a>
+                                     the same key is needed for both encryption and decryption while in 
+                                     <a href="https://en.m.wikipedia.org/wiki/Public-key_cryptography">asymmetric encryption scheme</a>
+                                      two different keys are required, one for encryption (public key) and the other for decryption (private key),
+                                    these two keys are mathematically associated.<br>
+                					In this tutorial we will be using the <a href="https://cryptography.io/en/latest/fernet/">Cryptography Library</a>
+                                     which was built on top of <a href="https://en.m.wikipedia.org/wiki/Advanced_Encryption_Standard">AES algorithm</a>
+                				</p>
+                				<p>
+                					First we need to install the library using:
+                				</p>
+                				<div class="code">
+                						<div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        pip3 install cryptography		<br>
+                				</div>
+              <p>
+              	We'll be using the <b>Fernet</b> class, so let's import this line:
+              				
+              </p>
+            <div class="code">
+                <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                </div><br><div class="line"></div><br>
+                <div id="py-code">
+                    from cryptography import fernet.Fernet<br>
+                </div>
+            </div>
+            <p>
+                To make life easy, we'll be using Classes, so here's 
+                how our class will look<br>
+            </p>
+            <br>
+            <div class="code">
+                <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                </div><br><div class="line"></div><br>
+                <div id="py-code">
+                    class Encrypter:<br><br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, key_file, target_file):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.key_file = key_file<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.target_file = target_file<br>
+                </div>
+            </div>
+            <br>
+            <p>
+                As you can see, in our class we defined a constructor, so whenever we want to
+                create an object of this class, we need to pass two things, first is the 
+                <b>key_file</b> which is representing a file which we'll write or read the key from,
+                the second one is the <b>target_file</b> which is the file that needs to be encrypted or
+                decrypted.<br>
+                Next we'll write a function in our class that'll generate the key for us and write into 
+                the <b>key_file</b>
+            </p>
+            <br>
+            <div class="code">
+                <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                </div><br><div class="line"></div><br>
+                <div id="py-code">
+                    # Generate a new key and write it<br>
+    # to the key file<br>
+    def generate_new_key(self):<br><br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;key = Fernet.generate_key()<br><br>
+        
+    &nbsp;&nbsp;&nbsp;&nbsp;with open(self.key_file, "wb") as file:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.write(key)<br>
+                </div>
+            </div>
+            <br>
+            <p>
+                Next we'll create another function in our class for loading the key from 
+                the <b>key_file</b>.<br>
+            </p>
+            <div class="code">
+                <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                </div><br><div class="line"></div><br>
+                <div id="py-code">
+                    # Reading the key from the file<br>
+                    def load_key(self):<br><br>
+                
+                    &nbsp;&nbsp;&nbsp;&nbsp;return open(self.key_file, "rb").read()<br>
+                </div>
+            </div>
+            <br>
+            <p>
+                Next we'll create another two functions in our class, one for encrypting the file,
+                and the other for decrypting it!.
+            </p>
+            <br>
+            <h2>Encrypting The File</h2>
+            <div class="code">
+                <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                </div><br><div class="line"></div><br>
+                <div id="py-code">
+                    # Function to encrypt the file<br>
+                    def encrypt_file(self):<br><br>
+                        
+                    &nbsp;&nbsp;&nbsp;&nbsp;key = self.load_key()<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;# create a new Fernet object with the key.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;f = Fernet(key)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;content = b&quot;&quot;<br><br>   
+                        
+                    &nbsp;&nbsp;&nbsp;&nbsp;# read the file and store it in content varaible<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;with open(self.target_file, &quot;rb&quot;) as file:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content = file.read()<br><br>
+                        
+                    &nbsp;&nbsp;&nbsp;&nbsp;# encrypt the file and store the encrypted text<br> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;encrypted = f.encrypt(content)<br><br>
+                        
+                    &nbsp;&nbsp;&nbsp;&nbsp;# open the file and override the plantext content<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;# with the encrypted one<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;with open(self.target_file, &quot;wb&quot;) as file:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.write(encrypted)<br>
+                </div>
+            </div>
+            <br>
+            <h2>Decrypting The File</h2>
+            <div class="code">
+                <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                </div><br><div class="line"></div><br>
+                <div id="py-code">
+                    # Function for decrypting the file<br>
+                    def decrypt_file(self):<br><br>
+                
+                    &nbsp;&nbsp;&nbsp;&nbsp;key = self.load_key()<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;# create a new fernet object with the key<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;f = Fernet(key)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;content = b&quot;&quot;<br><br>
+                
+                    &nbsp;&nbsp;&nbsp;&nbsp;#read the file content and store it in the content variable<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;with open(self.target_file, &quot;rb&quot;) as file:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content = file.read()<br><br>
+                
+                    &nbsp;&nbsp;&nbsp;&nbsp;# decrypt the file with the decrypt() method of Fernet<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;decrypted = f.decrypt(content)<br><br>
+                
+                    &nbsp;&nbsp;&nbsp;&nbsp;# write the decrypted content into the target_file<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;with open(self.target_file, &quot;wb&quot;) as file:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.write(decrypted)<br>
+                </div>
+            </div>
+            <br>
+            <p>
+                The <b>encrypt()</b> and <b>decrypt()</b> method of <b>Fernet</b> class are use for encryption 
+                and decryption respectively.<br>
+            </p>
+            <h2>Full source code:</h2>
+            <div class="code">
+                <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                </div><br><div class="line"></div><br>
+                <div id="py-code">
+                    from cryptography.fernet import Fernet<br><br>
+
+                    class Encrypter:<br><br>
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, key_file, target_file):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.key_file = key_file<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.target_file = target_file<br><br><br>
+                    
+                        
+                    &nbsp;&nbsp;&nbsp;&nbsp;# Generate a new key and write it<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;# to the key file<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def generate_new_key(self):<br><br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key = Fernet.generate_key()<br><br>
+                            
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with open(self.key_file, &quot;wb&quot;) as file:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.write(key)<br><br><br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;# Reading the key from the file<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def load_key(self):<br><br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return open(self.key_file, &quot;rb&quot;).read()<br><br><br>
+                    
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;# Function to encrypt the file<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def encrypt_file(self):<br><br>
+                            
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key = self.load_key()<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f = Fernet(key)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content = b&quot;&quot;<br><br>   
+                            
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# read the file and store it in content varaible<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with open(self.target_file, &quot;rb&quot;) as file:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content = file.read()<br><br>
+                            
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# encrypt the file and store the encrypted text<br> 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encrypted = f.encrypt(content)<br><br>
+                            
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# open the file and override the plantext content<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# with the encrypted one<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with open(self.target_file, &quot;wb&quot;) as file:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.write(encrypted)<br><br><br>
+                    
+                        
+                        &nbsp;&nbsp;&nbsp;&nbsp;# Function for decrypting the file<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;def decrypt_file(self):<br><br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key = self.load_key()<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# create a new fernet object with the key<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f = Fernet(key)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content = b&quot;&quot;<br><br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#read the file content and store it in the content variable<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with open(self.target_file, &quot;rb&quot;) as file:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content = file.read()<br><br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# decrypt the file with the decrypt() method of Fernet<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;decrypted = f.decrypt(content)<br><br>
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# write the decrypted content into the target_file<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with open(self.target_file, &quot;wb&quot;) as file:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.write(decrypted)<br><br>                    
+                </div>
+            </div>
+            <br>
+            <p>
+                Let's see an example of encrypting a file.<br>
+            </p>
+            <div class="note">
+                <span class="mark">&#10069;</span><br><br>
+                Please try this example with a non useful or junk file, because you may lose sensitive data if you accidentally deleted the key.
+            </div><br>
+            <div class="code">
+                <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                </div><br><div class="line"></div><br>
+                <div id="py-code">
+                    enc = Encrypter(&apos;key.key&apos;, &apos;tmp.txt&apos;)<br>
+                    # generate a new key for encryption and decryption<br>
+enc.generate_new_key()<br>
+enc.encrypt_file()<br>
+                </div>
+            </div>
+            <p>
+                Initially this is what I've in my <b>tmp.txt</b> file:
+            </p>
+            <div class="code">
+                <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                </div><br><div class="line"></div><br>
+                23,1,HipHop<br>
+                25,1,HipHop<br>
+                26,1,Jazz<br>
+                29,1,Jazz<br>
+                30,1,Jazz<br>
+                31,1,Classical<br>
+                33,1,Classical<br>
+                37,1,Classical<br>
+                20,0,Dance<br>
+                21,0,Dance<br>
+                25,0,Dance<br>
+                26,0,Acoustic<br>
+                27,0,Acoustic<br>
+                30,0,Acoustic<br>
+                31,0,Classical<br>
+                34,0,Classical<br>
+                35,0,Classical<br>
+            </div>
+            <p>
+                And after running the program this is what I've now:
+            </p>
+            <div class="code">
+                <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                </div><br><div class="line"></div><br>
+                gAAAAABifzIEN9NKZGvGuo-PA8-sRrl_K8K4UGm-n1yBnwQLGSZf71uiJSHCv_djKit9HZcFL4QCXhgY0GJhDtLJ7Gv3nJq0Y77HELqK0tOqMY_E_7T5eGkhtVg082x5LDMlvZG3es3w9i3xvS7sesJ9I8vAPkAPSbj_9hwbJCo65GVkBHc6jEYQsgJ9KIhpWLEjhl9TON0uKeCxhPpj1nUuFx1YjPAaqkQ9e3fhrzMHwLHuf-DAoKVi3m0-HPTPMOGuRfpmBbw4x0AWtqKssrDsVi9XO101si5EljPjwN_tlS9d_JeU09mzlACw9ybmsjzzvcy9iteNJ3CJOxinBLCkC_ZmHPAgNuLzCGn8h9h0dULliXsaCmc5TTAcCyO7UqKINm3pguPy0q7hXPCf6Ct7Q6ImzGhsjg==
+            </div>
+            <p>
+                You can change the <b>tmp.txt</b> with the name and path of the file you wish to test this with.<br>
+                Now let's try to decrypt the file
+            </p>
+            <div class="code">
+                <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                </div><br><div class="line"></div><br>
+                <div id="py-code">
+                    enc = Encrypter(&apos;key.key&apos;, &apos;tmp.txt&apos;)<br>
+enc.decrypt_file()<br>
+                </div>
+            </div>
+            <p>
+                And now after decrypting the file using the same key, 
+                this is what I've
+            </p>
+            <div class="code">
+                <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                </div><br><div class="line"></div><br>
+                23,1,HipHop<br>
+                25,1,HipHop<br>
+                26,1,Jazz<br>
+                29,1,Jazz<br>
+                30,1,Jazz<br>
+                31,1,Classical<br>
+                33,1,Classical<br>
+                37,1,Classical<br>
+                20,0,Dance<br>
+                21,0,Dance<br>
+                25,0,Dance<br>
+                26,0,Acoustic<br>
+                27,0,Acoustic<br>
+                30,0,Acoustic<br>
+                31,0,Classical<br>
+                34,0,Classical<br>
+                35,0,Classical<br>
+            </div>
+            <p>
+                As you can see from the example above, we don't need to call the <b>generate_new_key()</b>
+                method again since we already have our key, and be mindful that we must use the same
+                key we used in encrypting the file while decrypting it.<br>
+            </p>
+                </article>
+            </section>
+        </div>
+        <div class="sep"></div>
+        <footer>
+            <span class="txt">
+                NSH is an educational platform for learning programming, ethical hacking, 
+                networking and other related content.<br>
+                This website is still under development!<br><br>
+                <span>Copyright &copy; <span id="year">2022</span>
+            </span>
+        </footer>
+        <script src="../../index.js"></script>
+        <script src="py.js"></script>
+    </body>
+</html>

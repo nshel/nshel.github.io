@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Number Guess Game - Python</title>
+        <meta name="http-equiv" content="Content-Type: text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <link rel="stylesheet" href="../../index.css">
+        <link rel="stylesheet" href="../../boxes.css">
+    </head>
+    <body style="margin: 0;">
+        <!-- <div class="side-nav" id="sNav">
+            <span class="close-btn" onclick="closeNav()" title="Close" id="cl">&times;</span>
+            <a href="number_guess_game.html" id="active">Number guess game</a>
+            <a href="list_files.html">List files in a directory</a>
+            <a href="encryption_decryption.html">Encrypting/Decrypting a file</a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div> -->
+        <nav class="top-nav">
+            <!-- <span class="open-btn" onclick="openNav()" id="opener">&#9776;</span> -->
+            <a href="../../index.html">Home</a>
+            <a href="index.html" id="active">Python</a> 
+            <a href="../c/index.html">C</a>
+            <a href="../c++/index.html">C++</a>
+            <a href="../java/index.html">Java</a>
+            <a href="#about" id="about">About</a>
+        </nav> 
+        <h1 class="domain">NSH</h1>
+        <div class="main">             
+            <section class="content1" id="contentID"> 
+                <header>
+                    <h1><span class="howto">How to </span>Make a Number Guess Game in Python</h1>
+                </header>
+                <article>
+                    <br>
+                    <p> A number guessing game is one is beginner's small project.
+                        This tutorial will show you how to archeive that in python.<br>
+                        First import the random module
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br> 
+                        <div id="py-code">
+                            from random import randint<br>
+                            <br>
+                            # Generate a random number between 1 and 9 as the secret number<br>
+                            secret_number = randint(1, 9)<br>
+                            user_guess = 0<br>
+                            is_correct = False<br>
+        
+                            print(&quot;&lt;&lt;&lt; Number Guessing Game &gt;&gt;&gt;&quot;)<br>
+                            print(&quot;You have only 3 tries to get the correct number&quot;)<br>
+                            print(&quot;The secret number is between 1 and 9, Good luck!&quot;)<br><br>
+                            for i in range(3):<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;user_guess = int(input("Guess> "))<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;if user_guess == secret_number:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is_correct = True<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br><br>
+                            if is_correct:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;print("You win!")<br>
+                            else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;print(f"You failed! Secret number is {secret_number}")<br>
+                        </div>
+                    </div>
+                    <br><br>
+                    <p> 
+                        In the above code we set the <b>secret_number</b> varaible to a randomly generated number by the <b>randint</b>
+                        function, This number is between 1 and 9. Then we print out some describtion and then enter a loop,
+                        the loop only terminates if the user guesses the correct number or quess limit is reached. 
+                    </p>
+                </article>
+            </section>
+            <div class="sep"></div>
+            <footer>
+                <span class="txt">
+                    NSH is an educational platform for learning programming, ethical hacking, 
+                    networking and other related content.<br>
+                    This website is still under development!<br><br>
+                    <span>Copyright &copy; <span id="year">2022</span>
+                </span>
+            </footer>
+        </div>
+        <script src="../../index.js"></script>
+        <script src="py.js"></script>
+    </body>
+</html>

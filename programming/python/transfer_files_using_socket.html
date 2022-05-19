@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>How to Transfer Files in Network Using Socket - Python</title>
+        <meta name="http-equiv" content="Content-Type: text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <link rel="stylesheet" href="../../index.css">
+        <link rel="stylesheet" href="../../boxes.css">
+    </head>
+    <body style="margin: 0;">
+        <!-- <div class="side-nav" id="sNav">
+            <span class="close-btn" onclick="closeNav()" title="Close" id="cl">&times;</span>
+            <a href="number_guess_game.html">Number guess game</a>
+            <a href="list_files.html">List files in a directory</a>
+            <a href="encryption_decryption.html">Encrypting/Decrypting a file</a>
+            <a href="remove_duplicates_in_list.html">Remove duplicates in a list</a>
+            <a href="transfer_files_using_socket.html" id="active">Transfer files using socket</a>
+        </div> -->
+        <nav class="top-nav">
+            <!-- <span class="open-btn" onclick="openNav()" id="opener">&#9776;</span> -->
+            <a href="../../index.html">Home</a>
+            <a href="index.html" id="active">Python</a> 
+            <a href="../c/index.html">C</a>
+            <a href="../c++/index.html">C++</a>
+            <a href="../java/index.html">Java</a>
+            <a href="#about" id="about">About</a>
+        </nav> 
+        <h1 class="domain">NSH</h1>
+        <div class="imagine-displayer">
+            <div class="conainer" id="container"></div>
+        </div>
+        <div class="main">             
+            <section class="content1" id="contentID"> 
+                <header>
+                    <h1><span class="howto">How to </span>Transfer File in Network Using Sockets - Python</h1>
+                </header>
+                <article>
+                    <p>
+                        In this tutorial we'll be writing a server and client python scripts for receiving and 
+                        sending files in the network using the 
+                        <a href="https://docs.python.org/3/library/socket.html">socket</a> module in python.<br>
+                        A socket is one endpoint of communication link between systems. Applications that uses 
+                        network sends and receives all of its network data using socket.<br>
+                        In this tutorial we'll first create a server that listens for connection on a specific
+                        port number, since server is meant to serve, our server will be sending (transferring)
+                        the file to the connected client. Then next we'll create a client that'll connect
+                        to the server's host(or ip address) on the port it's listening on, then we'll recieve this 
+                        file.<br>
+                        First we're gonna install the tqdm library that allows us to display progress,
+                        install it using:<br>
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        pip3 install tqdm
+                    </div>
+                    <h2>Server</h2>
+                    <p>
+                        Let's start coding the server.
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            import os<br>
+import socket<br>
+import tqdm<br><br>
+
+
+# the size of buffer to send each at a time<br>
+buffer_size = 4096<br><br>
+
+# the file to send a client connected<br>
+file_name = &apos;file.html&apos;<br><br>
+
+# get the size of the file(we'll be used for displaying progress)<br>
+file_size = os.path.getsize(file_name)<br><br>
+
+# to seperate between file name and file size<br>
+seperator = &quot;\r\n\r\n&quot;<br>
+                        </div>
+                    </div>
+                    <p>
+                        From the above code, the <b>buffer_size</b> variable represents the size of
+                        buffer we'll be seding each at a time.
+                        Since we'll also be sending the file name and size to the client, we'll 
+                        be using a seperator to seperate between the file name and file size.
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            # our device ip address<br>
+host = &apos;0.0.0.0&apos;<br><br>
+
+# the port number to listen on<br>
+port = 4444<br>
+                        </div>
+                    </div>
+                    <p>
+                        You can see we set the <b>host</b> to <i>0.0.0.0</i> which means
+                        we want our OS(Operating System) to choose any interface available on
+                        our device. Next we create the server socket
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            print(&quot;++[*] Starting server...&quot;)<br>
+# create the server socket<br>
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>
+                        </div>
+                    </div>
+                    <p>
+                        The <b>socket()</b> method is used to creating a socket.<br>
+                        The <b>socket.AF_INET</b> means we want our socket to use <a href="https://en.m.wikipedia.org/wiki/IPv4">IPv4 address</a><br>
+                        The <b>socket.SOCK_STREAM</b> mean that we want our socket to use the <a href="https://en.m.wikipidia.org/wiki/Transmission_Control_Protocol">TCP(transmission control protocol).</a><br>
+                        
+                        Normally when you create a socket, you need to associate it with a host and port number,
+                        which we're about to do now!<br>
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            # bind the server socket to the host and port number<br>
+try:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;server_socket.bind((host, port))<br>
+except socket.error as err:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(f&quot;--[*] Failed to bind socket {err}&quot;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exit()<br><br>
+
+# start listening for incoming connections<br>
+server_socket.listen(10)<br>
+print(f&quot;++[*] Server started listening on  {host}:{port}&quot;)<br>
+                        </div>
+                    </div>
+                    <p>
+                        Now our server has reached the stage of listening for connection,
+                        the <b>listen()</b> method of socket puts a socket in a listening mode.<br>
+                        Next is to accept any incoming connections.
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            # accept() returns a new socekt for the session and the client address<br>
+                            # we store that in a varaible<br>
+                            client_socket, client_addr = server_socket.accept()<br>
+                            print(f&quot;++[*] Got a new connection from: {str(client_addr)}&quot;)<br><br>
+                        
+                            # send the file info immediately<br>
+                            client_socket.send(f&quot;{file_name}{seperator}{file_size}&quot;.encode())<br>
+                        </div>
+                    </div>
+                    <p>
+                        Now the last step, sending the file to the client.<br>
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            # start sending the file to the connected client<br>
+    progress = tqdm.tqdm(range(file_size), f&quot;Seding {file_name}&quot;, unit=&quot;B&quot;, unit_scale=True, unit_divisor=1024)<br>
+    with open(file_name, &quot;rb&quot;) as file:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;while True:<br><br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# read bytes from the file<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bytes_read = file.read(buffer_size)<br><br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not bytes_read:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# finish reading the file<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br><br>
+            
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# send the bytes to the connected client socket<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client_socket.send(bytes_read)<br><br>
+            
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# update the progress bar<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progress.update(len(bytes_read))<br>
+        
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# close the client socket<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client_socket.close()<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br><br>
+
+# close the server socket<br>
+server_socket.close()<br>
+                        </div>
+                    </div>
+                    <p>
+                        Now our server is ready, next we create the client.
+                    </p>
+                    <h2>Client</h2>
+                    <p>
+                        Let's start coding the client. We first initialize some varaibles
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            import os<br>
+import socket<br>
+import tqdm<br><br>
+
+
+# ip address to connect to<br>
+host = &apos;127.0.0.1&apos;<br><br>
+
+# the port number that the host is listening on<br>
+port = 4444<br><br>
+
+seperator = &apos;\r\n\r\n&apos;<br>
+
+buffer_size = 4096<br>
+                        </div>
+                    </div>
+                    <p>
+                        You can see we set the <b>host</b> to <i>127.0.0.1(localhost)</i>
+                        because we're using our device to taste, if you're using two different
+                        devices, you must specify the IP(internet protocol) address of that device.
+                        And we set <b>port</b> to <i>4444</i> because it's port  number our server is
+                        listening on. Next we create the client socket and connect to the server.
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            # create a socket<br>
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br><br>
+
+print(f&apos;++[$] Connecting {host}:{port}...&apos;)<br><br>
+
+try:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;# connect to the host<br>
+&nbsp;&nbsp;&nbsp;&nbsp;client_socket.connect((host, port))<br>
+except socket.error as err:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(f&apos;--[$] Failed to connect, {err}&apos;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exit()<br><br>
+
+print(&apos;++[$] Connected&apos;)<br>
+                        </div>
+                    </div>
+                    <p>
+                        By now you should be familiar with the <b>socket.socket()</b> function.
+                        Next we used the <b>connect()</b> method to connect to server, as you can see
+                        we passed in the <b>host</b> and <b>port</b> as a parameter.<br>
+                        Next we recieve the file info(file name and size)<br>
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            # recieve the file info first<br>
+data = client_socket.recv(buffer_size).decode()<br><br>
+
+# get the file name and size<br>
+file_name, file_size = data.split(seperator)<br><br>
+
+# remove the absolute path if contained<br>
+file_name = os.path.basename(file_name)<br><br>
+
+# convert file_size to integer<br>
+file_size = int(file_size)<br>
+                        </div>
+                    </div>
+                    <p>
+                        Now you've seen the use of the <b>seperator</b> variable,
+                        we used the <b>split()</b> method to seperate the string
+                        based on the seperator.<br>
+                        Next we need to receive the file.
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            # start receiving and saving the file<br>
+progress = tqdm.tqdm(range(file_size), f&quot;Receiving {file_name}&quot;, unit=&quot;B&quot;, unit_scale=True, unit_divisor=1024)<br>
+with open(file_name, &quot;wb&quot;) as file:<br><br>
+    
+&nbsp;&nbsp;&nbsp;&nbsp;while True:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# read bytes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bytes_read = client_socket.recv(buffer_size)<br><br>
+        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not bytes_read:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# finished receiving data<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# write bytes to file<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.write(bytes_read)<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# update the progress bar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progress.update(len(bytes_read))<br><br>
+
+# close the socket<br>
+client_socket.close()<br>
+                        </div>
+                    </div>
+                    <p>
+                        And that was it, our client is done!.<br>
+                        This what I get after running the server and client:
+                    </p>
+                    <h3>Server:</h3>
+                    <div class="image">
+                        <img src="../../img/server.png" alt="transferring file to client">
+                    </div>
+                    <h3>Client:</h3>
+                    <div class="image">
+                        <img src="../../img/client.png" alt="receiving file from server">
+                    </div>
+                    <h2>Full Server Code:</h2>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            import os<br>
+import socket<br>
+import tqdm<br><br>
+
+
+# the size of buffer to send each at a time<br>
+buffer_size = 4096<br><br>
+
+# the file to send a client connected<br>
+file_name = &apos;file.html&apos;<br><br>
+
+# get the size of the file(we'll be used for displaying progress)<br>
+file_size = os.path.getsize(file_name)<br><br>
+
+# to seperate between file name and file size<br>
+seperator = &quot;\r\n\r\n&quot;<br><br>
+# our device ip address<br>
+host = &apos;0.0.0.0&apos;<br><br>
+
+# the port number to listen on<br>
+port = 4444<br><br>
+print(&quot;++[*] Starting server...&quot;)<br>
+# create the server socket<br>
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br><br>
+# bind the server socket to the host and port number<br>
+try:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;server_socket.bind((host, port))<br>
+except socket.error as err:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(f&quot;--[*] Failed to bind socket {err}&quot;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exit()<br><br>
+
+# start listening for incoming connections<br>
+server_socket.listen(10)<br>
+print(f&quot;++[*] Server started listening on  {host}:{port}&quot;)<br><br>
+# accept() returns a new socekt for the session and the client address<br>
+# we store that in a varaible<br>
+client_socket, client_addr = server_socket.accept()<br>
+print(f&quot;++[*] Got a new connection from: {str(client_addr)}&quot;)<br><br>
+
+# send the file info immediately<br>
+client_socket.send(f&quot;{file_name}{seperator}{file_size}&quot;.encode())<br></br>
+# start sending the file to the connected client<br>
+progress = tqdm.tqdm(range(file_size), f&quot;Seding {file_name}&quot;, unit=&quot;B&quot;, unit_scale=True, unit_divisor=1024)<br>
+with open(file_name, &quot;rb&quot;) as file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;while True:<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# read bytes from the file<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bytes_read = file.read(buffer_size)<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not bytes_read:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# finish reading the file<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br><br>
+        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# send the bytes to the connected client socket<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client_socket.send(bytes_read)<br><br>
+        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# update the progress bar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progress.update(len(bytes_read))<br>
+    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# close the client socket<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;client_socket.close()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br><br>
+
+# close the server socket<br>
+server_socket.close()<br></br>
+               
+                        </div>
+                    </div>
+                    <h2>Full Client Code:</h2>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            import os<br>
+import socket<br>
+import tqdm<br><br>
+
+
+# ip address to connect to<br>
+host = &apos;127.0.0.1&apos;<br><br>
+
+# the port number that the host is listening on<br>
+port = 4444<br><br>
+
+seperator = &apos;\r\n\r\n&apos;<br>
+
+buffer_size = 4096<br><br>
+# create a socket<br>
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br><br>
+
+print(f&apos;++[$] Connecting {host}:{port}...&apos;)<br><br>
+
+try:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;# connect to the host<br>
+&nbsp;&nbsp;&nbsp;&nbsp;client_socket.connect((host, port))<br>
+except socket.error as err:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(f&apos;--[$] Failed to connect, {err}&apos;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exit()<br><br>
+
+print(&apos;++[$] Connected&apos;)<br>
+# recieve the file info first<br>
+data = client_socket.recv(buffer_size).decode()<br><br>
+
+# get the file name and size<br>
+file_name, file_size = data.split(seperator)<br><br>
+
+# remove the absolute path if contained<br>
+file_name = os.path.basename(file_name)<br><br>
+
+# convert file_size to integer<br>
+file_size = int(file_size)<br><br>
+# start receiving and saving the file<br>
+progress = tqdm.tqdm(range(file_size), f&quot;Receiving {file_name}&quot;, unit=&quot;B&quot;, unit_scale=True, unit_divisor=1024)<br>
+with open(file_name, &quot;wb&quot;) as file:<br><br>
+    
+&nbsp;&nbsp;&nbsp;&nbsp;while True:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# read bytes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bytes_read = client_socket.recv(buffer_size)<br><br>
+        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not bytes_read:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# finished receiving data<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# write bytes to file<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.write(bytes_read)<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# update the progress bar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;progress.update(len(bytes_read))<br><br>
+
+# close the socket<br>
+client_socket.close()<br>
+
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <div class="sep"></div>
+            <footer>
+                <span class="txt">
+                    NSH is an educational platform for learning programming, ethical hacking, 
+                    networking and other related content.<br>
+                    This website is still under development!<br><br>
+                    <span>Copyright &copy; <span id="year">2022</span>
+                </span>
+            </footer>
+        </div>
+        <script src="../../index.js"></script>
+        <script src="py.js"></script>
+    </body>
+</html>

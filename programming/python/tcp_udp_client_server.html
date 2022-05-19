@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>How to code a TCP and UDP client/server - Python</title>
+        <meta name="http-equiv" content="Content-Type: text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <link rel="stylesheet" href="../../index.css">
+        <link rel="stylesheet" href="../../boxes.css">
+    </head>
+    <body style="margin: 0;">
+        <!--<div class="side-nav" id="sNav">
+            <span class="close-btn" onclick="closeNav()" title="Close" id="cl">&times;</span>
+            <input type="text" id="mySearch" onkeyup="myFilter()" placeholder="Search.." title="Type in a category">
+            <ul style="list-style-type: none; padding:0;margin:0;" id="menuList">
+                <li><a href="number_guess_game.html">Number guess game</a></li>
+                <li><a href="list_files.html">List files in a directory</a></li>
+                <li><a href="encryption_decryption.html">Encrypting/Decrypting a file</a></li>
+                <li><a href="remove_duplicates_in_list.html">Remove duplicates in a list</a></li>
+                <li><a href="transfer_files_using_socket.html">Transfer files using socket</a></li>
+                <li><a href="tcp_udp_client_server.html" id="active">TCP & UDP client/server</a></li>
+            </ul>
+        </div> -->
+        <nav class="top-nav">
+           <!--<span class="open-btn" onclick="openNav()" id="opener">&#9776;</span>-->
+            <a href="../../index.html">Home</a>
+            <a href="index.html" id="active">Python</a> 
+            <a href="../c/index.html">C</a>
+            <a href="../c++/index.html">C++</a>
+            <a href="../java/index.html">Java</a>
+            <a href="#about" id="about">About</a>
+        </nav>
+        <h1 class="domain">NSH</h1>
+        <div class="main">             
+            <section class="content1" id="contentID"> 
+                <header>
+                    <h1><span class="howto">How to </span>Code a TCP & UDP Client/Server - Python</h1>
+                </header>
+                <article>
+                    <p>
+                        In this tutorial we'll learn how to code a TCP and UDP client and server
+                        in python using the <a href="https://docs.python.org/3/library/socket.html">socket</a>
+                        module in python.<br>
+                        <b>TCP </b> or Transmission Control Protocol is a connection-oriented protocol
+                        which provides a reliable connection between the server and the client. While<br>
+                        <b>UDP</b> or User Datagram Protocol is termed as a connectionless protocol.<br>
+                    </p>
+                    <h2>TCP Server</h2>
+                    <p>
+                        In order to make a TCP server the following process needs to be involved:
+                        <ul>
+                            <li>Create a socket</li>
+                            <li>Bind the socket</li>
+                            <li>Make the socket listen for connections</li>
+                            <li>Accept a connection</li>
+                            <li>Send/Recieve data</li>
+                            <li>Close the socket</li>
+                        </ul>
+                        
+                    </p>
+                    <p>Let's first import the socket module and declare some varaibles</p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            import socket<br><br>
+                            # Our host, 0.0.0.0 means use any<br>
+# interface available on our device<br>
+host = &apos;0.0.0.0&apos;<br><br>
+
+# The port number to listen on<br>
+port = 8080<br>
+                        </div>
+                    </div>
+                    <p>Next we create the server socket</p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            print(&quot;[$] Creating socket...&quot;)<br>
+# Create the server socket<br>
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>
+print(&quot;[$] Socket created successfully!&quot;)<br>
+                        </div>
+                    </div>
+                    <p>
+                        The <b>socket()</b> method of socket is use for creating the socket.<br>
+                        The <b>socket.AF_INET</b> is the family address, it means we want our socket to use IPv4 address,
+                        if you want to use IPv6 address, use <b>socket.AF_INET6</b><br>
+                        The <b>socket.SOCK_STREAM</b> is the socket type, it means we want to use TCP.<br>
+                        Next we bind our socket.
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            print(&quot;[$] Binding socket...&quot;)<br>
+# bind the socket<br>
+try:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;server_socket.bind((host, port))<br>
+except socket.error as err:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(f&quot;[-] Bind failed, {str(err)}&quot;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exit()<br>
+print(&quot;[$] Bind complete&quot;)<br>
+                        </div>
+                    </div>
+                    <p>
+                        The <b>bind()</b> method is use to bind the socket, we use it to
+                        associate host/IP address and port number.<br>
+                        Next we listen for connections.<br>
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            # Put the socket in a listening mode<br>
+server_socket.listen(10) <br> <br>
+
+print(f&quot;[$] Server started, listening on {host}:{port}&quot;) <br>
+                        </div>
+                    </div>
+                    <p>
+                        As you can see, the <b>listen()</b> method is use to put a 
+                        socket in a listening mode.<br>
+                        Next we accept any incoming connection and recv some data.
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            # accept any incoming connection<br>
+client_socket, client_addr = server_socket.accept()<br>
+print(f&quot;[$] Got a new connection from {client_addr[0]}:{client_addr[1]}&quot;)<br><br>
+
+# receive data from client <br>
+# maximum buffer size
+buffer_size = 4096 <br>
+data = client_socket.recv(4096).decode() <br><br>
+print(f&quot;[$] Data received: {data}&quot;)
+                        </div>
+                    </div>
+                    <p>
+                        The <b>accept()</b> method is use for accepting connections.
+                        The <b>accept()</b> method returns the client socket and 
+                        the client address as a tuple.<br>
+                        Next we used the <b>recv()</b> method on the <b>client_socket</b>
+                        to receive data from the client, then we used the <b>decode()</b> method.
+                    </p>
+                    <div class="note">
+                        <span class="mark">&#10069;</span><br><br>
+                        It is very important that you always encode data before sending on the network.<br>
+                        And decode it after receiving it from the network.
+                    </div>
+                    <p>
+                        Since this is just an echo server, we'll just convert
+                        the data received from the client then send it back to the client.<br>
+                        After that we'll just close the connection.
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            # send back the same message to the server<br>
+client_socket.send(data.upper().encode())<br>
+server_socket.close()<br>
+                        </div>
+                    </div>
+                    <h2>TCP Client</h2>
+                    <p>
+                        Steps of making a TCP client
+                        <ul>
+                            <li>Create a socket</li>
+                            <li>Connect to another socket</li>
+                            <li>Send/Recieve data</li>
+                            <li>Close the socket</li>
+                        </ul>
+                        
+                    </p>
+                    <p>Here's our TCP client code:</p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            import socket<br><br>
+
+# host to connect to<br>
+host = &apos;127.0.0.1&apos;<br><br>
+
+# port number to connect on<br>
+port = 8080<br><br>
+
+print(&apos;[$] Creating socket...&apos;)<br>
+# Create the client socket<br>
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>
+print(&apos;[$] Socket created successfully!&apos;)<br>
+print(f&apos;[$] Connecting {host}:{port}...&apos;)<br><br>
+
+# Connect to the server<br>
+try:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;client_socket.connect((host, port))<br>
+except socket.error as err:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(f&apos;[-] Connection to server failed, {err}&apos;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exit()<br><br>
+
+print(&apos;[$] Connected&apos;)<br><br>
+
+# send some data to the server<br>
+data = &apos;Hello Server&apos;<br>
+client_socket.send(data.encode())<br><br>
+
+# receive data from the server<br>
+buffer_size = 4096<br>
+data_received = client_socket.recv(buffer_size)<br><br>
+
+print(f&apos;[$] Data received: {data_received.decode()}&apos;)<br>
+
+                        </div>
+                    </div>
+                    <p>
+                        By now you should be familiar with all the methods we used in the client code,
+                        well except for <b>connect()</b> which you can tell what it does,
+                        it just connect our socket to the specified host/IP on a port.<br>
+                    </p>
+                    <h2>UDP Server & Client</h2>
+                    <p>
+                        In order to code a UDP server or client we don't have to write
+                        everything we just have to make some small modification to our 
+                        TCP server and client code.<br>
+                    </p>
+                    <h2>UDP Server</h2>
+                    <p>
+                        Steps:
+                        <ul>
+                            <li>Create a socket</li>
+                            <li>Bind the socket</li>
+                            <li>Send/Recieve data</li>
+                            <li>Close the socket</li>
+                        </ul>
+                    </p>
+                    <p>
+                        You can see in the steps we did not include <i>'listen for connection'</i> and <i>'accept connection</i>
+                        because UDP is a connectionless protocol, connection is needed not in order 
+                        to send/receive data. <br>
+                        Let's start coding the server now.
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            import socket<br><br>
+
+# Our host, 0.0.0.0 means use any<br>
+# interface available on our device<br>
+host = &quot;0.0.0.0&quot;<br><br>
+
+# The port number to listen on<br>
+port = 8080<br><br>
+
+print(&quot;[$] Creating socket...&quot;)<br>
+# Create the server socket<br>
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br>
+print(&quot;[$] Socket created successfully!&quot;)<br>
+print(&quot;[$] Binding socket...&quot;)<br>
+# bind the socket<br>
+try:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;server_socket.bind((host, port))<br>
+except socket.error as err:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(f&quot;[-] Bind failed, {str(err)}&quot;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exit()<br>
+print(&quot;[$] Bind complete&quot;)<br>
+                        </div>
+                    </div>
+                    <p>
+                        Note that this time we used <b>socket.SOCK_DGRAM</b> instead of <b>socket.SOCK_STREAM</b>
+                        because we're no longer gonna be using TCP so we used <b>socket.SOCK_DGRAM</b> which 
+                        idicates the socket type to be Datagram(or UDP).<br>
+                        Next we'll receive some data from a client then echo back
+                        the same data to the client.<br>
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            # receive data from client<br>
+buffer_size = 4096<br>
+data = server_socket.recvfrom(buffer_size)<br><br>
+
+message = data[0].decode()<br>
+address = data[1]<br>
+print(f&quot;[$] Data received: {message} from {address[0]}:{address[1]}&quot;)<br>
+# send back the same message to the server<br>
+server_socket.sendto(message.upper().encode(), address)<br>
+server_socket.close()<br>
+                        </div>
+                    </div>
+                    <p>
+                        Since this is a UDP socket, so we'll not be using the <b>recv()</b>
+                        function to recv data, we'll be using the <b>recvfrom()</b>
+                        function.<br>
+                        The <b>recvfrom()</b> function is used for receiving data 
+                        from any client. It returns a 2 tuple, the first one is the actual
+                        data from the client, then the second one is also a tuple of the client 
+                        address, which the first one is the client's IP address and the second is the client's 
+                        port number.<br>
+                        we also used the <b>sendto()</b> function to send data to a specific address.
+                        So here we're echoing back the data to the client that sends us the data
+                        from the first place.
+                    </p>
+                    <h2>UDP Client</h2>
+                    <p>
+                        Steps:
+                        <ul>
+                            <li>Create a socket</li>
+                            <li>Send/Recieve data</li>
+                            <li>Close the socket</li>
+                        </ul>
+                        
+                    </p>
+                    <p>
+                        In UDP, we don;t actually have to connect to the server in order
+                        to send data that's why in the list of our steps there's no <i>'connect to the server'</i>.<br>
+                        Client code:
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="py-code">
+                            import socket<br><br>
+
+# host to connect to<br>
+host = &quot;127.0.0.1&quot;<br>
+
+# port number to connect on<br>
+port = 8080<br><br>
+
+print(&quot;[$] Creating socket...&quot;)<br>
+# Create the client socket<br>
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br>
+print(&quot;[$] Socket created successfully!&quot;)<br><br>
+
+data = &quot;Hello Server&quot;<br>
+client_socket.sendto(data.encode(), ((host, port)))<br><br>
+
+# receive data from the server<br>
+buffer_size = 4096<br>
+data = client_socket.recvfrom(buffer_size)<br><br>
+
+message = data[0].decode()<br>
+address = data[1]<br><br>
+
+print(f&quot;[$] Data received: {message} from {address[0]}:{address[1]}&quot;)<br>
+client_socket.close()<br>
+
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <div class="sep"></div>
+            <footer>
+                <span class="txt">
+                    NSH is an educational platform for learning programming, ethical hacking, 
+                    networking and other related content.<br>
+                    This website is still under development!<br><br>
+                    <span>Copyright &copy; <span id="year">2022</span>
+                </span>
+            </footer>
+        </div>
+        <script src="../../index.js"></script>
+        <script src="py.js"></script>
+    </body>
+</html>
