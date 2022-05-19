@@ -1,0 +1,106 @@
+html {
+    box-sizing: border-box;
+}
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Some left and right padding inside the container */
+/* .txt-container {
+    padding: 0 16px;
+} */
+
+/* Clear floats */
+/* .txt-container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+} */
+.outer-box {
+    background-color: white;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 30.3%;
+    height: 380px;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    display: inline-block;
+}
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+    .outer-box, .box {
+        width: 100%;
+        display: block;
+    }
+}
+.outer-box a {
+    text-decoration: none;
+}
+.outer-box p {
+    color: #00e600;
+    font-size: 19px;
+}
+.outer-box p:hover {
+    color: red;
+}
+.outer-box .box {
+    margin: 0;
+    padding: 0;
+    height: 250px;
+    width: 100%;
+}
+.main .content1 {
+    margin-top: 90px;
+    margin-left: 45px;
+    width: 980px;
+    height: auto;
+    border-radius: 10px;
+    padding: 2%;
+    display: inline-block;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+@media screen and (min-width: 1000px){
+    .main .content1 {
+        margin-left: 45px;
+        max-width: 990px;
+        background-color: transparent;
+        box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    
+    .main .content1 { 
+        margin-left: 0;
+        max-width: 97%; 
+        background-color: white;
+        box-shadow: none;
+    }
+    .outer {
+        width: 90%;
+    }
+    @media screen and (max-width: 212px) {
+        .outer {
+            margin-left: 2%;
+        }
+    }
+    .border {
+        width: 95%;
+    }
+}
+
+.box {
+    width: 30%;
+    height: 380px;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    display: inline-block;
+    background-color: transparent;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.box img {
+    width: 90%;
+}
