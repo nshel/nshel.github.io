@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>How to find max and minimum number in array - Java</title>
+        <meta name="http-equiv" content="Content-Type: text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <link rel="stylesheet" href="../../index.css">
+        <link rel="stylesheet" href="../../boxes.css">
+    </head>
+    <body style="margin: 0;">
+       <!-- <div class="side-nav" id="sNav">
+            <span class="close-btn" onclick="closeNav()" title="Close" id="cl">&times;</span>
+            <a href="number_guessing_game.html">Number guess game</a>
+            <a href="#find_max_min_array" id="active">Find min/max array</a>
+            <a href="#ls-dir">List of files directory</a>
+            <a href="#encrypt_file">Encrypt/Decrypt file</a>
+        </div> -->
+        <nav class="top-nav">
+            <!-- <span class="open-btn" onclick="openNav()" id="opener">&#9776;</span> -->
+            <a href="../../index.html">Home</a>
+            <a href="../java/index.html" id="active">Java</a>
+            <a href="../python/index.html">Python</a> 
+            <a href="../c/index.html">C</a>
+            <a href="../c++/index.html">C++</a>
+            <a href="#about" id="about">About</a>
+        </nav> 
+        <h1 class="domain">NSH</h1>
+        <div class="main">             
+            <section class="content1" id="contentID"> 
+                <header>
+                    <h1><span class="howto">How to </span>Find Maximum and Minimum Number in an Array </h1>
+                </header>
+                <article>
+                    <p>
+                        Finding maximum and minimum number in an array is pretty easy.
+                        we just need to make 2 functions, one for finding maximum number and the other for finding minimum number.!<br><br>
+                    <b>The first function:</b> <i>finding maximum number</i>
+                    			 
+                    </p>
+                    <div class="code">
+                    							<div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                    			
+                        </div><br><div class="line"></div><br>
+                        <div id="java-code">
+                      
+                
+                        public static int getMax(int []arr) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;int max = arr[0];<br><br>
+                       &nbsp;&nbsp;&nbsp;&nbsp;for(int a: arr) {<br>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (a > max)<br>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max = a;<br>
+                       &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                      &nbsp;&nbsp;&nbsp;&nbsp; return max;<br>
+                      }<br>
+                      </div>
+                        
+                    			</div>
+                    			<p>
+                    							<br>
+                    							The function above takes an array as argument, then declare a variable <b><i>max</i></b> and set it to the value of the first element in the array.<br>
+                    							Then we use an enhanced for-loop to loop through all the elements of the array checking to see if a specific element is greater than the value of  <b><i>max</i></b>, if we found one, then reset the value of <b><i>max</i></b>.<br>
+                    							Keep doing this until all elements are checked.<br><br>
+                    							
+                    			<b>The second function: </b>	 <i>finding minimum number</i><br>	
+                    		
+                    			</p>
+                    			<div class="code">
+                    					<div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>	
+                        <div id="java-code">
+                       public static int getMin(int []arr) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int min = arr[0];<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int a: arr) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (a < min)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min = a;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+    
+&nbsp;&nbsp;&nbsp;&nbsp;return min;<br>
+  }<br>
+  </div> 	
+                    			</div>
+                    			<p>
+                    							The above function is exactly the opposite of the first one but instead of finding the greater number we find the smaller one.<br>
+                    			</p>
+                    			
+                    			<h2>Full source code</h2>
+                    			<div class="code">
+                    						<div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>	
+                    			<div id="java-code">			
+public class MaxMin {<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int arr[] = {23, 2, 4, 67, 3, 4, 9};<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(getMax(arr));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(getMin(arr));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+  
+&nbsp;&nbsp;&nbsp;&nbsp;public static int getMax(int []arr) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int max = arr[0];<br><br>
+    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int a: arr) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (a > max)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max = a;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return max;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+  
+&nbsp;&nbsp;&nbsp;&nbsp;public static int getMin(int []arr) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int min = arr[0];<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int a: arr) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (a < min)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min = a;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return min;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}<br>
+</div>
+
+                    			</div>
+                </article>
+            </section>
+            <div class="sep"></div>
+            <footer>
+                <span class="txt">
+                    NSH is an educational platform for learning programming, ethical hacking, 
+                    networking and other related content.<br>
+                    This website is still under development!<br><br>
+                    <span>Copyright &copy; <span id="year">2022</span>
+                </span>
+            </footer>
+        </div>
+        <script src="../../index.js"></script>
+        <script src="java.js"></script>
+    </body>
+</html>
