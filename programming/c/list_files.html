@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>List files in a direcotry - C</title>
+        <meta name="http-equiv" content="Content-Type: text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <link rel="stylesheet" href="../../index.css">
+        <link rel="stylesheet" href="../../boxes.css">
+    </head>
+    <body style="margin: 0;">
+        <!-- <div class="side-nav" id="sNav">
+            <span class="close-btn" onclick="closeNav()" title="Close" id="cl">&times;</span>
+            <a href="#calculator" >Calculator</a>
+            <a href="#find_max_min_array">Find min/max array</a>
+            <a href="#ls-dir" id="active">List files & folders in directory</a>
+            <a href="#encrypt_file">Encrypt/Decrypt file</a>
+        </div> -->
+        <nav class="top-nav">
+            <!-- <span class="open-btn" onclick="openNav()" id="opener">&#9776;</span> -->
+            <a href="../../index.html">Home</a>
+            <a href="../c/index.html" id="active">C</a>
+            <a href="../c++/index.html">C++</a>
+            <a href="../python/index.html">Python</a> 
+            <a href="../java/index.html">Java</a>
+            <a href="#about" id="about">About</a>
+        </nav> 
+        <h1 class="domain">NSH</h1>
+        <div class="main">             
+            <section class="content1" id="contentID"> 
+                <header>
+                    <h1><span class="howto">How to </span>List Files in a Directory in C</h1>
+                </header>
+                <article>
+                    <p> 
+                        There may be times when you want to work with files/folders in your C programs,
+                        or maybe you're writing a program that needs to list the files in a directory.
+                        To work with directories in C we need to include the <b><i>dirent.h</i></b>
+                        header file.<br>
+                        First include these library header files<br><br>
+                    </p>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="c-code">
+#include &lt;stdio.h&gt;<br>
+#include &lt;dirent.h&gt;<br>
+</div>
+                    </div><br><br>
+                    <p>
+                        Then we declare a <b><i>dirent</i></b> structure, the <b><i>dirent</i></b> structure
+                        holds information about a file or folder in a directory.<br><br>
+                    </p>
+                    <div class="code"> 
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="c-code">
+// structure that holds info of a file/folder in a dir<br>
+struct dirent *dir;<br><br>
+
+// Open the current working directory<br>
+DIR *dir2 = opendir(&quot;.&quot;);<br>
+</div>
+                    </div>
+                    <br><br>
+                    <p>
+                        Now the <b><i>dir2</i></b> variable points to the list of all files/folders
+                        in a directory. <br>
+                        The <i><b>opendir()</b></i> takes a path of a direcotry you wish to work
+                        with as an argument, so in this example we're refering to the our current working direcotry,
+                        although, this depends on where you run the program.<br> 
+                        Next we'll use a for loop to loop through all those files/folders.
+                    </p>
+                    <br>
+                    <div class="code">
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="c-code">
+if (dir2 != NULL) {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;// the readdir returns a dirent strcuture for a specific file/folder<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;for (dir = readdir(dir2); dir != NULL; dir = readdir(dir2)) {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;%s\n&quot;, dir->d_name);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;//close the directory<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;closedir(dir2);<br>
+    } else {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;Error&quot;);<br>
+}
+</div>                            
+                    </div><br>
+                    <p>
+                        In the above code, we  first make sured that the direcotry exists otherwise
+                        it prints out an error.<br>
+                        The <b><i>readdir()</i></b> returns a dirent structure which points to
+                        a specific file/folder.<br> We're not doing much here, we;re just printing out
+                        the name of the file/folder in the direcotry.<br>
+                        After you're done working with the directory make sure you always close it
+                        with the <b><i>closedir()</i></b> function. 
+                    </p>
+                    <h2>Full Source Code:</h2>
+                    <div class="code"> 
+                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                        </div><br><div class="line"></div><br>
+                        <div id="c-code">
+#include &lt;stdio.h&gt;<br>
+#include &lt;dirent.h&gt;<br><br>
+int main() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// structure that holds info of a file/folder in a dir<br>
+&nbsp;&nbsp;&nbsp;&nbsp;struct dirent *dir;<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;// Open the current working directory<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DIR *dir2 = opendir(&quot;.&quot;);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (dir2 != NULL) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// the readdir returns a dirent strcuture for a specific file/folder<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (dir = readdir(dir2); dir != NULL; dir = readdir(dir2)) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;%s\n&quot;, dir->d_name);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//close the directory<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;closedir(dir2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;Error&quot;);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+
+}
+</div>
+                    </div>
+                </article>
+            </section>
+            <div class="sep"></div>
+            <footer>
+                <span class="txt">
+                    NSH is an educational platform for learning programming, ethical hacking, 
+                    networking and other related content.<br>
+                    This website is still under development!<br><br>
+                    <span>Copyright &copy; <span id="year">2022</span>
+                </span>
+            </footer>
+        </div>
+        <script src="../../index.js"></script>
+        <script src="c.js"></script>
+    </body>
+</html>
