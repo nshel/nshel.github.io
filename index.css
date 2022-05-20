@@ -1,5 +1,7 @@
 body {
     font-family: "Times New Roman", Times, serif;
+    transform: translate();
+
 }
 html {
     box-sizing: border-box;
@@ -10,20 +12,81 @@ html {
 }
 /* Styling the top nav */
 .top-nav {
-    position: sticky;
+    position: relative;
     top: 0;
-    z-index: 1;
-    background-color: #00e600;
+    background-color:#f3f3f3;
     overflow: hidden;
-    height: auto;
-    max-height: 48px;
+    /* padding: 4px 16px 4px 16px; */
+}
+.sticky-nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+.top-nav a {
+    float: left;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    padding: 17px;
+}
+.top-nav .right-side {
+    position: absolute;
+    right: 4px;
+}
+.top-nav .slide-bar {
+    position: absolute;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 17px;
+    right: 4px;
+}
+/* hide the right sided links and display a slide bar on small screen*/
+@media screen and (max-width: 907px) {
+    .top-nav .right-side {display: none;}
+    .top-nav .slide-bar {display: block;}
+}
+.left-nav {
+    display: none;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.95;
+    z-index: 1;
+    overflow-x: hidden; /* disable horizontal scroll bar*/
+    padding-top: 15px;  /* 50px from top*/
 }
 
+.left-nav a, .left-nav .close-btn {
+    text-decoration: none;
+    color: #f3f3f3;
+    padding: 8px 16px 8px 16px;
+    margin: 5px auto;
+    font-size: 22px;
+    display: block;
+    transition: 0.2s;
+}
+.left-nav a:hover, .left-nav .close-btn:hover {
+    color: black;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+.left-nav #active {
+    background-color: #f5f5f5;
+    color: black;
+}
 /* Position the about link 25px from right*/
-.top-nav #about {
+/* .top-nav #about {
     float: right;
     margin-right: 2px;
-}
+} */
 
 .domain {
     color: #00e600;
@@ -31,24 +94,20 @@ html {
     float: right; 
 }
 /*Style the top nav links*/
-.top-nav a, .top-nav .open-btn {
+.top-nav .open-btn {
     text-decoration: none;
-    color: #f5f5f5;
     text-align: center;
-    padding: 14px;
+    /* padding: 14px; */
     font-size: 17px;
-    float: left;
 }
 /* style the active link*/
 .top-nav #active {
-    background-color: #f5f5f5;
-    color: #00e600;
+    background-color: #d3d3d3;
     border-bottom: 2px solid #00e600;
 }
 
 .top-nav a:hover {
-    color: #00e600;
-    background-color: #f5f5f5;
+    background-color: #d3d3d3;
 }
 
 /** add a media screen to make the topnav responsive(690)*/
@@ -306,11 +365,55 @@ body, html {
   margin: 0;
 }
 .head {
+    font-family: "Raleway", sans-serif;
+    position: relative;
+    line-height: 1.8;
     overflow-wrap: break-word;
-    height: 50%;
+    height: 100%;
     width: 100%;
-    text-align: center;
+    background-blend-mode: darken;
     background-repeat: no-repeat;
-    background-position: center;
+    /* background-position: center; */
     background-size: cover;
+}
+
+/* .head .logo {
+    position: absolute;
+    top: 3%;
+    left: 4%;
+    font-size: 18px;
+    color: white;
+} */
+.head .text {
+    padding: 48px;
+    font-size: 20px;
+    color: white;
+    /* transform:translate(0%,-50%);
+    -ms-transform:translate(-0%,-50%); */
+}
+.text .large-txt {
+    font-size:50px!important;
+}
+.noscript, #msg-box {
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    padding: 26px 6px 26px 6px;
+    margin: 0;
+    width: 100%;
+    background-color: tomato;
+}
+
+/* Position the close button */
+#msg-box .close-btn {
+    position: absolute;
+    top: 2px;
+    right: 3%;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+#msg-box .close-btn:hover {
+    cursor: pointer;
+    color: white;
 }

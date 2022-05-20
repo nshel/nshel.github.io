@@ -1,23 +1,70 @@
 <!DOCTYPE html>
 <html> 
     <head> 
-        <title>Network Shell (NSH)</title>
+        <title>Network Shell - NSH</title>
+        <meta name="author" content="Mohammed Zayyad">
         <meta name="http-equiv" content="Content-Type: text/html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
+        <meta name="description" content="NSH, network shell, programming, coding, ethical-hacking, 
+        hacking, network, networking, c, c++, python, java, javascript, js,">
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="boxes.css">
-        <style>
-            
-            .head .text {
-                margin-top: 55%;
-                color: white;
-                text-align: centers;
-                font-size: 50px;
-            }
-        </style>
     </head>
-    <body style="margin: 0;"> 
+    <body style="margin: 0;">
+            <noscript>
+                <div class="noscript">
+                    <noscript>
+                        Please enable JavaScript on your browser in order to render this page properly.
+                    </noscript> 
+                </div> 
+            </noscript>
+        <!-- <div id="msg-box">
+            <span class="close-btn" onclick="document.getElementById('msg-box').style.display = 'none';">
+                &times;</span><br>
+        <p>
+            This website is still under development.
+        </p> 
+        </div> -->
+        <div class="top-nav" id="topNav">
+            <a class="logo">NSH logo</a>
+            <span class="slide-bar" 
+            onclick="openLeftNav()">&#9776;</span>
+            <div class="right-side">
+                <a href="#home" id="active">Home</a> 
+                <a href="#programming">Programming</a>
+                <a href="#ethical-hacking">Ethical Hacking</a>
+                <a href="#networking">Networking</a>
+                <a href="#web-dev">Web development</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <nav class="left-nav" id="leftNav">
+            <span class="close-btn" 
+            onclick="closeLeftNav()" style="color: #f5f5f5; background-color: black;">Close &times;</span>
+            <a href="#home" id="active">Home</a> 
+            <a href="#programming">Programming</a>
+            <a href="#ethical-hacking">Ethical Hacking</a>
+            <a href="#networking">Networking</a>
+            <a href="#web-dev">Web development</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <header class="head" style="background-image: url('img/mac.jpg');">
+            <div class="text"><br>
+                <span class="large-txt">Network Shell - NSH</span>
+                <p>
+                    A great platform for learning and exploring
+                    new things about coding, ethical hacing, networking
+                    and other related content.
+                </p>
+            </div>
+            <!-- <span class="text">Network Shell<br>(NSH)</span> -->
+        </header>
+        <!-- <ul>
+            <li>Home</li>
+            <li>Programming</li>
+            <li>Ethical hacking</li>
+            <li>Web development</li>
+        </ul>
         <nav class="top-nav">
             <a href="#home" id="active">Home</a> 
             <a href="#programming">Programming</a>
@@ -25,10 +72,9 @@
             <a href="#networking">Networking</a>
             <a href="#web-dev">Web development</a>
             <a href="#about" id="about">About</a>
-        </nav>
-        <div class="head" style="background-image: url('img/mac.jpg');">
-            <span class="text">Network Shell<br>(NSH)</span>
-        </div>
+        </nav> -->
+        <!-- <div class="noscript"> -->
+        <!-- </div> -->
         <!-- <h1 class="domain" style="color: #00e600; font-size: 45px;">NSH</h1> -->
         <div class="main"> 
             
@@ -117,10 +163,7 @@
                 </span>
             </footer>
         </div>
-        <script>
-            window.onload = function() {
-                alert("This website is still under development");
-            }
+        <script src="index.js">
         </script>
     </body>
 </html>
