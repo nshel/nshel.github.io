@@ -2,35 +2,54 @@
 <html> 
     <head> 
         <title>How to code a TCP and UDP client/server - Python</title>
+        <meta name="author" content="Mohammed Zayyad">
         <meta name="http-equiv" content="Content-Type: text/html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
+        <meta name="description" content="how to code a tcp server and client in python, how to make a tcp server and client, how to code a udp server
+        and client in python, how to make a udp server and client in python, in python, python, tcp, udp, socket">
         <link rel="stylesheet" href="../../index.css">
         <link rel="stylesheet" href="../../boxes.css">
+        <link rel="icon" href="../../favicon.png">
     </head>
     <body style="margin: 0;">
-        <!--<div class="side-nav" id="sNav">
-            <span class="close-btn" onclick="closeNav()" title="Close" id="cl">&times;</span>
-            <input type="text" id="mySearch" onkeyup="myFilter()" placeholder="Search.." title="Type in a category">
-            <ul style="list-style-type: none; padding:0;margin:0;" id="menuList">
-                <li><a href="number_guess_game.html">Number guess game</a></li>
-                <li><a href="list_files.html">List files in a directory</a></li>
-                <li><a href="encryption_decryption.html">Encrypting/Decrypting a file</a></li>
-                <li><a href="remove_duplicates_in_list.html">Remove duplicates in a list</a></li>
-                <li><a href="transfer_files_using_socket.html">Transfer files using socket</a></li>
-                <li><a href="tcp_udp_client_server.html" id="active">TCP & UDP client/server</a></li>
-            </ul>
-        </div> -->
-        <nav class="top-nav">
-           <!--<span class="open-btn" onclick="openNav()" id="opener">&#9776;</span>-->
+        <noscript>
+            <div class="noscript">
+                <noscript>
+                    Please enable JavaScript on your browser in order to render this page properly.
+                </noscript> 
+            </div> 
+        </noscript>
+        <div class="top-nav" id="topNav">
+            <a class="logo" href="../../index.html"><img src="../../favicon.png" alt="NSH" style="width:100%;height:100%;"></a>
+            <span class="slide-bar" 
+            onclick="openLeftNav()">&#9776;</span>
+            <div class="right-side">
+                <a href="../../index.html">Home</a>
+                <a href="index.html" id="active">Python</a> 
+                <a href="../c/index.html">C</a>
+                <a href="../c++/index.html">C++</a>
+                <a href="../java/index.html">Java</a>
+                <a href="#contact" id="contact">Contact</a>
+            </div>
+        </div>
+        <nav class="left-nav" id="leftNav">
+            <span class="close-btn" 
+            onclick="closeLeftNav()" style="color: #f5f5f5; background-color: black;">Close &times;</span>
             <a href="../../index.html">Home</a>
             <a href="index.html" id="active">Python</a> 
             <a href="../c/index.html">C</a>
             <a href="../c++/index.html">C++</a>
             <a href="../java/index.html">Java</a>
-            <a href="#about" id="about">About</a>
+            <a href="#contact" id="contact">Contact</a>
         </nav>
-        <h1 class="domain">NSH</h1>
+        <header class="head" style="background-image: url('../../img/udp_client2.png');">
+            <div class="text"><br>
+                <span class="large-txt">How to</span>
+                <p>
+                    Code a TCP & UDP Client/Server - Python
+                </p>
+            </div>
+        </header>
         <div class="main">             
             <section class="content1" id="contentID"> 
                 <header>
@@ -85,7 +104,7 @@ print(&quot;[$] Socket created successfully!&quot;)<br>
                     </div>
                     <p>
                         The <b>socket()</b> method of socket is use for creating the socket.<br>
-                        The <b>socket.AF_INET</b> is the family address, it means we want our socket to use IPv4 address,
+                        The <b>socket.AF_INET</b> is the address family, it means we want our socket to use IPv4 address,
                         if you want to use IPv6 address, use <b>socket.AF_INET6</b><br>
                         The <b>socket.SOCK_STREAM</b> is the socket type, it means we want to use TCP.<br>
                         Next we bind our socket.
@@ -144,11 +163,12 @@ print(f&quot;[$] Data received: {data}&quot;)
                         The <b>accept()</b> method returns the client socket and 
                         the client address as a tuple.<br>
                         Next we used the <b>recv()</b> method on the <b>client_socket</b>
-                        to receive data from the client, then we used the <b>decode()</b> method.
+                        to receive data from the client, then we'll use the <b>decode()</b> method
+                        to decode the data.
                     </p>
                     <div class="note">
                         <span class="mark">&#10069;</span><br><br>
-                        It is very important that you always encode data before sending on the network.<br>
+                        It is very important that you always encode data before sending it out on the network.<br>
                         And decode it after receiving it from the network.
                     </div>
                     <p>

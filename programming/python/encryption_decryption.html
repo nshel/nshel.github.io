@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html> 
     <head> 
-        <title>Encrypting & Decrypting a file - Python</title>
+        <title>How to encrypt/decrypt a file - Python</title>
+        <meta name="author" content="Mohammed Zayyad">
         <meta name="http-equiv" content="Content-Type: text/html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
+        <meta name="description" content="how to encrypt and decrypt a file in python, how to encrypt a file in python,
+        how to decrypt a file in python, python cryptography library, how to encrypt a file using cryptography
+        library in python, how to decrypt a file using cryptography library python, how to generate a key with 
+        cryptography library python, Fernet, python">
         <link rel="stylesheet" href="../../index.css">
         <link rel="stylesheet" href="../../boxes.css">
+        <link rel="icon" href="../../favicon.png">
     </head>
     <body style="margin: 0;">
+        <noscript>
+            <div class="noscript">
+                <noscript>
+                    Please enable JavaScript on your browser in order to render this page properly.
+                </noscript> 
+            </div> 
+        </noscript>
          <!-- <div class="side-nav" id="sNav">
             <span class="close-btn" onclick="closeNav()" title="Close" id="cl">&times;</span>
             <a href="number_guess_game.html">Number guess game</a>
@@ -16,50 +28,71 @@
             <a href="encryption_decryption.html" id="active">Encrypting/Decrypting a file</a>
             <a href="#"></a>
         </div> -->
-        <nav class="top-nav">
-            <!-- <span class="open-btn" onclick="openNav()" id="opener">&#9776;</span> -->
+        <div class="top-nav" id="topNav">
+            <a class="logo" href="../../index.html"><img src="../../favicon.png" alt="NSH" style="width:100%;height:100%;"></a>
+            <span class="slide-bar" 
+            onclick="openLeftNav()">&#9776;</span>
+            <div class="right-side">
+                <a href="../../index.html">Home</a>
+                <a href="index.html" id="active">Python</a> 
+                <a href="../c/index.html">C</a>
+                <a href="../c++/index.html">C++</a>
+                <a href="../java/index.html">Java</a>
+                <a href="#contact" id="contact">Contact</a>
+            </div>
+        </div>
+        <nav class="left-nav" id="leftNav">
+            <span class="close-btn" 
+            onclick="closeLeftNav()" style="color: #f5f5f5; background-color: black;">Close &times;</span>
             <a href="../../index.html">Home</a>
             <a href="index.html" id="active">Python</a> 
             <a href="../c/index.html">C</a>
             <a href="../c++/index.html">C++</a>
             <a href="../java/index.html">Java</a>
-            <a href="#about" id="about">About</a>
-        </nav> 
-        <h1 class="domain">NSH</h1>
+            <a href="#contact" id="contact">Contact</a>
+        </nav>
+        <header class="head" style="background-image: url('../../img/encrypt.jpg');">
+            <div class="text"><br>
+                <span class="large-txt">How to</span>
+                <p>
+                    Encrypt/Decrypt files - Python
+                </p>
+            </div>
+        </header>
         <div class="main">             
             <section class="content1" id="contentID"> 
                 <header>
                     <h1><span class="howto">How to </span>Encrypt/Decrypt a file in Python </h1>
                 </header>
                 <article>
-                				<p>
-                                <b>Cryptography</b> is the study of application and techniques that hide the real meaning of information by transmitting it into a non-human readable format and vice versa.<br>
-                                For cryptography to take place two process needs to get involved namely:
-                                <ul>
-                                    <li><b>Encryption</b></li>
-                                    <li><b>Decryption</b></li><br>
-                                    <li><b>Encryption:</b> is the process of transforming information into a non-human readable form. while</li>
-                                    <li><b>Decryption:</b> is the process of transforming information into a human readable form.</li>
-                                </ul>
-                                </p>
-                                <p>
-                					A key(secret key) is needed for encryption and decryption to take place. this key is unique.
-                                    <br> In <a href="https://en.m.wikipedia.org/wiki/Symmetric-key_algorithm">symmetric encryption scheme</a>
-                                     the same key is needed for both encryption and decryption while in 
-                                     <a href="https://en.m.wikipedia.org/wiki/Public-key_cryptography">asymmetric encryption scheme</a>
-                                      two different keys are required, one for encryption (public key) and the other for decryption (private key),
-                                    these two keys are mathematically associated.<br>
-                					In this tutorial we will be using the <a href="https://cryptography.io/en/latest/fernet/">Cryptography Library</a>
-                                     which was built on top of <a href="https://en.m.wikipedia.org/wiki/Advanced_Encryption_Standard">AES algorithm</a>
-                				</p>
-                				<p>
-                					First we need to install the library using:
-                				</p>
-                				<div class="code">
-                						<div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        pip3 install cryptography		<br>
-                				</div>
+                    <p>
+                    <b>Cryptography</b> is the study of application and techniques that hide the real meaning of information by transmitting it into a non-human readable format and vice versa.<br>
+                    For cryptography to take place two process needs to get involved namely:
+                    <ul>
+                        <li><b>Encryption</b></li>
+                        <li><b>Decryption</b></li><br>
+                        <li><b>Encryption:</b> is the process of transforming information into a non-human readable form. while</li>
+                        <li><b>Decryption:</b> is the process of transforming information into a human readable form.</li>
+                    </ul>
+                    </p>
+                    <p>
+                        A key(secret key) is needed for encryption and decryption to take place. this key is unique.
+                        <br> In <a href="https://en.m.wikipedia.org/wiki/Symmetric-key_algorithm">symmetric encryption scheme</a>
+                            the same key is needed for both encryption and decryption while in 
+                            <a href="https://en.m.wikipedia.org/wiki/Public-key_cryptography">asymmetric encryption scheme</a>
+                            two different keys are required, one for encryption (public key) and the other for decryption (private key),
+                        these two keys are mathematically associated.<br>
+                        In this tutorial we will be using the <a href="https://cryptography.io/en/latest/fernet/">Cryptography Library</a>
+                            which was built on top of <a href="https://en.m.wikipedia.org/wiki/Advanced_Encryption_Standard">AES algorithm</a>
+                    </p>
+                    <p>
+                        First we need to install the library using:
+                    </p>
+                    <div class="code">
+                            <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+            </div><br><div class="line"></div><br>
+            pip3 install cryptography		<br>
+                    </div>
               <p>
               	We'll be using the <b>Fernet</b> class, so let's import this line:
               				
