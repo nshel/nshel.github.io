@@ -7,26 +7,49 @@
         <meta name="description" content="">
         <link rel="stylesheet" href="../index.css">
         <link rel="stylesheet" href="../boxes.css">
-        <style>
-            
-            .head .text {
-                margin-top: 55%;
-                color: white;
-                text-align: centers;
-                font-size: 50px;
-            }
-        </style>
+        <link rel="icon" href="../favicon.png">
     </head>
     <body style="margin: 0;"> 
-        <nav class="top-nav">
+        <noscript>
+            <div class="noscript">
+                <noscript>
+                    Please enable JavaScript on your browser in order to render this page properly.
+                </noscript> 
+            </div> 
+        </noscript>
+        <div class="top-nav" id="topNav">
+            <a class="logo" href="index.html"><img src="../favicon.png" alt="NSH" style="width:100%;height:100%;"></a>
+            <span class="slide-bar" 
+            onclick="openLeftNav()">&#9776;</span>
+            <div class="right-side">
+                <a href="../index.html">Home</a> 
+                <a href="index.html" id="active">Programming</a>
+                <a href="#ethical-hacking">Ethical Hacking</a>
+                <a href="#networking">Networking</a>
+                <a href="#web-dev">Web development</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <nav class="left-nav" id="leftNav">
+            <span class="close-btn" 
+            onclick="closeLeftNav()" style="color: #f5f5f5; background-color: black;">Close &times;</span>
             <a href="../index.html">Home</a> 
-            <a href="programming/index.html" id="active">Programming</a>
+            <a href="index.html" id="active">Programming</a>
             <a href="#ethical-hacking">Ethical Hacking</a>
             <a href="#networking">Networking</a>
             <a href="#web-dev">Web development</a>
-            <a href="#about" id="about">About</a>
+            <a href="#contact">Contact</a>
         </nav>
-        <!-- <h1 class="domain" style="color: #00e600; font-size: 45px;">NSH</h1> -->
+        <header class="head" style="background-image: url('../img/programming.jpg');">
+            <div class="text"><br>
+                <span class="large-txt">Programming</span>
+                <p>
+                    Select your programming language to find posts related
+                    to the language
+                </p>
+            </div>
+            <!-- <span class="text">Network Shell<br>(NSH)</span> -->
+        </header>
         <div class="main"> 
             
             <section class="content1"> 
@@ -34,23 +57,27 @@
                     <h1>Programming</h1>
                 </header>
                 <div class="box">
-                    <a href="programming/python/encryption_decryption.html">
-                        <img src="../img/c-logo.png" alt="C programming language logo">  
+                    <a href="c/index.html">
+                        <img src="../img/c-logo2.png" alt="C programming language logo"> 
+                        <!-- <p>C Programming Language</p>  -->
                     </a>
                 </div>
                 <div class="box">
-                    <a href="programming/python/encryption_decryption.html">
-                        <img src="../img/cpp-logo.png" alt="C programming language logo">  
+                    <a href="c++/index.html">
+                        <img src="../img/cpp-logo2.png" alt="C programming language logo"> 
+                        <!-- <p>C++ Programming Language</p>  -->
                     </a>
                 </div>
                 <div class="box">
-                    <a href="programming/python/encryption_decryption.html">
-                        <img src="../img/python-logo.png" alt="C programming language logo">  
+                    <a href="python/index.html">
+                        <img src="../img/python-logo2.png" alt="C programming language logo">  
+                        <!-- <p>Python Programming Language</p> -->
                     </a>
                 </div>
                 <div class="box">
-                    <a href="programming/python/encryption_decryption.html">
-                        <img src="../img/java-logo.png" alt="C programming language logo">  
+                    <a href="java/index.html">
+                        <img src="../img/java-logo2.png" alt="C programming language logo">  
+                        <!-- <p>Java Programming Language</p> -->
                     </a>
                 </div>
             </section>
@@ -64,5 +91,6 @@
                 </span>
             </footer>
         </div>
+        <script src="../index.js"></script>
     </body>
 </html>
