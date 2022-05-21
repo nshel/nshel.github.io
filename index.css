@@ -14,7 +14,7 @@ html {
 .top-nav {
     position: relative;
     top: 0;
-    background-color:#f3f3f3;
+    background-color:#ffffff;
     overflow: hidden;
     /* padding: 4px 16px 4px 16px; */
 }
@@ -111,12 +111,12 @@ html {
 }
 
 /** add a media screen to make the topnav responsive(690)*/
-@media screen and (max-width: 600px){
+/* @media screen and (max-width: 600px){
 
     .top-nav {
         display: -moz-box;
     }   
-}
+} */
 .main .content {
     margin-top: 90px;
     margin-left: 255;

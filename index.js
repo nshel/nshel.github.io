@@ -63,6 +63,7 @@ function responseDeviceSize() {
     // }
 }
 
+/*
 function myFilter() {
 
     let menu = document.getElementById('menuList');
@@ -97,6 +98,7 @@ function stick() {
     navbar.classList.remove("sticky");
   }
 }
+*/
 
 // function for opening the left nav
 function openLeftNav() {

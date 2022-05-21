@@ -9,6 +9,7 @@
         hacking, network, networking, c, c++, python, java, javascript, js,">
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="boxes.css">
+        <link rel="icon" href="favicon.png">
     </head>
     <body style="margin: 0;">
             <noscript>
@@ -26,12 +27,12 @@
         </p> 
         </div> -->
         <div class="top-nav" id="topNav">
-            <a class="logo">NSH logo</a>
+            <a class="logo" href="index.html"><img src="favicon.png" alt="NSH" style="width:100%;height:100%;"></a>
             <span class="slide-bar" 
             onclick="openLeftNav()">&#9776;</span>
             <div class="right-side">
                 <a href="#home" id="active">Home</a> 
-                <a href="#programming">Programming</a>
+                <a href="programming/index.html">Programming</a>
                 <a href="#ethical-hacking">Ethical Hacking</a>
                 <a href="#networking">Networking</a>
                 <a href="#web-dev">Web development</a>
@@ -41,14 +42,14 @@
         <nav class="left-nav" id="leftNav">
             <span class="close-btn" 
             onclick="closeLeftNav()" style="color: #f5f5f5; background-color: black;">Close &times;</span>
-            <a href="#home" id="active">Home</a> 
-            <a href="#programming">Programming</a>
+            <a href="index.html" id="active">Home</a> 
+            <a href="programming/index.html">Programming</a>
             <a href="#ethical-hacking">Ethical Hacking</a>
             <a href="#networking">Networking</a>
             <a href="#web-dev">Web development</a>
             <a href="#contact">Contact</a>
         </nav>
-        <header class="head" style="background-image: url('img/mac.jpg');">
+        <header class="head" style="background-image: url('img/mac2.jpg');">
             <div class="text"><br>
                 <span class="large-txt">Network Shell - NSH</span>
                 <p>
@@ -164,6 +165,9 @@
             </footer>
         </div>
         <script src="index.js">
+            window.onload = function() {
+                alert('This website is still under development');
+            }
         </script>
     </body>
 </html>

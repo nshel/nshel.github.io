@@ -28,7 +28,7 @@ html {
 }
 /* Display the columns below each other instead of side by side on small screens */
 @media screen and (max-width: 650px) {
-    .outer-box, .box {
+    .outer-box {
         width: 100%;
         display: block;
     }
@@ -37,7 +37,7 @@ html {
     text-decoration: none;
 }
 .outer-box p {
-    color: #00e600;
+    color: tomato;
     font-size: 19px;
 }
 .outer-box p:hover {
@@ -50,16 +50,14 @@ html {
     width: 100%;
 }
 .main .content1 {
-    margin-top: 90px;
-    margin-left: 45px;
+    top: 60%;
+    margin: 5px auto;
     width: 980px;
     height: auto;
     border-radius: 10px;
     padding: 2%;
-    display: inline-block;
     box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 
 @media screen and (min-width: 1000px){
     .main .content1 {
@@ -102,5 +100,13 @@ html {
 }
 
 .box img {
-    width: 90%;
+    width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+    .box {
+        width: 100%;
+        display: block;
+    }
+    
 }
