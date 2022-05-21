@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html> 
     <head> 
-        <title>List files in a direcotry - C</title>
+        <title>How to list files in a direcotry - C</title>
+        <meta name="author" content="Mohammed Zayyad">
         <meta name="http-equiv" content="Content-Type: text/html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
+        <meta name="description" content="how to list file in a direcotry in c, how to get the list of files
+        in direcotry in c, how to get the list of files in a folder in c, how to list files in a folder in c,
+        dirent">
         <link rel="stylesheet" href="../../index.css">
         <link rel="stylesheet" href="../../boxes.css">
+        <link rel="icon" href="../../favicon.png">
     </head>
     <body style="margin: 0;">
-        <!-- <div class="side-nav" id="sNav">
-            <span class="close-btn" onclick="closeNav()" title="Close" id="cl">&times;</span>
-            <a href="#calculator" >Calculator</a>
-            <a href="#find_max_min_array">Find min/max array</a>
-            <a href="#ls-dir" id="active">List files & folders in directory</a>
-            <a href="#encrypt_file">Encrypt/Decrypt file</a>
-        </div> -->
-        <nav class="top-nav">
-            <!-- <span class="open-btn" onclick="openNav()" id="opener">&#9776;</span> -->
+        <noscript>
+            <div class="noscript">
+                <noscript>
+                    Please enable JavaScript on your browser in order to render this page properly.
+                </noscript> 
+            </div> 
+        </noscript>
+        <div class="top-nav" id="topNav">
+            <a class="logo" href="../../index.html"><img src="../../favicon.png" alt="NSH" style="width:100%;height:100%;"></a>
+            <span class="slide-bar" 
+            onclick="openLeftNav()">&#9776;</span>
+            <div class="right-side">
+                <a href="../../index.html">Home</a>
+                <a href="../c/index.html" id="active">C</a>
+                <a href="../c++/index.html">C++</a>
+                <a href="../java/index.html">Java</a>
+                <a href="../python/index.html">Python</a> 
+                <a href="#contact" id="contact">Contact</a>
+            </div>
+        </div>
+        <nav class="left-nav" id="leftNav">
+            <span class="close-btn" 
+            onclick="closeLeftNav()" style="color: #f5f5f5; background-color: black;">Close &times;</span>
             <a href="../../index.html">Home</a>
             <a href="../c/index.html" id="active">C</a>
             <a href="../c++/index.html">C++</a>
-            <a href="../python/index.html">Python</a> 
             <a href="../java/index.html">Java</a>
-            <a href="#about" id="about">About</a>
-        </nav> 
-        <h1 class="domain">NSH</h1>
+            <a href="../python/index.html">Python</a> 
+            <a href="#contact" id="contact">Contact</a>
+        </nav>
+        <header class="head" style="background-image: url('../../img/list_file_c.jpg');">
+            <div class="text"><br>
+                <span class="large-txt">How to</span>
+                <p>
+                    List Files in a Directory - C
+                </p>
+            </div>
+        </header>
         <div class="main">             
             <section class="content1" id="contentID"> 
                 <header>
@@ -33,7 +58,7 @@
                 </header>
                 <article>
                     <p> 
-                        There may be times when you want to work with files/folders in your C programs,
+                        There may be times when you want to work with files in your C programs,
                         or maybe you're writing a program that needs to list the files in a directory.
                         To work with directories in C we need to include the <b><i>dirent.h</i></b>
                         header file.<br>
@@ -55,7 +80,7 @@
                         <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
                         </div><br><div class="line"></div><br>
                         <div id="c-code">
-// structure that holds info of a file/folder in a dir<br>
+// structure that holds info of a file in a dir<br>
 struct dirent *dir;<br><br>
 
 // Open the current working directory<br>
@@ -64,12 +89,12 @@ DIR *dir2 = opendir(&quot;.&quot;);<br>
                     </div>
                     <br><br>
                     <p>
-                        Now the <b><i>dir2</i></b> variable points to the list of all files/folders
+                        Now the <b><i>dir2</i></b> variable points to the list of all files
                         in a directory. <br>
                         The <i><b>opendir()</b></i> takes a path of a direcotry you wish to work
                         with as an argument, so in this example we're refering to the our current working direcotry,
-                        although, this depends on where you run the program.<br> 
-                        Next we'll use a for loop to loop through all those files/folders.
+                        note that this depends on where you run the program.<br> 
+                        Next we'll use a for loop to loop through all those files.
                     </p>
                     <br>
                     <div class="code">
@@ -77,7 +102,7 @@ DIR *dir2 = opendir(&quot;.&quot;);<br>
                         </div><br><div class="line"></div><br>
                         <div id="c-code">
 if (dir2 != NULL) {<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;// the readdir returns a dirent strcuture for a specific file/folder<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;// the readdir returns a dirent strcuture for a specific file/directory<br>
     &nbsp;&nbsp;&nbsp;&nbsp;for (dir = readdir(dir2); dir != NULL; dir = readdir(dir2)) {<br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;%s\n&quot;, dir->d_name);<br>
     &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
@@ -105,7 +130,7 @@ if (dir2 != NULL) {<br>
 #include &lt;stdio.h&gt;<br>
 #include &lt;dirent.h&gt;<br><br>
 int main() {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;// structure that holds info of a file/folder in a dir<br>
+&nbsp;&nbsp;&nbsp;&nbsp;// structure that holds info of a file in a dir<br>
 &nbsp;&nbsp;&nbsp;&nbsp;struct dirent *dir;<br><br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;// Open the current working directory<br>
