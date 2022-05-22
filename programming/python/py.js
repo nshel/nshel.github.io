@@ -1,5 +1,5 @@
 // Patterns
-var keywordsPattern = /\b(import|from|if|else|elif|try|except|for|in|as|class|with|def|return|break|continue)(?![\w])/g,
+var keywordsPattern = /\b(import|from|if|else|elif|try|except|for|in|as|class|while|True|False|with|def|return|break|continue)(?![\w])/g,
 funcPattern = /\b(print|open|read|range|write|len|exit|input|str|int|self)(?![\w])/g,
 strPattern1 = /(".*?")/g,
 strPattern2 = /('.*?')/g,

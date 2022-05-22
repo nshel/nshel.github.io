@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html> 
+<html lang="en-us">
     <head> 
         <title>Network Shell - NSH</title>
+        <meta charset="utf-8">
         <meta name="author" content="Mohammed Zayyad">
         <meta name="http-equiv" content="Content-Type: text/html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,7 @@
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="boxes.css">
         <link rel="icon" href="favicon.png">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269"
-     crossorigin="anonymous"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269"      crossorigin="anonymous"></script>
     </head>
     <body style="margin: 0;">
             <noscript>
@@ -43,7 +43,7 @@
         </div>
         <nav class="left-nav" id="leftNav">
             <span class="close-btn" 
-            onclick="closeLeftNav()" style="color: #f5f5f5; background-color: black;">Close &times;</span>
+            onclick="closeLeftNav()" style="color:#f5f5f5;background-color:tomato;">Close &times;</span></span>
             <a href="index.html" id="active">Home</a> 
             <a href="programming/index.html">Programming</a>
             <a href="#ethical-hacking">Ethical Hacking</a>
@@ -83,8 +83,16 @@
             
             <section class="content1"> 
                 <header> 
-                    <h1>Top Posts</h1>
+                    <h2 style="font-size: 55px;">Top Posts</h2>
                 </header>
+                <div class="outer-box">
+                    <a href="programming/python/http_client.html">
+                    <div class="box" style="background-image: url('img/client_request.jpg');">  
+                    </div>
+
+                    <p>How to Code a HTTP Client With Socket - Python</p>
+                    </a>
+                </div>
                 <div class="outer-box">
                     <a href="programming/python/encryption_decryption.html">
                     <div class="box" style="background-image: url('img/encrypt.jpg');">  
@@ -162,14 +170,11 @@
                     NSH is an educational platform for learning programming, ethical hacking, 
                     networking and other related content.<br>
                     This website is still under development!<br><br>
-                    <span>Copyright &copy; <span id="year">2022</span>
+                    Copyright &copy; <span id="year">2022</span>
                 </span>
             </footer>
         </div>
         <script src="index.js">
-            window.onload = function() {
-                alert('This website is still under development');
-            }
         </script>
     </body>
 </html>
