@@ -104,6 +104,9 @@ html {
 .top-nav a:hover {
     background-color: #d3d3d3;
 }
+.top-nav .slide-bar {
+    font-weight: bolder;
+}
 
 /** add a media screen to make the topnav responsive(690)*/
 /* @media screen and (max-width: 600px){
@@ -254,6 +257,16 @@ h2, h3 {color: tomato;}
     border: 2px solid black;
     padding: 4px;
 }
+.suggested {
+    padding: 2%;
+    background-color: tomato;
+    border-radius: 4px;
+    font-size: 20px;
+}
+.suggested h3 {
+    color: white;
+}
+.suggested a {text-decoration: none;}
 footer {
     position: relative;
     text-align: center;
