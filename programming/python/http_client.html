@@ -147,7 +147,7 @@
                         everything is <b>OK</b> or request successful.<br>
                         The <b>Content-Length</b> is the size of the document we're receiving.<br>
                         In HTTP we use CRLF('\r\n') to indicate the end of each header, we 
-                        use double CRLF('\r\n\r\n') to indicare the end of the <b>request headers</b>
+                        use double CRLF('\r\n\r\n') to indicate the end of the <b>request headers</b>
                         or <b>response headers</b>.<br>
                         Now that we have some basics of how this protocol works let's make
                         a HTTP request from our python program.<br>
@@ -170,8 +170,8 @@
                         </div>
                     </div><br>
                     <p>
-                        In the construct, the user needs to pass in the URL for this connection.<br>
-                        and we define a <b>buffer.size</b> which is the maximum size of data to be received,
+                        In the constructor, the user needs to pass in the URL for this connection.<br>
+                        and we define a <b>buffer_size</b> which is the maximum size of data to be received,
                         and then we called <b>self.__parse_url__()</b> to break-down the url, the method
                         defination is next<br>.
                         The next function will be used to break-down the URL into:
@@ -258,14 +258,14 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;# resolve hostname to ip<br>
                             &nbsp;&nbsp;&nbsp;&nbsp;ip = socket.gethostbyname(self.hostname)<br><br>
                         
-                            &nbsp;&nbsp;&nbsp;&nbsp;# we create a IPv4, IPv6 dual stack socket<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;# we create a IPv4/IPv6 dual stack socket<br>
                             &nbsp;&nbsp;&nbsp;&nbsp;# for connection<br>
                             &nbsp;&nbsp;&nbsp;&nbsp;self.socket = socket.create_connection((ip, self.port), timeout=5)<br>
                         </div>
                     </div>
                     <br>
                     <p>
-                        Next we'll define our last function for sending and receiving response.<br>
+                        Next we'll define our last function for sending and receiving request and response respectively.<br>
                         This function will return the response from the server.
                     </p><br>
                     <div class="code">
@@ -433,7 +433,7 @@
                         <img src="../../img/parse_url.jpg" alt="URL break-down">
                     </div><br>
                     <p>
-                        Let's finally time to make some request!
+                        It's finally time to make some request!
                     </p>
                     <br>
                     <div class="code">
