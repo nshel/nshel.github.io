@@ -244,6 +244,7 @@ h2, h3 {color: tomato;}
     max-width: 100%;
     height: auto;
 }
+.image { text-align: center; }
 .note {
 
     padding: 2%;
@@ -288,7 +289,7 @@ footer {
 } */
 .code {
     font-family: 'Times New Roman', Times, serif;
-    width: 570px;
+    width: 620px;
     max-width: 100%;
     margin: 0;
     padding: 2%;

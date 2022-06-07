@@ -21,7 +21,10 @@ html {
     background-color: white;
     box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 30.3%;
-    height: 380px;
+    margin-left: 9px;
+    margin-top:  6px;
+    box-sizing: content-box;
+    height: 420px;
     margin-bottom: 16px;
     padding: 0 8px;
     display: inline-block;
@@ -30,6 +33,7 @@ html {
 @media screen and (max-width: 650px) {
     .outer-box {
         width: 100%;
+        margin-left: 0;
         display: block;
     }
 }
