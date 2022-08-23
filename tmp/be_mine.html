@@ -1,1 +1,184 @@
- 
+<!DOCTYPE html>
+<html lang="en-us">
+    <head> 
+        <title>Be Mine 🥺❤️😥</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Mohammed Zayyad">
+        <meta name="http-equiv" content="Content-Type: text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+        body {
+            margin: 0;
+            /* animation-name: change-background; */
+            animation-delay: 0s;
+            animation-duration: 50s;
+            animation-iteration-count: infinite;
+            background-image: url('bg1.jpg');
+            background-repeat: round;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+            font-family: Cambria;
+        }
+
+        @keyframes  change-background {
+            0% {background-image: url('bg1.jpg');}
+            20% {background-image: url('bg2.jpg');}
+            40% {background-image: url('bg3.jpg');}
+            60% {background-image: url('bg4.jpg');}
+            80% {background-image: url('bg5.jpg');}
+            100% {background-image: url('bg1.jpg');}
+        }
+        html {
+            box-sizing: border-box;
+            height: 100%;
+        }
+        
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        .main {
+            position: fixed;
+            display: none;
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+        }
+        .content-box {
+            border-radius: 6px;
+            overflow: auto;
+            margin: 5px auto;
+            width: 600px;
+            height: auto;
+            padding: 20px;
+            background-color: transparent;
+            box-shadow: 0 10px 8px 0 rgba(0, 21, 0, 0.2), 0 6px 14px 0 rgba(7, 235, 56, 0.19);
+            word-wrap: break-word;
+        }
+        .content-box .text {
+            color: #f2f2f2;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-shadow: 1px 1px 2px black, 0 0 53px cyan, 0 0 15px darkcyan;
+        }
+        .head {
+            color: tomato;
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 15px darkblue;
+        }
+        .head, .content-box span {
+            font-weight: bold;
+            
+        }
+        .form {            
+            padding: 16px;
+            text-align: center;
+            width: 600px;
+            height: auto;
+            margin: 5px auto;
+            background-color: transparent;
+            box-shadow: 0 10px 8px 0 rgba(0, 21, 0, 0.2), 0 6px 14px 0 rgba(7, 235, 56, 0.19);
+        }
+        input {
+            width: 90%;
+            border: 1px solid cyan;
+            border-radius: 4px;
+            height: 40px;
+        }
+        button {
+            width: 80px;
+            padding: 4px;
+            border-radius: 3px;
+            border: 2px solid #ccffff;
+            background-color: transparent;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #ccffff;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 650px) {
+            .content-box, .form {
+                width: 90%;
+                display: block;
+            }
+            
+        }
+    </style>
+    <body>
+        <div class="form" id="form">
+            <input type="text" name="code" id="code" placeholder="Enter code here.." /><br /><br>
+            <button onclick="openSite()" id="myBtn">Let me in</button>
+            <br><p id="writeIn" style="color: red;"></p>
+        </div>
+        <div class="main" id="main">
+            
+            <div class="content-box">
+                <h1 class="head">Be Mine 🥺❤️😥</h1>
+                <span style="text-align: center;margin-left: 5%;" class="text">Dear Nana Firdausi,</span><br>
+                <p class="text">
+                    How're you doing today?<br />
+                    
+                    When I started developing feelings for you a part of me
+                    wants to utilize it's chances and the other part doesn't
+                    actually knows what to do, it still don't. But that same
+                    part of me couldn't help the feel that you're hurting, and I hate to see you in pain🥺,
+                    you're indeed an amazing girl and any guy is lucky to have you!.<br><br>
+
+                    I love you, I truly do!, I didn't tell you this earlier because I wasn't
+                    ready to be in a relationship and frankly, I'm still not
+                    but something tells me that you're the one and I shouldn't
+                    let you go, I'm so sorry for what you've been through,
+                    I know how it feels to love someone who doesn't see you the same way,
+                    but none of that matters now because all I know is that I want to spend every 
+                    single moments of my life with you 💖. I love you so so much💖💖💖, but now I leave
+                    everything in your capable hands, if you think you and I can give this a shot I'll be
+                    really glad and I'll be waiting for your response. <br><br>
+
+                    I've already accepted what's about to happen, and I know none of us can change our destiny, 
+                    but I believed du'a can and I pray that Allah S.W.A choose what's best for the both of us🤲🏻...<br><br>
+
+                    I'm desperately sorry if I hurt you in anyways.<br>
+                    May Allah make things easy for you, just take heart!
+                </p>
+            </div>
+        </div>
+    </body>
+    <script>
+
+        var mySound = new sound('bg_music.mp3');
+        function openSite() {
+            var code = document.getElementById('code').value;
+
+            if (code == "1010") {
+                document.getElementById('form').style.display = "none";
+                document.getElementById('main').style.display = "block";
+                document.body.style.animationName = "change-background";
+
+                setTimeout(5000);
+                mySound.play();
+            } else {
+                document.getElementById('writeIn').innerText = "Incorrect code";
+            }
+        }
+
+        function sound(src) {
+            this.sound = document.createElement("audio");
+            this.sound.src = src;
+            this.sound.setAttribute("preload", "auto");
+            this.sound.setAttribute("controls", "none");
+            this.sound.setAttribute("loop", "loop");
+            this.sound.style.display = "none";
+            document.body.appendChild(this.sound);
+            this.play = function(){
+                this.sound.play();
+            }
+            this.stop = function(){
+                this.sound.pause();
+            }    
+        }
+    </script>
+</html>
