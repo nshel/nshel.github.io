@@ -3,195 +3,337 @@
     <head> 
         <title>Network Shell - NSH</title>
         <meta charset="utf-8">
+
         <meta name="author" content="Mohammed Zayyad">
         <meta name="http-equiv" content="Content-Type: text/html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="NSH, network shell, programming, coding, ethical-hacking, 
         hacking, network, networking, c, c++, python, java, javascript, js,">
-        <link rel="stylesheet" href="index.css">
+
+        <!-- $$$$$$$$$$$$$$$$$$$$$$ CSS Files $$$$$$$$$$$$$$$$$$$-->
+        <!-- Vendors -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+        <!-- Main CSS Files -->
+        <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="boxes.css">
+
+        <!-- Page Icon -->
         <link rel="icon" href="favicon.png">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269"      crossorigin="anonymous"></script>
+
+        <!-- Google -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269" crossorigin="anonymous"></script>
     </head>
-    <body style="margin: 0;">
+
+    <body class="page-index">
+        
+        <!-- Page Header -->
+        <header id="header" class="header fixed-top d-flex align-items-center">
+            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+
+                <a href="index.html" class="logo align-items-center d-flex">
+                    <!-- <img src="favicon.png" alt="logo"> -->
+                    <h1 class="d-flex align-items-center">NSH</h1>
+                </a>
+
+                <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+                <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+                <nav id="navbar" class="navbar">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="tutorials/index.html">Tutorials</a>
+                    <a href="programming/index.html">Programming</a>
+                    <a href="ehacking/index.html">Ethical Hacking</a>
+                    <a href="#">About</a></li>
+                    <a href="mailto:nshell.com@gmail.com">Contact</a>
+                </nav> <!-- end navbar -->
+            </div>
+        </header> <!-- end header -->
+
+        <section id="hero" class="hero d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4">
+                        <h2 data-aos="fade-up"> Network Shell - NSH</h2>
+                        <blockquote data-aos="fade-up" data-aos-delay="100">
+                            <p>
+                                A great platform for learning and exploring
+                                new things about coding, ethical hacking, networking
+                                and other related technical content.
+                            </p>
+                        </blockquote>
+                    </div>
+
+                </div>
+            </div>
+        </section> <!-- end section['hero'] -->
+
+        <!-- Main content  -->
+        <div id="main">
+
             <noscript>
-                <div class="noscript">
-                    <noscript>
+                <div class="alert alert-danger alert-dismissible shadow">
+                    <p>
+                        <strong>JavaScript Disabled</strong>
                         Please enable JavaScript on your browser in order to render this page properly.
-                    </noscript> 
-                </div> 
+                    </p>
+                </div>
             </noscript>
-        <!-- <div id="msg-box">
-            <span class="close-btn" onclick="document.getElementById('msg-box').style.display = 'none';">
-                &times;</span><br>
-        <p>
-            This website is still under development.
-        </p> 
-        </div> -->
-        <div class="top-nav" id="topNav">
-            <a class="logo" href="index.html"><img src="favicon.png" alt="NSH" style="width:100%;height:100%;"></a>
-            <span class="slide-bar" 
-            onclick="openLeftNav()">&#9776;</span>
-            <div class="right-side">
-                <a href="#home" id="active">Home</a> 
-                <a href="programming/index.html">Programming</a>
-                <a href="ehacking/index.html">Ethical Hacking</a>
-                <a href="#networking">Networking</a>
-                <a href="#web-dev">Web development</a>
-                <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
-            </div>
+
+            <!-- RECENT POSTS -->
+            <section class="recent-posts">
+
+                <div class="container" data-aos="fade-up">
+                    <div class="section-header">
+                        <h2>Top Tutorials</h2>
+                    </div>
+
+                    <div class="row gy-5">
+
+                        <div class="col-xl-3 col-md-6">
+                            <div class="post-box">
+                                <div class="post-img">
+                                    <img src="tutorials/networking/img/networking.jpg" class="img-fluid" alt="" />
+                                </div>
+                                <div class="meta">
+                                    <span class="post-date">20, Sep 2022</span>
+                                    
+                                </div>
+                                <h3 class="post-title text-muted">Computer Networking</h3>
+                                <p>Learn the basics and advanced concepts of computer networking with an essay to follow tutorial</p>
+                                <a href="tutorials/networking/index.html" class="readmore streached-link"> <span>Start Tutorial</span> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container" data-aos="fade-up">
+
+                    <div class="section-header">
+                        <h2>Recent Posts</h2>
+                    </div>
+
+                    <div class="row gy-5">
+
+                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="post-box">
+                                <div class="post-img">
+                                    <img src="assets/img/ehacking/server_room1.jpg" class="img-fluid" alt="" />
+                                </div>
+                                <div class="meta">
+                                    <span class="post-date">6, Jun 2022</span>
+                                    
+                                </div>
+                                <h3 class="post-title text-muted">How To Brute-Force SSH Login Credentials - 4 Methods</h3>
+                                <p>Most servers (such as web server, email servers etc.), are not usually attached to keyboards or monitors...</p>
+                                <a href="ehacking/bruteforce_ssh_server.html" class="readmore streached-link"> <span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="post-box">
+                                <div class="post-img">
+                                    <img src="assets/img/py/client_request.jpg" class="img-fluid" alt="" />
+                                </div>
+                                <div class="meta">
+                                    <span class="post-date">6, Jun 2022</span>
+                                    
+                                </div>
+                                <h3 class="post-title text-muted">How To Code HTTP Client Using Sockets - Python</h3>
+                                <p>If you open your web browser and navigate to http://www.example.com/page1.htm, your browser will need...</p>
+                                <a href="programming/python/http_client.html" class="readmore streached-link"> <span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="post-box">
+                                <div class="post-img">
+                                    <img src="assets/img/py/encrypt.jpg" class="img-fluid" alt="" />
+                                </div>
+                                <div class="meta">
+                                    <span class="post-date">6, Jun 2022</span>
+                                    
+                                </div>
+                                <h3 class="post-title text-muted">How To Encrypt/Decrpt Files - Python</h3>
+                                <p>Encryption is the process of transforming information into a non-human readable format, the cryptograhy python library...</p>
+                                <a href="programming/python/encryption_decryption.html" class="readmore streached-link"> <span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="post-box">
+                                <div class="post-img">
+                                    <img src="assets/img/c/list_file_c.jpg" class="img-fluid" alt="" />
+                                </div>
+                                <div class="meta">
+                                    <span class="post-date">7, Jun 2022</span>
+                                    
+                                </div>
+                                <h3 class="post-title text-muted">How To List Files in a Directory - C/C++</h3>
+                                <p>To work with directories in C we need to include the <b>dirent.h</b> header file, which has the structure that allows us to wor...</p>
+                                <a href="programming/c/list_files.html" class="readmore streached-link"> <span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                            <div class="post-box">
+                                <div class="post-img">
+                                    <img src="assets/img/py/server.png" class="img-fluid" alt="" />
+                                </div>
+                                <div class="meta">
+                                    <span class="post-date">7, Jun 2022</span>
+                                    
+                                </div>
+                                <h3 class="post-title text-muted">How To Transfer Files on Network Using Sockets - Python</h3>
+                                <p>In this tutorial we'll first create a server that listens for connection on a specific port number, since server is meant to serve,...</p>
+                                <a href="programming/python/transfer_files_using_socket.html" class="readmore streached-link"> <span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+
+                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                            <div class="post-box">
+                                <div class="post-img">
+                                    <img src="assets/img/py/tcp_server.jpg" class="img-fluid" alt="" />
+                                </div>
+                                <div class="meta">
+                                    <span class="post-date">7, Jun 2022</span>
+                                    
+                                </div>
+                                <h3 class="post-title text-muted">How to Code a TCP Server/Client - Python</h3>
+                                <p>In order to make a TCP server the following process needs to be involved: Create a socket,Bind the socket Make the socket listen for...</p>
+                                <a href="programming/python/tcp_client_server.html" class="readmore streached-link"> <span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                            <div class="post-box">
+                                <div class="post-img">
+                                    <img src="assets/img/py/udp_client2.png" class="img-fluid" alt="" />
+                                </div>
+                                <div class="meta">
+                                    <span class="post-date">7, Jun 2022</span>
+                                    
+                                </div>
+                                <h3 class="post-title text-muted">How to Code a UDP Server/Client - Python</h3>
+                                <p>While coding a UDP server we do not need to <i>'listen for connection'</i> or <i>'accept connection</i>because UDP is a connectionless protocol....
+                                </p>
+                                <a href="programming/python/tcp_udp_client_server.html" class="readmore streached-link"> <span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="700">
+                            <div class="post-box">
+                                <div class="post-img">
+                                    <img src="assets/img/java/find_max_min.jpg" class="img-fluid" alt="" />
+                                </div>
+                                <div class="meta">
+                                    <span class="post-date">7, Jun 2022</span>
+                                    
+                                </div>
+                                <h3 class="post-title text-muted">How to Find Maximum and Minimum Number in an Array - Java</h3>
+                                <p>Finding maximum and minimum number in an array is pretty easy. we just need to make 2 functions, one for finding maximum number and the...</p>
+                                <a href="programming/java/find_max_min.html" class="readmore streached-link"> <span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="800">
+                            <div class="post-box">
+                                <div class="post-img">
+                                    <img src="assets/img/py/zip_brute.jpg" class="img-fluid" alt="" />
+                                </div>
+                                <div class="meta">
+                                    <span class="post-date">7, Jun 2022</span>
+                                    
+                                </div>
+                                <h3 class="post-title text-muted">How to Make a Brute-Force Script for Password-Protected zip Files - Python</h3>
+                                <p>Python has a build-in module zipfile which one can use for extracting zip files from their python code.....</p>
+                                <a href="programming/python/zip_file_bruteforce.html" class="readmore streached-link"> <span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="900">
+                            <div class="post-box">
+                                <div class="post-img">
+                                    <img src="assets/img/py/remove_duplicate.jpg" class="img-fluid" alt="" />
+                                </div>
+                                <div class="meta">
+                                    <span class="post-date">7, Jun 2022</span>
+                                    
+                                </div>
+                                <h3 class="post-title text-muted">How to Remove Duplicates in a List - Python</h3>
+                                <p># x is a list that contains many duplicates x = [12, 2, 5, 65, 2, 9, 5, 2, 9, 12], we define another variable that'll hold the unique values...</p>
+                                <a href="programming/python/remove_duplicates_in_list.html" class="readmore streached-link"> <span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="1000">
+                            <div class="post-box">
+                                <div class="post-img">
+                                    <img src="assets/img/py/list_file.jpg" class="img-fluid" alt="" />
+                                </div>
+                                <div class="meta">
+                                    <span class="post-date">7, Jun 2022</span>
+                                    
+                                </div>
+                                <h3 class="post-title text-muted">How to List File in a Directory - Python</h3>
+                                <p>Listing files in a directory can sometimes be very usuful if you'll be working with files and directories in your Python project and there....</p>
+                                <a href="programming/python/list_files.html" class="readmore streached-link"> <span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="1100">
+                            <div class="post-box">
+                                <div class="post-img">
+                                    <img src="assets/img/py/guess_game.jpg" class="img-fluid" alt="" />
+                                </div>
+                                <div class="meta">
+                                    <span class="post-date">7, Jun 2022</span>
+                                    
+                                </div>
+                                <h3 class="post-title text-muted">How to Code a Number Guessing Game - Python</h3>
+                                <p> we set the secret_number varaible to a randomly generated number by the randint function, This number is between 1 and 9. Then we....</p>
+                                <a href="programming/python/number_guess_game.html" class="readmore streached-link"> <span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="1100">
+                            <div class="post-box">
+                                <div class="post-img">
+                                    <img src="assets/img/java/guess_game_java.jpg" class="img-fluid" alt="" />
+                                </div>
+                                <div class="meta">
+                                    <span class="post-date">7, Jun 2022</span>
+                                    
+                                </div>
+                                <h3 class="post-title text-muted">How to Code a Number Guessing Game - Java</h3>
+                                <p>We'll use a do-while loop which will only break if the user guesses the right number or the guess limit is reached. If the user has guessed....</p>
+                                <a href="programming/java/number_guess_game.html" class="readmore streached-link"> <span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <nav>
+                        <ul class="pagination pagination-lg">
+                            <li class="page-item disable"><a href="" class="page-link">Previous</a></li>
+                            <li class="page-item active"><a href="" class="page-link">1</a></li>
+                            <li class="page-item"><a href="" class="page-link">2</a></li>
+                            <li class="page-item"><a href="" class="page-link">3</a></li>
+                            <li class="page-item"><a href="" class="page-link">Next</a></li>
+                        </ul>
+                    </nav> -->
+                </div>
+
+            </section> <!-- End Section['section']-->
         </div>
-        <nav class="left-nav" id="leftNav">
-            <span class="close-btn" 
-            onclick="closeLeftNav()" style="color:#f5f5f5;background-color:tomato;">Close &times;</span></span>
-            <a href="index.html" id="active">Home</a> 
-            <a href="programming/index.html">Programming</a>
-            <a href="ehacking/index.html">Ethical Hacking</a>
-            <a href="#networking">Networking</a>
-            <a href="#web-dev">Web development</a>
-            <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
-        </nav>
-        <header class="head" style="background-image: url('img/mac2.jpg');">
-            <div class="text"><br>
-                <span class="large-txt">Network Shell - NSH</span>
-                <p>
-                    A great platform for learning and exploring
-                    new things about coding, ethical hacking, networking
-                    and other related content.
-                </p>
-            </div>
-            <!-- <span class="text">Network Shell<br>(NSH)</span> -->
-        </header>
-        <!-- <ul>
-            <li>Home</li>
-            <li>Programming</li>
-            <li>Ethical hacking</li>
-            <li>Web development</li>
-        </ul>
-        <nav class="top-nav">
-            <a href="#home" id="active">Home</a> 
-            <a href="#programming">Programming</a>
-            <a href="#ethical-hacking">Ethical Hacking</a>
-            <a href="#networking">Networking</a>
-            <a href="#web-dev">Web development</a>
-            <a href="#about" id="about">About</a>
-        </nav> -->
-        <!-- <div class="noscript"> -->
-        <!-- </div> -->
-        <!-- <h1 class="domain" style="color: #00e600; font-size: 45px;">NSH</h1> -->
-        <div class="main"> 
-            
-            <section class="content1"> 
-                <header> 
-                    <h2 style="font-size: 45px;">Top Posts</h2>
-                </header>
-                <h1>Ethical Hacking</h1>
-                <div class="outer-box">
-                    <a href="ehacking/bruteforce_ssh_server.html">
-                    <div class="box" style="background-image: url('img/ehacking/server_room1.jpg');">  
-                    </div>
 
-                    <p>How to Brute-Force SSH Login Credentials - 4 Methods</p>
-                    </a>
-                </div><br>
-                <h1>Programming</h1>
-                <div class="outer-box">
-                    <a href="programming/python/http_client.html">
-                    <div class="box" style="background-image: url('img/py/client_request.jpg');">  
-                    </div>
 
-                    <p>How to Code a HTTP Client With Socket - Python</p>
-                    </a>
-                </div>
-                <div class="outer-box">
-                    <a href="programming/python/encryption_decryption.html">
-                    <div class="box" style="background-image: url('img/py/encrypt.jpg');">  
-                    </div>
-
-                    <p>How to Encrypt/Decrypt Files - Python</p>
-                    </a>
-                </div>
-                <div class="outer-box">
-                    <a href="programming/c/list_files.html">
-                    <div class="box" style="background-image: url('img/c/list_file_c.jpg');">  
-                    </div>
-
-                    <p>How to List File in a Directory - C/C++</p>
-                    </a>
-                </div>
-                <div class="outer-box">
-                    <a href="programming/python/transfer_files_using_socket.html">
-                    <div class="box" style="background-image: url('img/py/server.png');">  
-                    </div>
-
-                    <p>How to Transfer Files on Network Using Socket - Python</p>
-                    </a>
-                </div>
-                <div class="outer-box">
-                    <a href="programming/python/tcp_udp_client_server.html">
-                    <div class="box" style="background-image: url('img/py/tcp_server.jpg');">   
-                    </div>
-                    <p>How to Code a TCP & UDP Server/Client - Python</p>
-                    </a>
-                </div>
-                <div class="outer-box">
-                    <a href="programming/java/find_max_min.html">
-                    <div class="box" style="background-image: url('img/java/find_max_min.jpg');">   
-                    </div>
-                    <p>How to Find Maximum and Minimum Number in Array - Java</p>
-                    </a>
-                </div>
-                <div class="outer-box">
-                    <a href="programming/python/zip_file_bruteforce.html">
-                    <div class="box" style="background-image: url('img/py/zip_brute.jpg');">  
-                    </div>
-                    <p>How to Make a Brute-Force Script for Password-Protected zip Files - Python</p>
-                    </a>
-                </div>
-                <div class="outer-box">
-                    <a href="programming/python/remove_duplicates_in_list.html">
-                    <div class="box" style="background-image: url('img/py/remove_duplicate.jpg');">  
-                    </div>
-
-                    <p>How to Remove Duplicates in a List - Python</p>
-                    </a>
-                </div>
-                <div class="outer-box">
-                    <a href="programming/python/list_files.html">
-                    <div class="box" style="background-image: url('img/py/list_file.jpg');">  
-                    </div>
-
-                    <p>How to List File in a Directory - Python</p>
-                    </a>
-                </div>
-                <div class="outer-box">
-                    <a href="programming/python/number_guess_game.html">
-                    <div class="box" style="background-image: url('img/guess_game.png');">  
-                    </div>
-
-                    <p>How to Code a Number Guessing Game - Python</p>
-                    </a>
-                </div>
-                <div class="outer-box">
-                    <a href="programming/java/number_guess_game.html">
-                    <div class="box" style="background-image: url('img/guess_game2.png');">  
-                    </div>
-
-                    <p>How to Code a Number Guessing Game - Java</p>
-                    </a>
-                </div>
-            </section>
-            <div class="sep"></div>
-            <footer>
-                <span class="txt">
-                    NSH is an educational platform for learning programming, ethical hacking, 
-                    networking and other related content.<br>
-                    This website is still under development!<br><br>
-                    Copyright &copy; <span id="year">2022</span>
-                </span>
-            </footer>
-        </div>
-        <script src="index.js">
-        </script>
+        <!-- Script Files -->
+        <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>
