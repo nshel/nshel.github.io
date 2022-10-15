@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-us"> 
+    <head> 
+        <title>Data Encapsulation - Computer Networking</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Mohammed Zayyad">
+        <meta name="http-equiv" content="Content-Type: text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="data encapsulation, data encapsulation in networking, networking data encapsulation, data encapsulation networking">
+        <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+        <script src="../../bootstrap/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="../../index.css">
+        <link rel="stylesheet" href="../../boxes.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="icon" href="../../favicon.png">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269"      crossorigin="anonymous"></script>
+    </head>
+    <body style="margin: 0;">
+        <noscript>
+            <div class="noscript">
+                <noscript>
+                    Please enable JavaScript on your browser in order to render this page properly.
+                </noscript> 
+            </div> 
+        </noscript>
+        <div class="top-nav" id="topNav">
+            <a class="logo" href="../../index.html"><img src="../../favicon.png" alt="NSH" style="width:100%;height:100%;"></a>
+            <span class="slide-bar" 
+            onclick="openLeftNav()">&#9776;</span>
+            <div class="right-side">
+                <a href="../../index.html">Home</a> 
+                <a href="../../networking" id="active">Networking</a>
+                <a href="../../programming/index.html">Programming</a>
+                <a href="../../ehacking/index.html">Ethical Hacking</a>
+                <a href="../../web-dev">Web development</a>
+                <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
+            </div>
+        </div>
+        <nav class="left-nav" id="leftNav">
+            <span class="close-btn" 
+            onclick="closeLeftNav()" style="color:#f5f5f5;background-color:tomato;">Close &times;</span>
+            <h2 style="color: lightgray; text-align: center;">Computer Networking</h2>
+            <a href="introduction.html">Introduction</a>
+            <h3 style="color: lightgrey; text-align: center;">Models</h3>
+            <a href="osi-model.html">OSI Model</a> 
+            <a href="tcp_ip_model.html">TCP/IP Model</a>
+            <a href="data_encapsulation.html" id="active">Data Encapsulation</a>
+        </nav>
+        <!-- <header class="head" style="background-image: url('img/networking.jpg');">
+            <div class="text"><br>
+                <span class="large-txt">Learn Computer Networking</span><br>
+                <span class="small-txt">
+                    Learn the basics and advanced knowledge of networking
+                    with an essy to follow tutorial
+                </span>
+            </div>
+        </header> -->
+        <br><br>
+        
+        <div class="main"> 
+            <!-- <div class="side-nav">
+                <a href="introduction.html">Introduction</a>
+                <a href="osi-model.html">OSI Model</a> 
+                <a href="tcp_ip_model.html">TCP/IP Model</a>
+                <a href="data_encapsulation.html" id="active">Data Encapsulation</a>
+            </div>             -->
+            <section class="container bg-transparent border" id="contentID">
+                <div class="text-muted">
+                    <p>Last updated: 17, Sep 2022</p>
+                </div> 
+                <header>
+                    <h1><span class="header-title">Data Encapsulation</span></h1>
+                </header>
+                <div class="topNavButton">
+                    <div class="prevButton">
+                        <a href="tcp_ip_model.html"><button type="button" id="navBtn">
+                            &lt;&lt; Previous
+                        </button></a>
+                    </div>
+                    <div class="nextButton">
+                        <a href="#"><button type="button" id="navBtn">
+                            Next &gt;&gt;
+                        </button></a>
+                    </div>
+                </div><br /><br /> 
+                <article>
+                    <p>
+                        <b>Data Encapsulation:</b> is the process of adding additional information
+                        when transmitting data using the <a href="osi-model.html">OSI</a> or 
+                        <a href="tcp_ip_model.html">TCP/IP</a> model. <br>
+                        When communicating over a network, data must be processed down through the layers at
+                        the sender and up again through the layers at the receiver. For example, if we have a web
+                        server, <b>Host A</b>, which is transmitting a web page to the receiver, <b>Host B</b>, it may look like
+                        this:
+
+                    </p>
+                    <div class="image">
+                        <img src="img/data_transmission.jpg" alt="Data Transmission Between Layers">
+                    </div>
+                    <p>
+                        The web page contains a few paragraphs of text, but the web server doesn't only send the
+                        text by itself. For the text to be rendered correctly, it must be encoded in an HTML
+                        structure:
+                    </p>
+                    <div class="image">
+                        <img src="img/data_trans1.jpg" alt="">
+                    </div>
+                    <p>
+                        In some cases, the text is already preformatted into HTML and saved that way but, in this
+                        example, we are considering a web application that dynamically generates the HTML,
+                        which is the most common paradigm for dynamic web pages. As the text cannot be
+                        transmitted directly, neither can the HTML. It instead must be transmitted as part of an
+                        HTTP (Hyper Text Transfer) response. The web server does this by applying the appropriate HTTP response
+                        header to the HTML:
+                    </p>
+
+                    <div class="image">
+                        <img src="img/data_trans2.jpg" alt="">
+                    </div>
+
+                    <p>
+                        The HTTP uses the TCP session for transmitting webpages. This isn't done explicitly by the web
+                        server, but is taken care of by the operating system's TCP/IP stack:                        
+                    </p>
+                    <div class="image">
+                        <img src="img/data_trans3.jpg" alt="">
+                    </div>
+                    <p>
+                        The TCP packet itself is also routed by an IP packet:
+                    </p>
+                    <div class="image">
+                        <img src="img/data_trans4.jpg" alt="">
+                    </div>
+                    <p>
+                        This is transmitted over the wire in an Ethernet packet (or another protocol):
+                    </p>
+                    <div class="image">
+                        <img src="img/data_trans5.jpg" alt="">
+                    </div>
+                </article>
+
+                <div class="bottomNavButton">
+                    <div class="prevButton">
+                        <a href="tcp_ip_model.html"><button type="button" id="navBtn">
+                            &lt;&lt; Previous
+                        </button></a>
+                    </div>
+                    <div class="nextButton">
+                        <a href="#"><button type="button" id="navBtn">
+                            Next &gt;&gt;
+                        </button></a>
+                    </div>
+                </div><br /><br />
+            </section>
+            <div class="sep"></div>
+            <footer>
+                <span class="txt">
+                    NSH is an educational platform for learning programming, ethical hacking, 
+                    networking and other related content.<br>
+                    This website is still under development!<br><br>
+                    Copyright &copy; <span id="year">2022</span>
+                </span>
+            </footer>
+        </div>
+        <script src="../../index.js"></script>
+    </body>
+</html>

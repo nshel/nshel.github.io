@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-us"> 
+    <head> 
+        <title>OSI Model - Computer Networking</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Mohammed Zayyad">
+        <meta name="http-equiv" content="Content-Type: text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="osi model, netwoking osi, networking osi model, network models, networking tutorial osi model">
+        <link rel="stylesheet" href="../../index.css">
+        <link rel="stylesheet" href="../../boxes.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="icon" href="../../favicon.png">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269"      crossorigin="anonymous"></script>
+    </head>
+    <body style="margin: 0;">
+        <noscript>
+            <div class="noscript">
+                <noscript>
+                    Please enable JavaScript on your browser in order to render this page properly.
+                </noscript> 
+            </div> 
+        </noscript>
+        <div class="top-nav" id="topNav">
+            <a class="logo" href="../../index.html"><img src="../../favicon.png" alt="NSH" style="width:100%;height:100%;"></a>
+            <span class="slide-bar" 
+            onclick="openLeftNav()">&#9776;</span>
+            <div class="right-side">
+                <a href="../../index.html">Home</a> 
+                <a href="../../networking" id="active">Networking</a>
+                <a href="../../programming/index.html">Programming</a>
+                <a href="../../ehacking/index.html">Ethical Hacking</a>
+                <a href="../../web-dev">Web development</a>
+                <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
+            </div>
+        </div>
+        <nav class="left-nav" id="leftNav">
+            <span class="close-btn" 
+            onclick="closeLeftNav()" style="color:#f5f5f5;background-color:tomato;">Close &times;</span>
+            <h2 style="color: lightgray; text-align: center;">Computer Networking</h2>
+            <a href="introduction.html">Introduction</a>
+            <h3 style="color: lightgrey; text-align: center;">Models</h3>
+            <a href="osi-model.html" id="active">OSI Model</a> 
+            <a href="tcp_ip_model.html">TCP/IP Model</a>
+            <a href="data_encapsulation.html">Data Encapsulation</a>
+        </nav>
+        <!-- <header class="head" style="background-image: url('img/networking.jpg');">
+            <div class="text"><br>
+                <span class="large-txt">Learn Computer Networking</span><br>
+                <span class="small-txt">
+                    Learn the basics and advanced knowledge of networking
+                    with an essy to follow tutorial
+                </span>
+            </div>
+        </header> -->
+        <br><br>
+        <div class="main">             
+            <section class="content1" id="contentID">
+                <div class="date" style="color: darkgrey;">
+                    <p>Last updated: 17, Sep 2022</p>
+                </div> 
+                <header>
+                    <h1><span class="header-title">OSI Model</span></h1>
+                </header>
+                <div class="topNavButton">
+                    <div class="prevButton">
+                        <a href="introduction.html"><button type="button" id="navBtn">
+                            &lt;&lt; Previous
+                        </button></a>
+                    </div>
+                    <div class="nextButton">
+                        <a href="tcp_ip_model.html"><button type="button" id="navBtn">
+                            Next &gt;&gt;
+                        </button></a>
+                    </div>
+                </div><br /><br /> 
+                <article>
+                    <p>
+                        It's clear that if all of the disparate devices composing the internet are going to
+                        communicate seamlessly, there must be agreed-upon standards that define their
+                        communications. These standards are called protocols. Protocols define everything from
+                        the voltage levels on an Ethernet cable to how a JPEG image is compressed on a web page.
+                        It's clear that, when we talk about the voltage on an Ethernet cable, we are at a much
+                        different level of abstraction compared to talking about the JPEG image format. If you're
+                        programming a website, you don't want to think about Ethernet cables or Wi-Fi
+                        frequencies. Likewise, if you're programming an internet router, you don't want to have to
+                        worry about how JPEG images are compressed. For this reason, we break the problem
+                        down into many smaller pieces.
+                    </p>
+                    <p>
+                        One common method of breaking down the problem is to place levels of concern into
+                        layers. Each layer then provides services for the layer on top of it, and each upper layer can
+                        rely on the layers underneath it without concern for how they work.
+                    </p>
+                    <p>
+                        The most popular layer system for networking is called the <b>Open Systems Interconnection
+                        model (OSI model)</b>. It was standardized in 1977 and is published as ISO 7498. It has seven
+                        layers.
+                    </p>
+                    <h2>OSI Model Layers</h2>
+                    <ul>
+                        <li><b>7.</b> Application</li>
+                        <li><b>6.</b> Presentation</li>
+                        <li><b>5.</b> Session</li>
+                        <li><b>4.</b> Transport</li>
+                        <li><b>3.</b> Network</li>
+                        <li><b>2.</b> Data Link</li>
+                        <li><b>1.</b> Physical</li>
+                    </ul>
+                    <div class="image">
+                        <a href="img/osi-layers.jpg" target="_blank">
+                        <img src="img/osi-layers.jpg" alt="The 7 OSI model layers" />
+                        </a>
+                    </div>
+                    <h3 style="color: tomato;">Physical Layer</h3>
+                    <p>
+                        This is the lowest level of OSI model. It is the level of physical communication in the real world. At
+                        this level, we have specifications for things such as the voltage levels on an
+                        Ethernet cable, what each pin on a connector is for, the radio frequency of Wi-Fi,
+                        and the light flashes over an optic fiber.
+                    </p>
+                    <h3 style="color: tomato;">Data Link Layer</h3>
+                    <p>
+                        This level builds on the physical layer. It deals with protocols for
+                        directly communicating between two nodes. <br>
+                        This layer performs the following functions:
+                    </p>
+                    <ul>
+                        <li><b>Framing:</b> Defines how direct data between nodes starts and ends.</li>
+                        <li><b>Error detection and correction(Error control):</b> Error detection and 
+                        correction is archived by adding a calculated value <b>CRC (Cyclic Redundancy Check)</b>
+                        that is placed to the data link layer's trailer which is added to the message frame
+                        before it is sent to the physical layer.
+                        </b></li>
+                        <li><b>Flow control:</b> It is the technical through which the constant data rate 
+                        is maintained on both the sides so that no data get corrupted.</li>
+                    </ul>
+                    <p>
+                        Data on this layer is called <b>frame</b>.
+                    </p>
+                    <h3 style="color: tomato;">Network Layer</h3>
+                    <p>
+                        The network layer provides the methods to transmit data
+                        sequences (called <b>packets</b>) between nodes in different networks. It provides
+                        methods to route packets from one node to another (without a direct physical
+                        connection) by transferring through many intermediate nodes. This is the layer
+                        that the <b>Internet Protocol</b> is defined on, which we will learn later in this tutorial.
+                        <br>Data on this layer is referred to as <b>packet</b>.
+                    </p>
+                    <h3 style="color: tomato;">Transport Layer</h3>
+                    <p>
+                        This is the layer which <b>Transmission Control Protocol (TCP)</b> and
+                        <b>User Datagram Protocol (UDP)</b> are said to exists, they provides
+                        methods to reliably deliver variable
+                        length data between hosts. These methods deal with splitting up data,
+                        recombining it, ensuring data arrives in order, and so on.<br>
+                        Data on this layer is called <b>Segment</b>.
+                    </p>
+                    <h3 style="color: tomato;">Session Layer</h3>
+                    <p>
+                        This layer builds on the transport layer by adding methods to
+                        establish, checkpoint, suspend, resume, and terminate dialogs.
+                    </p>
+                    <h3 style="color: tomato;">Presentation Layer</h3>
+                    <p>
+                        This is the lowest layer at which data structure and
+                        presentation for an application are defined. Concerns such as data encoding,
+                        serialization, and encryption are handled here.
+                    </p>
+                    <h3 style="color: tomato;">Application Layer</h3>
+                    <p>
+                        The applications that the user interfaces with (for example,
+                        web browsers and email clients) exist here. These applications make use of the
+                        services provided by the six lower layers.
+                        A protocol from this layer, such as HTTP used to transmit web pages,
+                        doesn't have to concern itself with how the data is being transmitted. It can rely on services
+                        provided by the layer underneath it to effectively transmit data.
+                    </p>
+
+                    <p>
+                        As we will see in the next section, the OSI model doesn't fit precisely with the common
+                        protocols in use today. However, it is still a handy model to explain networking concerns,
+                        and it is still in widespread use for that purpose today.
+                    </p>
+                </article>
+
+                <div class="bottomNavButton">
+                    <div class="prevButton">
+                        <a href="introduction.html"><button type="button" id="navBtn">
+                            &lt;&lt; Previous
+                        </button></a>
+                    </div>
+                    <div class="nextButton">
+                        <a href="tcp_ip_model.html"><button type="button" id="navBtn">
+                            Next &gt;&gt;
+                        </button></a>
+                    </div>
+                </div><br /><br />
+            </section>
+            <div class="sep"></div>
+            <footer>
+                <span class="txt">
+                    NSH is an educational platform for learning programming, ethical hacking, 
+                    networking and other related content.<br>
+                    This website is still under development!<br><br>
+                    Copyright &copy; <span id="year">2022</span>
+                </span>
+            </footer>
+        </div>
+        <script src="../../index.js"></script>
+    </body>
+</html>

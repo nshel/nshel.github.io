@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-us"> 
+    <head> 
+        <title>TCP/IP Layer Model - Computer Networking</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Mohammed Zayyad">
+        <meta name="http-equiv" content="Content-Type: text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="tcp layer model, tcp model, tcp ip layer model, tcp/ip layer model ">
+        <link rel="stylesheet" href="../../index.css">
+        <link rel="stylesheet" href="../../boxes.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="icon" href="../../favicon.png">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269"      crossorigin="anonymous"></script>
+    </head>
+    <body style="margin: 0;">
+        <noscript>
+            <div class="noscript">
+                <noscript>
+                    Please enable JavaScript on your browser in order to render this page properly.
+                </noscript> 
+            </div> 
+        </noscript>
+        <div class="top-nav" id="topNav">
+            <a class="logo" href="../../index.html"><img src="../../favicon.png" alt="NSH" style="width:100%;height:100%;"></a>
+            <span class="slide-bar" 
+            onclick="openLeftNav()">&#9776;</span>
+            <div class="right-side">
+                <a href="../../index.html">Home</a> 
+                <a href="../../networking" id="active">Networking</a>
+                <a href="../../programming/index.html">Programming</a>
+                <a href="../../ehacking/index.html">Ethical Hacking</a>
+                <a href="../../web-dev">Web development</a>
+                <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
+            </div>
+        </div>
+        <nav class="left-nav" id="leftNav">
+            <span class="close-btn" 
+            onclick="closeLeftNav()" style="color:#f5f5f5;background-color:tomato;">Close &times;</span>
+            <h2 style="color: lightgray; text-align: center;">Computer Networking</h2>
+            <a href="introduction.html">Introduction</a>
+            <h3 style="color: lightgrey; text-align: center;">Models</h3>
+            <a href="osi-model.html">OSI Model</a> 
+            <a href="tcp_ip_model.html" id="active">TCP/IP Model</a>
+            <a href="data_encapsulation.html">Data Encapsulation</a>
+        </nav>
+        <!-- <header class="head" style="background-image: url('img/networking.jpg');">
+            <div class="text"><br>
+                <span class="large-txt">Learn Computer Networking</span><br>
+                <span class="small-txt">
+                    Learn the basics and advanced knowledge of networking
+                    with an essy to follow tutorial
+                </span>
+            </div>
+        </header> -->
+        <br><br>
+        <div class="main">
+                        
+            <section class="content1" id="contentID">
+                <div class="date" style="color: darkgrey;">
+                    <p>Last updated: 17, Sep 2022</p>
+                </div> 
+                <header>
+                    <h1><span class="header-title">TCP/IP Layer Model</span></h1>
+                </header>
+                <div class="topNavButton">
+                    <div class="prevButton">
+                        <a href="osi-model.html"><button type="button" id="navBtn">
+                            &lt;&lt; Previous
+                        </button></a>
+                    </div>
+                    <div class="nextButton">
+                        <a href="data_encapsulation.html"><button type="button" id="navBtn">
+                            Next &gt;&gt;
+                        </button></a>
+                    </div>
+                </div><br /><br /> 
+                <article>
+                    <p>
+                        The TCP/IP protocol suite is the most common network communication model in use
+                        today. The TCP/IP reference model differs a bit from the OSI model, as it has only four
+                        layers instead of seven.
+                    </p>
+                    <p>
+                        The TCP/IP reference model was developed after the TCP/IP protocol was already in
+                        common use. It differs from the OSI model by subscribing a less rigid, although still
+                        hierarchical, model. For this reason, the OSI model is sometimes better for understanding
+                        and reasoning about networking concerns, but the TCP/IP model reflects a more realistic
+                        view of how networking is commonly implemented today.
+                    </p>
+                    <h2>TCP/IP Model Layers</h2>
+                    <ul>
+                        <li><b>4.</b> Process/Application</li>
+                        <li><b>3.</b> Host-to-Host</li>
+                        <li><b>2.</b> Internet</li>
+                        <li><b>1.</b> Network Access</li>
+                    </ul>
+                    <div class="image">
+                        <img src="img/tcp_model.jpg" alt="TCP/IP Model Layers">
+                    </div>
+                    <p>
+                        The TCP/IP model doesn't match up exactly with the layers in the OSI model.
+                        That's OK. In both models, the same functions are performed; they are just divided
+                        differently as you can see in the diagram below.
+                    </p>
+                    <div class="image">
+                        <img src="img/di.jpg" alt="OSI and TCP/IP Model Layers">
+                    </div>
+                    <h3 style="color: tomato;">Network Access Layer</h3>
+                    <p>
+                        On this layer, physical connections and data framing
+                        happen. Sending an Ethernet or Wi-Fi packet are examples of layer 1 concerns.
+                    </p>
+
+                    <h3 style="color: tomato;">Internet Layer</h3>
+                    <p>
+                        This layer deals with the concerns of addressing packets and
+                        routing them over multiple interconnection networks. It's at this layer that an IP
+                        address is defined.
+                    </p>
+                    <h3 style="color: tomato;">Host-to-Host Layer</h3>
+                    <p>
+                        The host-to-host layer provides two protocols, TCP and
+                        UDP, which we will discuss later in this tutorial. These protocols address
+                        concerns such as data order, data segmentation, network congestion, and error
+                        correction.
+                    </p>
+                    <h3 style="color: tomato;">Process/Application Layer</h3>
+                    <p>
+                        The process/application layer is where protocols
+                        such as HTTP, SMTP, and FTP are implemented. It is no different
+                        with the <b>Presentation</b> and <b>Application</b> layer in the OSI Model.
+                    </p>
+                </article>
+
+                <div class="bottomNavButton">
+                    <div class="prevButton">
+                        <a href="osi-model.html"><button type="button" id="navBtn">
+                            &lt;&lt; Previous
+                        </button></a>
+                    </div>
+                    <div class="nextButton">
+                        <a href="data_encapsulation.html"><button type="button" id="navBtn">
+                            Next &gt;&gt;
+                        </button></a>
+                    </div>
+                </div><br /><br />
+            </section>
+            <div class="sep"></div>
+            <footer>
+                <span class="txt">
+                    NSH is an educational platform for learning programming, ethical hacking, 
+                    networking and other related content.<br>
+                    This website is still under development!<br><br>
+                    Copyright &copy; <span id="year">2022</span>
+                </span>
+            </footer>
+        </div>
+        <script src="../../index.js"></script>
+    </body>
+</html>
