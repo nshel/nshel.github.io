@@ -1,0 +1,50 @@
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: grey;
+}
+.command {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 19px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2%;
+    border-radius: 14px;
+    color: white;
+    background-color: rgb(22, 22, 48);
+    overflow-wrap: break-word;
+    box-shadow: 0 10px 8px 0 rgba(0, 21, 0, 0.2), 0 6px 24px 0 rgba(0, 0, 0, 0.19);
+}
+.command .top { position: relative;}
+.command .top span {
+    margin-bottom: 14px;
+    display: block;
+    float: left;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.command .top .a {background-color: red;}
+.command .top .b {background-color: yellow; }
+.command .top .c {background-color: green;}
+/* .command .top {
+    border-bottom: 1px solid darkgreen;
+    width: 97%;
+} */
+.command .line {
+    border-bottom: 1px solid darkgreen;
+    width: 97%;
+}
+
+/* .command #keyword {color: darkgreen; }
+.command #arg {color: mediumslateblue; } */

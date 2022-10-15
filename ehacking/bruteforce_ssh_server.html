@@ -8,241 +8,267 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="how to brute force ssh login credentils, how to brute force ssh login 
         credentils using sshcred,how to brute force ssh login credentils using nmap, 
-        how to brute force ssh login credentils using hydra, how to brute force ssh login credentils using metasploit,
-        sshcred, nmap, hydra, metasploit, msfconsole, ssh-brute, ssh Brute-Force, ssh brute force,
+        how to brute force ssh login credentils using hydra, how to brute force ssh login credentils using metasploit,sshcred, nmap, hydra, metasploit, msfconsole, ssh-brute, ssh Brute-Force, ssh brute force,
         kali linux, linux, parrot, parrotOS, termux">
-        <link rel="stylesheet" href="../index.css">
-        <link rel="stylesheet" href="../boxes.css">
-        <link rel="stylesheet" href="eh.css">
+
+
+         <!-- $$$$$$$$$$$$$$$$$$$$$$ CSS Files $$$$$$$$$$$$$$$$$$$-->
+        <!-- Vendors -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+        <!-- Main CSS Files -->
+        <link rel="stylesheet" href="../main.css">
+        <link rel="stylesheet" href="ehacking.css">
+
+        <!-- Page Icon -->
         <link rel="icon" href="../favicon.png">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269"      crossorigin="anonymous"></script>
+
+        <!-- Google -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269" crossorigin="anonymous"></script>
     </head>
-    <body style="margin: 0;">
-        <noscript>
-            <div class="noscript">
-                <noscript>
-                    Please enable JavaScript on your browser in order to render this page properly.
-                </noscript> 
-            </div> 
-        </noscript>
-        <div class="top-nav" id="topNav">
-            <a class="logo" href="../index.html"><img src="../favicon.png" alt="NSH" style="width:100%;height:100%;"></a>
-            <span class="slide-bar" 
-            onclick="openLeftNav()">&#9776;</span>
-            <div class="right-side">
-                <a href="../index.html">Home</a> 
-                <a href="#ethical-hacking" id="active">Ethical Hacking</a>
-                <a href="../programming/index.html">Programming</a>
-                <a href="#networking">Networking</a>
-                <a href="#web-dev">Web development</a>
-                <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
+
+    <body class="page-index">
+        <!-- Page Header -->
+        <header id="header" class="header fixed-top d-flex align-items-center">
+            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+
+                <a href="../index.html" class="logo align-items-center d-flex">
+                    <!-- <img src="favicon.png" alt="logo"> -->
+                    <h1 class="d-flex align-items-center">NSH</h1>
+                </a>
+
+                <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+                <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+                <nav id="navbar" class="navbar">
+                    <a href="index.html">Home</a>
+                    <a href="index.html" class="active">Ethical Hacking</a>
+                    <a href="../programming/index.html">Programming</a>
+                    <a href="../tutorials/index.html">Tutorials</a>
+                    <a href="#">About</a></li>
+                    <a href="mailto:nshell.com@gmail.com">Contact</a>
+                </nav> <!-- end navbar -->
             </div>
-        </div>
-        <nav class="left-nav" id="leftNav">
-            <span class="close-btn" 
-            onclick="closeLeftNav()" style="color:#f5f5f5;background-color:tomato;">Close &times;</span>
-            <a href="../index.html">Home</a> 
-            <a href="#ethical-hacking" id="active">Ethical Hacking</a>
-            <a href="../programming/index.html">Programming</a>
-            <a href="#networking">Networking</a>
-            <a href="#web-dev">Web development</a>
-            <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
-        </nav>
-        <header class="head" style="background-image: url('../img/ehacking/server_room1.jpg')">
-            <div class="text"><br>
-                <span class="large-txt">How to</span><br>
-                <span class="small-txt">
-                    Brute-Force SSH login credentials using<br> sshcred,
-                    nmap, hydar and metasploit 
-                </span>
-            </div>
-        </header>
-        <div class="main">             
-            <section class="content1" id="contentID1">
-                <header>
-                    <h1><span class="howto">How to </span>Brute-Force SSH Login Credentials - Nmap, Sshcred, Hydra, Metasploit</h1>
-                </header>
-                <article>
-                    <p>
-                        Most servers (such as web server, email servers etc.), are not usually attached to keyboards or monitors.<br>
-                        One of the most popular protocols that provide remote command-line access to servers is TELNET.<br>
-                        With telnet,  a client remotely connects to a server using plaintext over TCP (Transmission Control 
-                        Protocol) port 23.<br> The client sends commands to the server as plaintext, and then the server executes 
-                        the command and send the output to the client.<br> 
-                        Telnet does not encrypt any data sent or received even usernames passwords are sent as plaintext 
-                        which makes it unsecure.<br>
+        </header> <!-- end header -->
 
-                        To fix does setbacks SSH protocol has now largely replaced telnet.
+        <div class="main">           
+            
+            <!-- Breadcrumbs -->
+            <section class="breadcrumbs d-flex align-items-center" style="background-image:  url('../assets/img//ehacking/server_room1.jpg');">
+                <div class="container position-relative d-flex flex-column align-items-center">
 
-                        The SSH (Secure Shell) protocol works over TCP port 22. SSH uses a strong encryption and allows both 
-                        the server and client to be authenticated.<br>
+                        <h2 data-aos="fade-up">HOW TO</h2>
+                        <p data-aos="fade-up" data-aos-delay="50">
+                            Brute Force SSH Login Credentils - 4 Best Methods
+                        </p>
 
-                        In this tutorial I'll show you 4 methods to Brute-Force SSH login credentials
-                        and gain access to the remote system.<br>
-                    </p>
-                    <div class="image">
-                        <img src="../img/ehacking/server_room_0.jpg" alt="server room image">
                     </div>
-                    <div class="note">
-                        <span class="mark">&#10069;</span><br><br>
-                        Make sure you've full permission for testing this examples on systems/networks
-                        that does'nt belong to you.<br>
-                        I used my personal device to described all the examples found here.
-                    </div><br>
-                    <h2>Method 1: <i>using nmap scripting engine(NSE)</i></h2>
-                    <p>
-                        In this method we'll be using an nmap script; the command goes like This
-                    </p>
-                    <div class="command">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="command">
-                            <span style="color:blue">┌──(</span><span style="color:red;">root💀kali</span>
-                            <span style="color:blue;">)-[</span>~<span style="color:blue;">]<br>└─</span>
-                            <span style="color:red;">#</span>
-                            nmap --script ssh-brute --script-args=userdb=user.txt,passworddb=rockyou.txt -p 22 127.0.0.1
-                            <!-- <span style="color:red;">root💀kali~#</span> -->
+                </div>
+            </section> <!-- end section['hero'] -->
+            
+            <section id="post" class="post">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="row g-5">
+                        <div class="col-lg-9 shadow" data-aos="fade-up" data-aos-delay="200">
+
+                            <article class="post-details">
+
+                                <h2 class="title"><span class="color-primary">How To</span> Brute Force SSH Login Credentils - 4 Best Methods</h2>
+                                
+                                <div class="post-meta">
+                                    <ul>
+                                        <li class="d-flex align-items-center"><i class="bi bi-clock"><span class="text-muted"> Posted</span><time datetime="2022-06-14"> Aug, 2 2022</i></li>
+                                        <li class="d-flex align-items-center"><i class="bi bi-clock"><span class="text-muted"> Last updated</span><time datetime="2022-09-29"> Sep, 29 2022</i></li>
+                                    </ul>
+                                </div> <!-- END POST-META -->
+                                <div class="content">
+                                    <p>
+                                        Most servers (such as web server, email servers etc.), are not usually attached to keyboards or monitors.<br>
+                                        One of the most popular protocols that provide remote command-line access to servers is TELNET.<br>
+                                        With telnet,  a client remotely connects to a server using plaintext over TCP (Transmission Control 
+                                        Protocol) port 23.<br> The client sends commands to the server as plaintext, and then the server executes 
+                                        the command and send the output to the client.<br> 
+                                        Telnet does not encrypt any data sent or received even usernames passwords are sent as plaintext 
+                                        which makes it unsecure.<br>
+
+                                        To fix does setbacks SSH protocol has now largely replaced telnet.
+
+                                        The SSH (Secure Shell) protocol works over TCP port 22. SSH uses a strong encryption and allows both 
+                                        the server and client to be authenticated.<br>
+
+                                        In this tutorial I'll show you 4 methods to Brute-Force SSH login credentials
+                                        and gain access to the remote system.<br>
+                                    </p>
+                                    <div class="image">
+                                        <img src="../assets/img/ehacking/server_room_0.jpg" alt="server room image">
+                                    </div>
+                                    <div class="alert alert-warning alert-dismissible">
+                                        Make sure you've full permission for testing this examples on systems/networks
+                                        that does'nt belong to you.<br>
+                                        I used my personal device to described all the examples found here.
+                                    </div><br>
+                                    <h3>Method 1: <i>using nmap scripting engine(NSE)</i></h3>
+                                    <p>
+                                        In this method we'll be using an nmap script; the command goes like This
+                                    </p>
+                                    <div class="command">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="command">
+                                            <span style="color:blue">┌──(</span><span style="color:red;">root💀kali</span>
+                                            <span style="color:blue;">)-[</span>~<span style="color:blue;">]<br>└─</span>
+                                            <span style="color:red;">#</span>
+                                            nmap --script ssh-brute --script-args=userdb=user.txt,passworddb=rockyou.txt -p 22 127.0.0.1
+                                            <!-- <span style="color:red;">root💀kali~#</span> -->
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <p>After running this you should see something like this:</p>
+                                    <div class="image">
+                                        <img src="../assets/img/ehacking/nmap_ssh_brute.png" alt="ssh bruteforce with nmap scripting engine">
+                                    </div>
+                                    <p>
+                                        <h3>Command arguments:</h3>
+                                        <ul>
+                                            <li><b>--script:</b> is used to specify the script which is <b>ssh-brute</b> in this case.</li>
+                                            <li><b>--script-args:</b> is used to pass in the arguments for the script.
+                                            the <i>userdb</i> is used to specify a file with a list of usernames, and
+                                            the <i>passworddb</i> is used to specify a password list.
+                                            </li>
+                                            <li><b>-p:</b> is set to 22 as our port number.</li>
+                                            <li><b>127.0.0.1:</b> is our target(localhost in this case).</li>
+                                        </ul>
+                                    </p>
+                                    <h3>Method 2: <i>using sshcred</i></h3>
+                                    <p>
+                                        sshcred(or ssh credentials) is a tool for brute forcing SSH login credentials,
+                                        opening an interactive shell session etc.<br>
+                                        Visit their <a href="https://github.com/4anonz/sshcred">Github Repo</a> for instructions
+                                        on how to install the tool.
+                                        Once you've sshcred installed we can use this command to start the bruteforce attack.
+                                    </p><br>
+                                    <div class="command">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="command">
+                                            <span style="color:blue">┌──(</span><span style="color:red;">root💀kali</span>
+                                            <span style="color:blue;">)-[</span>~<span style="color:blue;">]<br>└─</span>
+                                            <span style="color:red;">#</span>
+                                            sshcred --user-file user.txt --wordlist rockyou.txt 127.0.0.1
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <p>This is what I get after running the command</p>
+                                    <div class="image">
+                                        <img src="../assets/img/ehacking/sshcred_ssh_brute.png" alt="ssh bruteforce with sshcred">
+                                    </div>
+                                    <p>
+                                        <h3>Command arguments:</h3>
+                                        <ul>
+                                            <li><b>--user-file(or -U):</b> is used to specify a file with a list of usernames,
+                                            you can also use the <i>--username</i> or <i>-u</i> flag to specify a single username.</li>
+                                            <li><b>--wordlist(or -w):</b> is used to specify a password list file.</li>
+                                            <li><b>127.0.0.1:</b> this is our target IP</li>
+                                        </ul>
+                                    </p>
+                                    <p>
+                                        By default sshcred uses port 22 if no port is provided.<br>
+                                        You can use the <i>-p(or --port)</i> flag to specify a custom port number.
+                                    </p>
+                                    <h3>Method 3: <i>using hydra</i></h3>
+                                    <p>
+                                        In this method we'll be using hydra to bruteforce SSH login credentials;
+                                        the command goes like this:
+                                    </p><br>
+                                    <div class="command">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="command">
+                                            <span style="color:blue">┌──(</span><span style="color:red;">root💀kali</span>
+                                            <span style="color:blue;">)-[</span>~<span style="color:blue;">]<br>└─</span>
+                                            <span style="color:red;">#</span>
+                                            hydra ssh://127.0.0.1 -L user.txt -P rockyou.txt
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="image">
+                                        <img src="../assets/img/ehacking/hydra_ssh_brute.png" alt="ssh bruteforce with hydra">
+                                    </div>
+                                    <p>
+                                        <h3>Command arguments:</h3>
+                                        <ul>
+                                            <li><b>ssh://127.0.0.1:</b> <i>ssh://</i> is the protocol we're attacking, and <i>127.0.0.1</i> is our target host.</li>
+                                            <li><b>-L:</b> is used to specify a file with a list of usernames. Use <i>-l</i> to specify a single username.</li>
+                                            <li><b>-P:</b> is used to specify a password list, you can use the <i>-p</i> flag to specify a single password.</li>
+                                        </ul>
+                                    </p>
+                                    <br>
+                                    <h3>Method 4: using metasploit</h3>
+                                    <p>Launch metasploit console using:</p>
+                                    <div class="command">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="command">
+                                            <span style="color:blue">┌──(</span><span style="color:red;">root💀kali</span>
+                                            <span style="color:blue;">)-[</span>~<span style="color:blue;">]<br>└─</span>
+                                            <span style="color:red;">#</span>
+                                            msfconsole
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <p>After lauching msfconsole, use these commands to set options</p>
+                                    <div class="command">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="command">
+                                            msf6> use auxiliary/scanner/ssh/ssh_login <br>
+                                            msf6 auxiliary(<span style="color:red;">scanner/ssh/ssh_login</span>) > set RHOSTS 127.0.0.1<br>
+                                            RHOSTS => 127.0.0.1<br>
+                                            msf6 auxiliary(<span style="color:red;">scanner/ssh/ssh_login</span>) > set USER_FILE user.txt<br>
+                                            USER_FILE => user.txt<br>
+                                            msf6 auxiliary(<span style="color:red;">scanner/ssh/ssh_login</span>) > set PASS_FILE rockyou.txt<br>
+                                            PASS_FILE => rockyou.txt<br>
+                                            msf6 auxiliary(<span style="color:red;">scanner/ssh/ssh_login</span>) > set THREADS 4<br>
+                                            THREADS => 4<br>
+                                            msf6 auxiliary(<span style="color:red;">scanner/ssh/ssh_login</span>) > set VERBOSE true<br>
+                                            VERBOSE => true<br>
+                                            msf6 auxiliary(<span style="color:red;">scanner/ssh/ssh_login</span>) > run<br>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <p>This is what I get after running the commands:</p>
+                                    <div class="image">
+                                        <img src="../assets/img/ehacking/msfconsole_ssh_brute.png" alt="ssh bruteforce with metasploit">
+                                    </div>
+                                    <!-- <div class="command">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="command">
+                                            <span style="color:blue">┌──(</span><span style="color:red;">root💀kali</span>
+                                            <span style="color:blue;">)-[</span>~<span style="color:blue;">]<br>└─</span>
+                                            <span style="color:red;">#</span>
+                                        </div>
+                                    </div> -->
+                                </div> <!-- END Content-->
+
+                            </article> <!-- End POST details -->
+
                         </div>
                     </div>
-                    <br>
-                    <p>After running this you should see something like this:</p>
-                    <div class="image">
-                        <img src="../img/ehacking/nmap_ssh_brute.png" alt="ssh bruteforce with nmap scripting engine">
-                    </div>
-                    <p>
-                        <h3>Command arguments:</h3>
-                        <ul>
-                            <li><b>--script:</b> is used to specify the script which is <b>ssh-brute</b> in this case.</li>
-                            <li><b>--script-args:</b> is used to pass in the arguments for the script.
-                            the <i>userdb</i> is used to specify a file with a list of usernames, and
-                            the <i>passworddb</i> is used to specify a password list.
-                            </li>
-                            <li><b>-p:</b> is set to 22 as our port number.</li>
-                            <li><b>127.0.0.1:</b> is our target(localhost in this case).</li>
-                        </ul>
-                    </p>
-                    <h2>Method 2: <i>using sshcred</i></h2>
-                    <p>
-                        sshcred(or ssh credentials) is a tool for brute forcing SSH login credentials,
-                        opening an interactive shell session etc.<br>
-                        Visit their <a href="https://github.com/4anonz/sshcred">Github Repo</a> for instructions
-                        on how to install the tool.
-                        Once you've sshcred installed we can use this command to start the bruteforce attack.
-                    </p><br>
-                    <div class="command">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="command">
-                            <span style="color:blue">┌──(</span><span style="color:red;">root💀kali</span>
-                            <span style="color:blue;">)-[</span>~<span style="color:blue;">]<br>└─</span>
-                            <span style="color:red;">#</span>
-                            sshcred --user-file user.txt --wordlist rockyou.txt 127.0.0.1
-                        </div>
-                    </div>
-                    <br>
-                    <p>This is what I get after running the command</p>
-                    <div class="image">
-                        <img src="../img/ehacking/sshcred_ssh_brute.png" alt="ssh bruteforce with sshcred">
-                    </div>
-                    <p>
-                        <h3>Command arguments:</h3>
-                        <ul>
-                            <li><b>--user-file(or -U):</b> is used to specify a file with a list of usernames,
-                            you can also use the <i>--username</i> or <i>-u</i> flag to specify a single username.</li>
-                            <li><b>--wordlist(or -w):</b> is used to specify a password list file.</li>
-                            <li><b>127.0.0.1:</b> this is our target IP</li>
-                        </ul>
-                    </p>
-                    <p>
-                        By default sshcred uses port 22 if no port is provided.<br>
-                        You can use the <i>-p(or --port)</i> flag to specify a custom port number.
-                    </p>
-                    <h2>Method 3: <i>using hydra</i></h2>
-                    <p>
-                        In this method we'll be using hydra to bruteforce SSH login credentials;
-                        the command goes like this:
-                    </p><br>
-                    <div class="command">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="command">
-                            <span style="color:blue">┌──(</span><span style="color:red;">root💀kali</span>
-                            <span style="color:blue;">)-[</span>~<span style="color:blue;">]<br>└─</span>
-                            <span style="color:red;">#</span>
-                            hydra ssh://127.0.0.1 -L user.txt -P rockyou.txt
-                        </div>
-                    </div>
-                    <br>
-                    <div class="image">
-                        <img src="../img/ehacking/hydra_ssh_brute.png" alt="ssh bruteforce with hydra">
-                    </div>
-                    <p>
-                        <h3>Command arguments:</h3>
-                        <ul>
-                            <li><b>ssh://127.0.0.1:</b> <i>ssh://</i> is the protocol we're attacking, and <i>127.0.0.1</i> is our target host.</li>
-                            <li><b>-L:</b> is used to specify a file with a list of usernames. Use <i>-l</i> to specify a single username.</li>
-                            <li><b>-P:</b> is used to specify a password list, you can use the <i>-p</i> flag to specify a single password.</li>
-                        </ul>
-                    </p>
-                    <br>
-                    <h2>Method 4: using metasploit</h2>
-                    <p>Launch metasploit console using:</p>
-                    <div class="command">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="command">
-                            <span style="color:blue">┌──(</span><span style="color:red;">root💀kali</span>
-                            <span style="color:blue;">)-[</span>~<span style="color:blue;">]<br>└─</span>
-                            <span style="color:red;">#</span>
-                            msfconsole
-                        </div>
-                    </div>
-                    <br>
-                    <p>After lauching msfconsole, use these commands to set options</p>
-                    <div class="command">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="command">
-                            msf6> use auxiliary/scanner/ssh/ssh_login <br>
-                            msf6 auxiliary(<span style="color:red;">scanner/ssh/ssh_login</span>) > set RHOSTS 127.0.0.1<br>
-                            RHOSTS => 127.0.0.1<br>
-                            msf6 auxiliary(<span style="color:red;">scanner/ssh/ssh_login</span>) > set USER_FILE user.txt<br>
-                            USER_FILE => user.txt<br>
-                            msf6 auxiliary(<span style="color:red;">scanner/ssh/ssh_login</span>) > set PASS_FILE rockyou.txt<br>
-                            PASS_FILE => rockyou.txt<br>
-                            msf6 auxiliary(<span style="color:red;">scanner/ssh/ssh_login</span>) > set THREADS 4<br>
-                            THREADS => 4<br>
-                            msf6 auxiliary(<span style="color:red;">scanner/ssh/ssh_login</span>) > set VERBOSE true<br>
-                            VERBOSE => true<br>
-                            msf6 auxiliary(<span style="color:red;">scanner/ssh/ssh_login</span>) > run<br>
-                        </div>
-                    </div>
-                    <br>
-                    <p>This is what I get after running the commands:</p>
-                    <div class="image">
-                        <img src="../img/ehacking/msfconsole_ssh_brute.png" alt="ssh bruteforce with metasploit">
-                    </div>
-                    <!-- <div class="command">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="command">
-                            <span style="color:blue">┌──(</span><span style="color:red;">root💀kali</span>
-                            <span style="color:blue;">)-[</span>~<span style="color:blue;">]<br>└─</span>
-                            <span style="color:red;">#</span>
-                        </div>
-                    </div> -->
-                </article>
-            </section>
-            <div class="sep"></div>
-            <footer>
-                <span class="txt">
-                    NSH is an educational platform for learning programming, ethical hacking, 
-                    networking and other related content.<br>
-                    This website is still under development!<br><br>
-                    Copyright &copy; <span id="year">2022</span>
-                </span>
-            </footer>
-        </div>
-        <script src="../index.js"></script>
+
+                </div> <!-- Container -->
+
+            </section> <!-- Section POST -->
+        
+        </div> <!-- Main -->
+
+        <!-- Script Files -->
+        <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="../main.js"></script>
     </body>
 </html>
