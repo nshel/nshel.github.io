@@ -70,4 +70,9 @@ function RegExS(res, parsed) {
 	return p;
 }
 
-window.onload = pySyntax();
+
+// window.onload = pySyntax();
+window.addEventListener('DOMContentLoaded', () => {
+	pySyntax();
+});
+

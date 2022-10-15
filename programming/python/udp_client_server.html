@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-us"> 
+    <head> 
+        <title>How to Code a UDP Client-Server - Python</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Mohammed Zayyad">
+        <meta name="http-equiv" content="Content-Type: text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="how to code a udp server
+        and client in python, how to make a udp server and client in python, in python, python, tcp, udp, socket">
+
+
+        <!-- $$$$$$$$$$$$$$$$$$$$$$ CSS Files $$$$$$$$$$$$$$$$$$$-->
+        <!-- Vendors -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+        <!-- Main CSS Files -->
+        <link rel="stylesheet" href="../../main.css">
+        <link rel="stylesheet" href="../../boxes.css">
+
+        <!-- Page Icon -->
+        <link rel="icon" href="../../favicon.png">
+
+        <!-- Google -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="page-index">
+        <!-- Page Header -->
+        <header id="header" class="header fixed-top d-flex align-items-center">
+            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+
+                <a href="../../index.html" class="logo align-items-center d-flex">
+                    <!-- <img src="favicon.png" alt="logo"> -->
+                    <h1 class="d-flex align-items-center">NSH</h1>
+                </a>
+
+                <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+                <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+                <nav id="navbar" class="navbar">
+                    <a href="../../index.html">Home</a>
+                    <a href="index.html" class="active">Python Codes</a>
+                    <a href="../c/index.html">C Codes</a>
+                    <a href="../c++/index.html">C++ Codes</a>
+                    <a href="../java/index.html">Java Codes</a>
+                    <a href="#">About</a></li>
+                    <a href="mailto:nshell.com@gmail.com">Contact</a>
+                </nav> <!-- end navbar -->
+            </div>
+        </header> <!-- end header -->
+
+        <div class="main">           
+            
+            <!-- Breadcrumbs -->
+            <section class="breadcrumbs d-flex align-items-center" style="background-image:  url('../../assets/img/py/udp_client2.png');">
+                <div class="container position-relative d-flex flex-column align-items-center">
+
+                        <h2 data-aos="fade-up">HOW TO</h2>
+                        <p data-aos="fade-up" data-aos-delay="50">
+                            Code a UDP Client-Server - Python
+                        </p>
+
+                    </div>
+                </div>
+            </section> <!-- end section['hero'] -->
+            
+            <section id="post" class="post">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="row g-5">
+                        <div class="col-lg-9 shadow" data-aos="fade-up" data-aos-delay="200">
+
+                            <article class="post-details">
+
+                                <h2 class="title"><span class="color-primary">How To</span> Code a UDP Client-Server - Python</h2>
+                                
+                                <div class="post-meta">
+                                    <ul>
+                                        <li class="d-flex align-items-center"><i class="bi bi-clock"><span class="text-muted"> Posted</span><time datetime="2022-06-14"> Jun, 14 2022</i></li>
+                                        <li class="d-flex align-items-center"><i class="bi bi-clock"><span class="text-muted"> Last updated</span><time datetime="2022-06-14"> Jun, 14 2022</i></li>
+                                    </ul>
+                                </div> <!-- END POST-META -->
+
+                                <div class="content">
+                                    <p>
+                                        In this tutorial we'll learn how to code a UDP client and server
+                                        in python using the <a href="https://docs.python.org/3/library/socket.html">socket</a>
+                                        module in python.<br>
+                                        <b>UDP</b> or User Datagram Protocol is termed as a connectionless protocol.<br>
+                                    </p><br>
+                                    <div class="alert alert-info alert-dismissible">
+                                        <h4>Suggested</h4>
+                                        <a href="tcp_client_server.html">How to code a TCP client-server - Python</a>
+                                    </div><br>
+                                    <h3>UDP Server</h3>
+                                    <p>
+                                        Steps:
+                                        <ul>
+                                            <li>Create a socket</li>
+                                            <li>Bind the socket</li>
+                                            <li>Send/Recieve data</li>
+                                            <li>Close the socket</li>
+                                        </ul>
+                                    </p>
+                                    <p>
+                                        You can see in the steps we did not include <i>'listen for connection'</i> and <i>'accept connection</i>
+                                        because UDP is a connectionless protocol, connection is needed not in order 
+                                        to send/receive data. <br>
+                                        Let's start coding the server now.
+                                    </p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            import socket<br><br>
+
+                                            # Our host, 0.0.0.0 means use any<br>
+                                            # interface available on our device<br>
+                                            host = &quot;0.0.0.0&quot;<br><br>
+
+                                            # The port number to listen on<br>
+                                            port = 8080<br><br>
+
+                                            print(&quot;[$] Creating socket...&quot;)<br>
+                                            # Create the server socket<br>
+                                            server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br>
+                                            print(&quot;[$] Socket created successfully!&quot;)<br>
+                                            print(&quot;[$] Binding socket...&quot;)<br>
+                                            # bind the socket<br>
+                                            try:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;server_socket.bind((host, port))<br>
+                                            except socket.error as err:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;print(f&quot;[-] Bind failed, {str(err)}&quot;)<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;exit()<br>
+                                            print(&quot;[$] Bind complete&quot;)<br>
+                                        </div>
+                                    </div><br>
+                                    <p>
+                                        Note that this time we used <b>socket.SOCK_DGRAM</b> instead of <b>socket.SOCK_STREAM</b>
+                                        because we're no longer gonna be using TCP so we used <b>socket.SOCK_DGRAM</b> which 
+                                        idicates the socket type to be Datagram(or UDP).<br>
+                                        Next we'll receive some data from a client then echo back
+                                        the same data to the client.<br>
+                                    </p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            # receive data from client<br>
+                                            buffer_size = 4096<br>
+                                            data = server_socket.recvfrom(buffer_size)<br><br>
+
+                                            message = data[0].decode()<br>
+                                            address = data[1]<br>
+                                            print(f&quot;[$] Data received: {message} from {address[0]}:{address[1]}&quot;)<br>
+                                            # send back the same message to the server<br>
+                                            server_socket.sendto(message.upper().encode(), address)<br>
+                                            server_socket.close()<br>
+                                        </div>
+                                    </div><br>
+                                    <p>
+                                        Since this is a UDP socket, so we'll not be using the <b>recv()</b>
+                                        function to recv data, we'll be using the <b>recvfrom()</b>
+                                        function.<br>
+                                        The <b>recvfrom()</b> function is used for receiving data 
+                                        from any client. It returns a 2 tuple, the first one is the actual
+                                        data from the client, then the second one is also a tuple of the client 
+                                        address, which the first one is the client's IP address and the second is the client's 
+                                        port number.<br>
+                                        we also used the <b>sendto()</b> function to send data to a specific address.
+                                        So here we're echoing back the data to the client that sends us the data
+                                        from the first place.
+                                    </p>
+                                    <h3>UDP Client</h3>
+                                    <p>
+                                        Steps:
+                                        <ul>
+                                            <li>Create a socket</li>
+                                            <li>Send/Recieve data</li>
+                                            <li>Close the socket</li>
+                                        </ul>
+                                        
+                                    </p>
+                                    <p>
+                                        In UDP, we don;t actually have to connect to the server in order
+                                        to send data that's why in the list of our steps there's no <i>'connect to the server'</i>.<br>
+                                        Client code:
+                                    </p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            import socket<br><br>
+
+                                            # host to connect to<br>
+                                            host = &quot;127.0.0.1&quot;<br>
+
+                                            # port number to connect on<br>
+                                            port = 8080<br><br>
+
+                                            print(&quot;[$] Creating socket...&quot;)<br>
+                                            # Create the client socket<br>
+                                            client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br>
+                                            print(&quot;[$] Socket created successfully!&quot;)<br><br>
+
+                                            data = &quot;Hello Server&quot;<br>
+                                            client_socket.sendto(data.encode(), ((host, port)))<br><br>
+
+                                            # receive data from the server<br>
+                                            buffer_size = 4096<br>
+                                            data = client_socket.recvfrom(buffer_size)<br><br>
+
+                                            message = data[0].decode()<br>
+                                            address = data[1]<br><br>
+
+                                            print(f&quot;[$] Data received: {message} from {address[0]}:{address[1]}&quot;)<br>
+                                            client_socket.close()<br>
+
+                                        </div>
+                                    </div><br><br>
+                                    <div class="image">
+                                        <a href="../../assets/img/py/udp_server.jpg">
+                                            <img src="../../assets/img/py/udp_server.jpg" alt="UDP server">
+                                        </a>
+                                    </div>
+                                    <div class="image">
+                                        <a href="../../assets/img/py/udp_client.jpg">
+                                            <img src="../../assets/img/py/udp_client.jpg" alt="UDP client">
+                                        </a>
+                                    </div><br>
+
+                                </div> <!-- END Content-->
+
+                            </article> <!-- End POST details -->
+
+                        </div>
+                    </div>
+
+                </div> <!-- Container -->
+
+            </section> <!-- Section POST -->
+        
+        </div> <!-- Main -->
+
+        <!-- Script Files -->
+        <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="../../main.js"></script>
+        <script src="py.js"></script>
+    </body>
+</html>

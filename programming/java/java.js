@@ -1,12 +1,12 @@
 
 //patterns
-var keywordsPattern1 = /\b(import|public|class|static|void|int|float|boolean)(?![\w])/g,
-keywordsPattern2 = /\b(try|if|else|switch|while|for|do|new|return|true|false)(?![\w])/g,
+var keywordsPattern1 = /\b(import|public|Exception|NumberFormatException|class|static|void|int|float|boolean)(?![\w])/g,
+keywordsPattern2 = /\b(try|catch|if|else|switch|while|for|do|new|return|true|false)(?![\w])/g,
 strPattern1 = /(".*?")/g,
 strPattern2 = /('.*?')/g,
 sLineCommentPattern = /(\/\/.*)/g,
 mLineCommentPattern = /(\/\*.*\*\/)/g,
-numbersPattern = /([0-9])/g;
+numbersPattern = /\b([0-9])/g;
 
 function javaSyntax() {
 										
@@ -33,15 +33,15 @@ function javaSyntax() {
 		parsed = RegExD(res1, parsed);
 		parsed = RegExD(res2, parsed);
 
-		// var res3 = parsed.match(strPattern1);
-		// parsed = RegExS(res3, parsed);
+		var res3 = parsed.match(strPattern1);
+		parsed = RegExS(res3, parsed);
 
-		// var res4 = parsed.match(strPattern2);
-		// parsed = RegExS(res4, parsed);
+		var res4 = parsed.match(strPattern2);
+		parsed = RegExS(res4, parsed);
 
 		codeElements[i].innerHTML = parsed;
 	}
-	// codeElements.forEach( element => {
+	// codeElements.Array.forEach( element => {
 		
 	// });
 				
@@ -75,4 +75,8 @@ function RegExS(res, parsed) {
 	return p;
 }
 
-window.onload = javaSyntax();
+
+window.addEventListener('DOMContentLoaded', () => {
+	javaSyntax()
+});
+

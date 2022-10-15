@@ -34,4 +34,6 @@ function cSyntax() {
 				
 }
 
-window.onload = cSyntax();
+window.addEventListener('DOMContentLoaded', () => {
+	cSyntax();
+});

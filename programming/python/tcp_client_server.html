@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-us"> 
+    <head> 
+        <title>How to code a TCP client-server - Python</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Mohammed Zayyad">
+        <meta name="http-equiv" content="Content-Type: text/html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="how to code a tcp server and client in python, how to make a tcp server and client">
+
+
+        <!-- $$$$$$$$$$$$$$$$$$$$$$ CSS Files $$$$$$$$$$$$$$$$$$$-->
+        <!-- Vendors -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+        <!-- Main CSS Files -->
+        <link rel="stylesheet" href="../../main.css">
+        <link rel="stylesheet" href="../../boxes.css">
+
+        <!-- Page Icon -->
+        <link rel="icon" href="../../favicon.png">
+
+        <!-- Google -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="page-index">
+        <!-- Page Header -->
+        <header id="header" class="header fixed-top d-flex align-items-center">
+            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+
+                <a href="../../index.html" class="logo align-items-center d-flex">
+                    <!-- <img src="favicon.png" alt="logo"> -->
+                    <h1 class="d-flex align-items-center">NSH</h1>
+                </a>
+
+                <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+                <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+                <nav id="navbar" class="navbar">
+                    <a href="../../index.html">Home</a>
+                    <a href="index.html" class="active">Python Codes</a>
+                    <a href="../c/index.html">C Codes</a>
+                    <a href="../c++/index.html">C++ Codes</a>
+                    <a href="../java/index.html">Java Codes</a>
+                    <a href="#">About</a></li>
+                    <a href="mailto:nshell.com@gmail.com">Contact</a>
+                </nav> <!-- end navbar -->
+            </div>
+        </header> <!-- end header -->
+
+        <div class="main">           
+            
+            <!-- Breadcrumbs -->
+            <section class="breadcrumbs d-flex align-items-center" style="background-image:  url('../../assets/img/py/tcp_server.jpg');">
+                <div class="container position-relative d-flex flex-column align-items-center">
+
+                        <h2 data-aos="fade-up">HOW TO</h2>
+                        <p data-aos="fade-up" data-aos-delay="50">
+                            Code a TCP Client-Server - Python
+                        </p>
+
+                    </div>
+                </div>
+            </section> <!-- end section['hero'] -->
+            
+            <section id="post" class="post">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="row g-5">
+                        <div class="col-lg-9 shadow" data-aos="fade-up" data-aos-delay="200">
+
+                            <article class="post-details">
+
+                                <h2 class="title"><span class="color-primary">How To</span> Code a TCP Client-Server - Python</h2>
+                                
+                                <div class="post-meta">
+                                    <ul>
+                                        <li class="d-flex align-items-center"><i class="bi bi-clock"><span class="text-muted"> Posted</span><time datetime="2022-06-14"> Jun, 14 2022</i></li>
+                                        <li class="d-flex align-items-center"><i class="bi bi-clock"><span class="text-muted"> Last updated</span><time datetime="2022-06-14"> Jun, 14 2022</i></li>
+                                    </ul>
+                                </div> <!-- END POST-META -->
+
+                                <div class="content">
+                                    <p>
+                                        In this tutorial we'll learn how to code a TCP client and server
+                                        in python using the <a href="https://docs.python.org/3/library/socket.html">socket</a>
+                                        module in python.<br>
+                                        <b>TCP </b> or Transmission Control Protocol is a connection-oriented protocol
+                                        which provides a reliable connection between the server and the client. 
+                                    </p><br>
+                                    <h3>TCP Server</h3>
+                                    <p>
+                                        In order to make a TCP server the following process needs to be involved:
+                                        <ul>
+                                            <li>Create a socket</li>
+                                            <li>Bind the socket</li>
+                                            <li>Make the socket listen for connections</li>
+                                            <li>Accept a connection</li>
+                                            <li>Send/Recieve data</li>
+                                            <li>Close the socket</li>
+                                        </ul>
+                                        
+                                    </p>
+                                    <p>Let's first import the socket module and declare some varaibles</p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            import socket<br><br>
+                                            # Our host, 0.0.0.0 means use any<br>
+                                            # interface available on our device<br>
+                                            host = &apos;0.0.0.0&apos;<br><br>
+
+                                            # The port number to listen on<br>
+                                            port = 8080<br>
+                                        </div>
+                                    </div><br>
+                                    <p>Next we create the server socket</p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            print(&quot;[$] Creating socket...&quot;)<br>
+                                            # Create the server socket<br>
+                                            server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>
+                                            print(&quot;[$] Socket created successfully!&quot;)<br>
+                                        </div>
+                                    </div><br>
+                                    <p>
+                                        The <b>socket()</b> method of socket is use for creating the socket.<br>
+                                        The <b>socket.AF_INET</b> is the address family, it means we want our socket to use IPv4 address,
+                                        if you want to use IPv6 address, use <b>socket.AF_INET6</b><br>
+                                        The <b>socket.SOCK_STREAM</b> is the socket type, it means we want to use TCP.<br>
+                                        Next we bind our socket.
+                                    </p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            print(&quot;[$] Binding socket...&quot;)<br>
+                                            # bind the socket<br>
+                                            try:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;server_socket.bind((host, port))<br>
+                                            except socket.error as err:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;print(f&quot;[-] Bind failed, {str(err)}&quot;)<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;exit()<br>
+                                            print(&quot;[$] Bind complete&quot;)<br>
+                                        </div>
+                                    </div><br>
+                                    <p>
+                                        The <b>bind()</b> method is use to bind the socket, we use it to
+                                        associate host/IP address and port number.<br>
+                                        Next we listen for connections.<br>
+                                    </p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            # Put the socket in a listening mode<br>
+                                            server_socket.listen(10) <br> <br>
+
+                                            print(f&quot;[$] Server started, listening on {host}:{port}&quot;) <br>
+                                        </div>
+                                    </div><br>
+                                    <p>
+                                        As you can see, the <b>listen()</b> method is use to put a 
+                                        socket in a listening mode.<br>
+                                        Next we accept any incoming connection and recv some data.
+                                    </p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            # accept any incoming connection<br>
+                                            client_socket, client_addr = server_socket.accept()<br>
+                                            print(f&quot;[$] Got a new connection from {client_addr[0]}:{client_addr[1]}&quot;)<br><br>
+
+                                            # receive data from client <br>
+                                            # maximum buffer size<br>
+                                            buffer_size = 4096 <br>
+                                            data = client_socket.recv(4096).decode() <br><br>
+                                            print(f&quot;[$] Data received: {data}&quot;)
+                                        </div>
+                                    </div><br>
+                                    <p>
+                                        The <b>accept()</b> method is use for accepting connections.
+                                        The <b>accept()</b> method returns the client socket and 
+                                        the client address as a tuple.<br>
+                                        Next we used the <b>recv()</b> method on the <b>client_socket</b>
+                                        to receive data from the client, then we'll use the <b>decode()</b> method
+                                        to decode the data.
+                                    </p><br>
+                                    <div class="alert alert-info alert-dismissible">
+                                        <span class="mark">&#10069;</span><br><br>
+                                        It is very important that you always encode data before sending it out on the network.<br>
+                                        And decode it after receiving it from the network.
+                                    </div>
+                                    <p>
+                                        Since this is just an echo server, we'll just convert
+                                        the data received from the client then send it back to the client.<br>
+                                        After that we'll just close the connection.
+                                    </p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            # send back the same message to the server<br>
+                                            client_socket.send(data.upper().encode())<br>
+                                            server_socket.close()<br>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="alert alert-info alert-dismissible">
+                                        <h4>Suggested</h4>
+                                        <a href="udp_client_server.html">How to code UDP client-server - Python</a>
+                                    </div><br>
+
+                                    <h3>TCP Client</h3>
+                                    <p>
+                                        Steps of making a TCP client
+                                        <ul>
+                                            <li>Create a socket</li>
+                                            <li>Connect to another socket</li>
+                                            <li>Send/Recieve data</li>
+                                            <li>Close the socket</li>
+                                        </ul>
+                                        
+                                    </p>
+                                    <p>Here's our TCP client code:</p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            import socket<br><br>
+
+                                            # host to connect to<br>
+                                            host = &apos;127.0.0.1&apos;<br><br>
+
+                                            # port number to connect on<br>
+                                            port = 8080<br><br>
+
+                                            print(&apos;[$] Creating socket...&apos;)<br>
+                                            # Create the client socket<br>
+                                            client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>
+                                            print(&apos;[$] Socket created successfully!&apos;)<br>
+                                            print(f&apos;[$] Connecting {host}:{port}...&apos;)<br><br>
+
+                                            # Connect to the server<br>
+                                            try:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;client_socket.connect((host, port))<br>
+                                            except socket.error as err:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;print(f&apos;[-] Connection to server failed, {err}&apos;)<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;exit()<br><br>
+
+                                            print(&apos;[$] Connected&apos;)<br><br>
+
+                                            # send some data to the server<br>
+                                            data = &apos;Hello Server&apos;<br>
+                                            client_socket.send(data.encode())<br><br>
+
+                                            # receive data from the server<br>
+                                            buffer_size = 4096<br>
+                                            data_received = client_socket.recv(buffer_size)<br><br>
+
+                                            print(f&apos;[$] Data received: {data_received.decode()}&apos;)<br>
+
+                                        </div>
+                                    </div><br>
+                                    <p>
+                                        By now you should be familiar with all the methods we used in the client code,
+                                        well except for <b>connect()</b> which you can tell what it does,
+                                        it just connect our socket to the specified host/IP on a port.<br>
+                                    </p><br>
+                                    <div class="image">
+                                        <a href="../../assets/img/py/tcp_server.jpg">
+                                            <img src="../../assets/img/py/tcp_server.jpg" alt="TCP server">
+                                        </a>
+                                    </div><br>
+                                    <div class="image">
+                                        <a href="../../assets/img/py/tcp_client.jpg" target="_blank">
+                                            <img src="../../assets/img/py/tcp_client.jpg" alt="TCP client">
+                                        </a>
+                                    </div><br>
+
+                                </div> <!-- END Content-->
+
+                            </article> <!-- End POST details -->
+
+                        </div>
+                    </div>
+
+                </div> <!-- Container -->
+
+            </section> <!-- Section POST -->
+        
+        </div> <!-- Main -->
+
+        <!-- Script Files -->
+        <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="../../main.js"></script>
+        <script src="py.js"></script>
+    </body>
+</html>

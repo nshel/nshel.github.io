@@ -1,473 +1,513 @@
 <!DOCTYPE html>
 <html lang="en-us"> 
     <head> 
-        <title>HTTP client - Python</title>
+        <title>How To Code a HTTP Client Using Socket - Python</title>
         <meta charset="utf-8">
         <meta name="author" content="Mohammed Zayyad">
         <meta name="http-equiv" content="Content-Type: text/html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="how to make a http client in python without library,
-        how to code a http client with python socket, how to make a http request in python, how to make 
-        a http request with socket python, how to make a http request with python sockets module, 
-        how to make a http client without using library">
-        <link rel="stylesheet" href="../../index.css">
+        <meta name="description" content="">
+
+
+        <!-- $$$$$$$$$$$$$$$$$$$$$$ CSS Files $$$$$$$$$$$$$$$$$$$-->
+        <!-- Vendors -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+        <!-- Main CSS Files -->
+        <link rel="stylesheet" href="../../main.css">
         <link rel="stylesheet" href="../../boxes.css">
+
+        <!-- Page Icon -->
         <link rel="icon" href="../../favicon.png">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269"      crossorigin="anonymous"></script>
 
+        <!-- Google -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269" crossorigin="anonymous"></script>
     </head>
-    <body style="margin: 0;">
-        <noscript>
-            <div class="noscript">
-                <noscript>
-                    Please enable JavaScript on your browser in order to render this page properly.
-                </noscript> 
-            </div> 
-        </noscript>
-        <div class="top-nav" id="topNav">
-            <a class="logo" href="../../index.html"><img src="../../favicon.png" alt="NSH" style="width:100%;height:100%;"></a>
-            <span class="slide-bar" 
-            onclick="openLeftNav()">&#9776;</span>
-            <div class="right-side">
-                <a href="../../index.html">Home</a>
-                <a href="index.html" id="active">Python</a> 
-                <a href="../c/index.html">C</a>
-                <a href="../c++/index.html">C++</a>
-                <a href="../java/index.html">Java</a>
-                <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
+
+    <body class="page-index">
+        <!-- Page Header -->
+        <header id="header" class="header fixed-top d-flex align-items-center">
+            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+
+                <a href="../../index.html" class="logo align-items-center d-flex">
+                    <!-- <img src="favicon.png" alt="logo"> -->
+                    <h1 class="d-flex align-items-center">NSH</h1>
+                </a>
+
+                <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+                <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+                <nav id="navbar" class="navbar">
+                    <a href="../../index.html">Home</a>
+                    <a href="index.html" class="active">Python Codes</a>
+                    <a href="../c/index.html">C Codes</a>
+                    <a href="../c++/index.html">C++ Codes</a>
+                    <a href="../java/index.html">Java Codes</a>
+                    <a href="#">About</a></li>
+                    <a href="mailto:nshell.com@gmail.com">Contact</a>
+                </nav> <!-- end navbar -->
             </div>
-        </div>
-        <nav class="left-nav" id="leftNav">
-            <span class="close-btn" 
-            onclick="closeLeftNav()" style="color:#f5f5f5;background-color:tomato;">Close &times;</span>
-            <a href="../../index.html">Home</a>
-            <a href="index.html" id="active">Python</a> 
-            <a href="../c/index.html">C</a>
-            <a href="../c++/index.html">C++</a>
-            <a href="../java/index.html">Java</a>
-            <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
-        </nav>
-        <header class="head" style="background-image: url('../../img/py/http_client.jpg');">
-            <div class="text"><br>
-                <span class="large-txt">How to</span><br>
-                <span class="small-txt">
-                    Code a HTTP client using socket - Python
-                </span>
-            </div>
-        </header>
+        </header> <!-- end header -->
+
+        <div class="main">           
+            
+            <!-- Breadcrumbs -->
+            <section class="breadcrumbs d-flex align-items-center" style="background-image:  url('../../assets/img/py/http_client.jpg');">
+                <div class="container position-relative d-flex flex-column align-items-center">
+
+                        <h2 data-aos="fade-up">HOW TO</h2>
+                        <p data-aos="fade-up" data-aos-delay="50">
+                            How To Code a HTTP Client Using Socket - Python
+                        </p>
+
+                    </div>
+                </div>
+            </section> <!-- end section['hero'] -->
+            
+            <section id="post" class="post">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="row g-5">
+                        <div class="col-lg-9 shadow" data-aos="fade-up" data-aos-delay="200">
+
+                            <article class="post-details">
+
+                                <h2 class="title"><span class="color-primary">How To</span> a Code HTTP Client Using Socket - Python</h2>
+                                
+                                <div class="post-meta">
+                                    <ul>
+                                        <li class="d-flex align-items-center"><i class="bi bi-clock"><span class="text-muted"> Posted</span><time datetime="2022-06-14"> Jun, 14 2022</i></li>
+                                        <li class="d-flex align-items-center"><i class="bi bi-clock"><span class="text-muted"> Last updated</span><time datetime="2022-06-14"> Jun, 14 2022</i></li>
+                                    </ul>
+                                </div> <!-- END POST-META -->
+
+                                <div class="content">
+
+                                    <p>
+                                        In this tutorial we'll be writing a very simple HTTP client.<br>
+                                        <b>HTTP (or Hyper Text Transfer Protocol) </b> is a text-based client-server protocol that runs over TCP.<br> Plain HTTP runs over TCP
+                                        port 80.<br>
+                                        It should be noted that plain HTTP is mostly deprecated for security reasons.
+                                        Today, sites should use HTTPS, the secure version of HTTP.
+                                        HTTPS secures HTTP by merely running
+                                        the HTTP protocol through a Transport Layer Security (TLS) layer
+                                        In order to code a http client we need to have a basic understanding
+                                        of the protocol specification.<br>
+                                    </p>
+
+                                    <div class="image">
+                                        <img class="img-thumbnail" src="../../assets/img/py/request_response.jpg" alt="HTTP request and response">
+                                    </div>
+                                    
+                                    <h2>What You Should Know</h2>
+                                    <p>It is suggested that you've the basic knowledge of the <a href="https://docs.python.org/3/library/socket.html">socket</a> module</p>
+                                    <p>
+                                        <h3>HTTP Request type</h3>
+                                        <ul>
+                                            <li><b>GET:</b> Is used requesting a document from the server.</li>
+                                            <li><b>POST:</b> Is used sending data from the client to the server.</li>
+                                            <li><b>HEAD:</b> It's just like <b>GET</b> request but the response is just <i>response header</i> instead of receiving the both <i>response header</i> and <i>response body</i>.</li>
+                                            <li><b>PUT:</b>  Is used to send a document to the web server.</li>
+                                            <li><b>DELETE:</b>  Is used to request that the web server should delete a document or resource.</li>
+                                            <li><b>TRACE:</b>  Is used to request diagnostic information from web proxies.</li>
+                                            <li><b>CONNECT:</b> Is sometimes used to initiate an HTTP connection through a proxy server.</li>
+                                            <li><b>OPTIONS:</b>  Is used to ask which HTTP request types are supported by the server for a given resource.</li>
+                                        </ul>
+                                    </p>
+                                    <h3>HTTP Request Format</h3>
+                                    <p>
+                                        If you open your web browser and navigate to http://www.example.com/page1.htm,
+                                        your browser will need to send an HTTP request to the web server at www.example.com.
+                                        That HTTP request may look like this:
+                                    </p>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                            GET /page1.htm HTTP/1.1<br>
+                                            User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36<br>
+                                            Host: example.com<br>
+                                            Connection: close<br>
+                                    </div><br>
+                                    <p>
+                                        From the above request example, the <b>GET</b> means we want to get a document from the server,
+                                        and the document path on the server is <b>/page1.html</b>.<br> and the <b>HTTP/1.1</b> is protocol and the version(1.1).<br>
+                                        The <b>User-Agent</b> header is the name of the software requesting the page.<br>
+                                        The <b>Host</b> header is the name of the host we're requesting the page from.<br>
+                                        The <b>Connection</b> header tells the server what to do after finishing request,
+                                        the value of this field can be <b>Keep-Alive</b> or <b>close</b> which means
+                                        to keep the connection alive or close the connection after sending response respectively.<br><br>
+                                    </p>
+                                    <h3>HTTP Response Format</h3>
+                                    <p>
+                                        Like the HTTP request, the HTTP response also consists of a header part and a body part.<br>
+                                        Also similar to the HTTP request, the body part is optional.<br>Most HTTP responses do have
+                                        a body part, though.
+                                        The server at www.example.com could respond to our HTTP request with the following
+                                        reply:
+                                    </p>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                            HTTP/1.1 200 OK<br>
+                                            Cache-Control: max-age=604800<br>
+                                            Content-Type: text/html; charset=UTF-8<br>
+                                            Date: Sun, 22 May 2022 16:46:09 GMT<br>
+                                            Etag: "1541025663+gzip"<br>
+                                            Expires: Sun, 29 May 2022 16:46:09 GMT<br>
+                                            Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT<br>
+                                            Server: ECS (ord/5730)<br>
+                                            Vary: Accept-Encoding<br>
+                                            X-Cache: HIT<br>
+                                            Content-Length: 1270<br>
+                                            &lt;!doctype html&gt;<br>
+                                            &lt;html&gt;<br>
+                                            &lt;head&gt;<br>
+                                            &lt;title&gt;Example Domain&lt;/title&gt;<br>
+                                            ...<br>
+                                    </div><br>
+                                    <p>
+                                        The <b>200</b> from the above response is the status code which means 
+                                        everything is <b>OK</b> or request successful.<br>
+                                        The <b>Content-Length</b> is the size of the document we're receiving.<br>
+                                        In HTTP we use CRLF('\r\n') to indicate the end of each header, we 
+                                        use double CRLF('\r\n\r\n') to indicate the end of the <b>request headers</b>
+                                        or <b>response headers</b>.<br>
+                                        Now that we have some basics of how this protocol works let's make
+                                        a HTTP request from our python program.<br>
+                                    </p>
+                                    <p>
+                                        First we'll import the socket module and define a class
+                                    </p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            import socket<br><br>
+                
+                                            class HTTPClient:<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, url):<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.url = url<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.buffer_size = 4096<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__parse_url__()<br>
+                                        </div>
+                                    </div><br>
+                                    <p>
+                                        In the constructor, the user needs to pass in the URL for this connection.<br>
+                                        and we define a <b>buffer_size</b> which is the maximum size of data to be received,
+                                        and then we called <b>self.__parse_url__()</b> to break-down the url, the method
+                                        defination is next<br>.
+                                        The next function will be used to break-down the URL into:
+                                        <ul>
+                                            <li>Protocol</li>
+                                            <li>Hostname</li>
+                                            <li>Port</li>
+                                            <li>Path</li>
+                                            <li>Query string</li>
+                                        </ul>
+                                        This is an example:
+                                    </p>
+
+                                    <div class="image">
+                                        <img class="img-thumbnail" src="../../assets/img/py/url.jpg" alt="a URL example">
+                                    </div>
+                                    
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            # function for parsing the URL<br>
+                                            def __parse_url__(self):<br><br>
+                                        
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# Get the protocol,e.g http, https etc<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# If no protocol specified we raised an exception<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;url = self.url<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.protocol, url = url.split(&apos;://&apos;)<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;except ValueError:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise Exception(&apos;Invalid URL&apos;)<br><br>
+                                            
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# we make sure that the protocol is http<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# otherwise we raise an exception saying protocol is not supported<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;if self.protocol != &apos;http&apos;:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise Exception(f&apos;Protocol not supported: {self.protocol}&apos;)<br><br>
+                                        
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# Get the hostname and port, example www.google.com:80<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;hostname_port = url.split(&apos;/&apos;)[0]<br><br>
+                                        
+                                                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# Python will raises a ValueError if there's no enough<br> 
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# values to unpack, which means there's no port number<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# so we'll just default to 80<br><br>
+                                                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.hostname, self.port = hostname_port.split(&apos;:&apos;)<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;except ValueError:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.hostname = hostname_port<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.port = 80<br><br>
+                                        
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# get the path<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = url.split(&apos;/&apos;)[1]<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = &apos;/&apos; + self.path<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;except IndexError:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = &apos;/&apos;<br><br>
+                                        
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# remove any query string from our path<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;if &apos;?q=&apos; in self.path:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = self.path.split(&apos;?q=&apos;)[0]<br><br>
+                                        
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# get the query string (if available)<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.query = url.split(&apos;?q=&apos;)[1]<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;except IndexError:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.query = &apos;&apos;<br><br>
+                                        
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# remove the &apos;#&apos; from the query string if it contains any<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;if &apos;#&apos; in self.query:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.query = self.query.split(&apos;#&apos;)[0]<br><br>
+                                        
+                                        </div>
+                                    </div><br>
+                                    <p>
+                                        Next we'll define another method for establishing connection to the server.
+                                    </p>
+                                    <br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            # function for connecting to the server<br>
+                                            def __connect__(self):<br><br>
+                                        
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# resolve hostname to ip<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;ip = socket.gethostbyname(self.hostname)<br><br>
+                                        
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# we create a IPv4/IPv6 dual stack socket<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# for connection<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;self.socket = socket.create_connection((ip, self.port), timeout=5)<br>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <p>
+                                        Next we'll define our last function for sending and receiving request and response respectively.<br>
+                                        This function will return the response from the server.
+                                    </p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            # function for sending a HTTP get request<br>
+                                            def perform_request(self):<br><br>
+                                        
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# first we connect to the server<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;self.__connect__()<br><br>
+                                        
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# we contruct our request header<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;request_headers = \<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&quot;GET /{self.path}{self.query} HTTP/1.1\r\n&quot; \<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&quot;Host: {self.hostname}:{self.port}\r\n&quot; \<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;User-Agent: Python http/0.1\r\n&quot; \<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Connection: close\r\n&quot; \<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;\r\n&quot;<br><br>
+                                        
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# send the request headers<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;self.socket.send(request_headers.encode())<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;self.response = ''<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# receive response<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;while True:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data = self.socket.recv(self.buffer_size)<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if len(data) == 0:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# finished receiving data<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.response = self.response + data.decode()<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# return the response<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;return self.response<br>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <h3>Full Source Code</h3><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            import socket<br><br>
+                
+                                            class HTTPClient:<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, url):<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.url = url<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.buffer_size = 4096<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__parse_url__()<br><br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# function for parsing the URL<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;def __parse_url__(self):<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Get the protocol,e.g http, https etc<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# If no protocol specified we raised an exception<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url = self.url<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.protocol, url = url.split(&apos;://&apos;)<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except ValueError:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise Exception(&apos;Invalid URL&apos;)<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# we make sure that the protocol is http<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# otherwise we raise an exception ssaying protocol is not supported<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.protocol != &apos;http&apos;:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise Exception(f&apos;Protocol not supported: {self.protocol}&apos;)<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Get the hostname and port, example www.google.com:80<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hostname_port = url.split(&apos;/&apos;)[0]<br><br>
+                
+                                                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Python will raises a ValueError if there's no enough<br> 
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# values to unpack, which means there's no port number<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# so we'll just default to 80<br><br>
+                                                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.hostname, self.port = hostname_port.split(&apos;:&apos;)<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except ValueError:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.hostname = hostname_port<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.port = 80<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# get the path<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = url.split(&apos;/&apos;)[1]<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = &apos;/&apos; + self.path<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except IndexError:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = &apos;/&apos;<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# remove any query string from our path<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if &apos;?q=&apos; in self.path:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = self.path.split(&apos;?q=&apos;)[0]<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# get the query string (if available)<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.query = url.split(&apos;?q=&apos;)[1]<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except IndexError:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.query = &apos;&apos;<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# remove the &apos;#&apos; from the query string if it contains any<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if &apos;#&apos; in self.query:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.query = self.query.split(&apos;#&apos;)[0]<br><br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# function for connecting to the server<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;def __connect__(self):<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# resolve hostname to ip<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ip = socket.gethostbyname(self.hostname)<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# we create a IPv4, IPv6 dual stack socket<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# for connection<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.socket = socket.create_connection((ip, self.port), timeout=5)<br><br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# function for sending a HTTP get request<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;def perform_request(self):<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# first we connect to the server<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__connect__()<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# we contruct our request header<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request_headers = \<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&quot;GET /{self.path}{self.query} HTTP/1.1\r\n&quot; \<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&quot;Host: {self.hostname}:{self.port}\r\n&quot; \<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;User-Agent: Python http/0.1\r\n&quot; \<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Connection: close\r\n&quot; \<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;\r\n&quot;<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# send the request headers<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.socket.send(request_headers.encode())<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.response = ''<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# receive response<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while True:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data = self.socket.recv(self.buffer_size)<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if len(data) == 0:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# finished receiving data<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.response = self.response + data.decode()<br><br>
+                
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# return the response<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.response<br><br>
+                
+                                        </div>
+                                    </div>
+                                    <p>
+                                        We can use our class to parse URL as a bonus:
+                                    </p>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            http_client = HTTPClient(&quot;http://www.google.com/search?q=python+socket&quot;)<br><br>
+                
+                                            print(f&quot;protocol: {http_client.protocol}&quot;)<br>
+                                            print(f&quot;hostname: {http_client.hostname}&quot;)<br>
+                                            print(f&quot;port: {http_client.port}&quot;)<br>
+                                            print(f&quot;path: {http_client.path}&quot;)<br>
+                                            print(f&quot;query: {http_client.query}&quot;)<br>
+                                            print(f&quot;url: {http_client.url}&quot;)<br>
+                                        </div>
+                                    </div><br>
+                                    <p>Here is what I got after running the code:</p>
+                                    <div class="image">
+                                        <img src="../../assets/img/py/parse_url.jpg" class="img-thumbnail" alt="URL break-down">
+                                    </div><br>
+                                    <p>
+                                        It's finally time to make some request!
+                                    </p>
+                                    <br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            http_client = HTTPClient(&quot;http://www.example.com/&quot;)<br>
+                                            response = http_client.perform_request()<br>
+                                            headers_body = response.split(&quot;\r\n\r\n&quot;)<br>
+                                            print(f&quot;Response headers:\n{headers_body[0]}&quot;)<br>
+                                            print(f&quot;Response body:\n{headers_body[1]}&quot;)<br>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <p>
+                                        After performing the request, This is
+                                        what I get. 
+                                    </p><br>
+                                    <div class="image">
+                                        <img src="../../assets/img/py/client_request.jpg" class="img-thumbnail" alt="HTTP response from http://www.example.com">
+                                    </div>
+                                    
+                                </div> <!-- END Content-->
+
+                                <h3>Share</h3>
+                                <div class="share-links left-align">
+                                    <a href="https://www.twitter.com/share?url=https://nshel.github.io/programming/python/http_client.html"><i class="bi bi-twitter"></i></a>
+                                    <a href="#"><i class="bi bi-facebook"></i></a>
+                                    <a href="#"><i class="bi bi-instagram"></i></a>
+                                </div><br>
+                                
+                            </article> <!-- End POST details -->
+
+                        </div>
+                    </div>
+
+                </div> <!-- Container -->
+
+            </section> <!-- Section POST -->
         
-        <div class="main">             
-            <section class="content1" id="contentID"> 
-                <header>
-                    <h1><span class="howto">How to </span>Code a HTTP Client Using Socket - Python</h1>
-                </header>
-                <article>
-                    <p>
-                        In this tutorial we'll be writing a very simple HTTP client.<br>
-                        <b>HTTP (or Hyper Text Transfer Protocol) </b> is a text-based client-server protocol that runs over TCP.<br> Plain HTTP runs over TCP
-                        port 80.<br>
-                        It should be noted that plain HTTP is mostly deprecated for security reasons.
-                        Today, sites should use HTTPS, the secure version of HTTP.
-                        HTTPS secures HTTP by merely running
-                        the HTTP protocol through a Transport Layer Security (TLS) layer
-                        In order to code a http client we need to have a basic understanding
-                        of the protocol specification.<br>
-                    </p>
-                    <div class="image">
-                        <img src="../../img/py/request_response.jpg" alt="HTTP request and response">
-                    </div>
-                    <h2>What You Should Know</h2>
-                    <p>It is suggested that you've the basic knowledge of the <a href="https://docs.python.org/3/library/socket.html">socket</a> module</p>
-                    <p>
-                        <h3>HTTP Request type</h3>
-                        <ul>
-                            <li><b>GET:</b> Is used requesting a document from the server.</li>
-                            <li><b>POST:</b> Is used sending data from the client to the server.</li>
-                            <li><b>HEAD:</b> It's just like <b>GET</b> request but the response is just <i>response header</i> instead of receiving the both <i>response header</i> and <i>response body</i>.</li>
-                            <li><b>PUT:</b>  Is used to send a document to the web server.</li>
-                            <li><b>DELETE:</b>  Is used to request that the web server should delete a document or resource.</li>
-                            <li><b>TRACE:</b>  Is used to request diagnostic information from web proxies.</li>
-                            <li><b>CONNECT:</b> Is sometimes used to initiate an HTTP connection through a proxy server.</li>
-                            <li><b>OPTIONS:</b>  Is used to ask which HTTP request types are supported by the server for a given resource.</li>
-                        </ul>
-                    </p>
-                    <h3>HTTP Request Format</h3>
-                    <p>
-                        If you open your web browser and navigate to http://www.example.com/page1.htm,
-                        your browser will need to send an HTTP request to the web server at www.example.com.
-                        That HTTP request may look like this:
-                    </p>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                            GET /page1.htm HTTP/1.1<br>
-                            User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36<br>
-                            Host: example.com<br>
-                            Connection: close<br>
-                    </div><br>
-                    <p>
-                        From the above request example, the <b>GET</b> means we want to get a document from the server,
-                        and the document path on the server is <b>/page1.html</b>.<br> and the <b>HTTP/1.1</b> is protocol and the version(1.1).<br>
-                        The <b>User-Agent</b> header is the name of the software requesting the page.<br>
-                        The <b>Host</b> header is the name of the host we're requesting the page from.<br>
-                        The <b>Connection</b> header tells the server what to do after finishing request,
-                        the value of this field can be <b>Keep-Alive</b> or <b>close</b> which means
-                        to keep the connection alive or close the connection after sending response respectively.<br><br>
-                    </p>
-                    <h3>HTTP Response Format</h3>
-                    <p>
-                        Like the HTTP request, the HTTP response also consists of a header part and a body part.<br>
-                        Also similar to the HTTP request, the body part is optional.<br>Most HTTP responses do have
-                        a body part, though.
-                        The server at www.example.com could respond to our HTTP request with the following
-                        reply:
-                    </p>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                            HTTP/1.1 200 OK<br>
-                            Cache-Control: max-age=604800<br>
-                            Content-Type: text/html; charset=UTF-8<br>
-                            Date: Sun, 22 May 2022 16:46:09 GMT<br>
-                            Etag: "1541025663+gzip"<br>
-                            Expires: Sun, 29 May 2022 16:46:09 GMT<br>
-                            Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT<br>
-                            Server: ECS (ord/5730)<br>
-                            Vary: Accept-Encoding<br>
-                            X-Cache: HIT<br>
-                            Content-Length: 1270<br>
-                            &lt;!doctype html&gt;<br>
-                            &lt;html&gt;<br>
-                            &lt;head&gt;<br>
-                            &lt;title&gt;Example Domain&lt;/title&gt;<br>
-                            ...<br>
-                    </div><br>
-                    <p>
-                        The <b>200</b> from the above response is the status code which means 
-                        everything is <b>OK</b> or request successful.<br>
-                        The <b>Content-Length</b> is the size of the document we're receiving.<br>
-                        In HTTP we use CRLF('\r\n') to indicate the end of each header, we 
-                        use double CRLF('\r\n\r\n') to indicate the end of the <b>request headers</b>
-                        or <b>response headers</b>.<br>
-                        Now that we have some basics of how this protocol works let's make
-                        a HTTP request from our python program.<br>
-                    </p>
-                    <p>
-                        First we'll import the socket module and define a class
-                    </p><br>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="py-code">
-                            import socket<br><br>
+        </div> <!-- Main -->
 
-                            class HTTPClient:<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, url):<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.url = url<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.buffer_size = 4096<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__parse_url__()<br>
-                        </div>
-                    </div><br>
-                    <p>
-                        In the constructor, the user needs to pass in the URL for this connection.<br>
-                        and we define a <b>buffer_size</b> which is the maximum size of data to be received,
-                        and then we called <b>self.__parse_url__()</b> to break-down the url, the method
-                        defination is next<br>.
-                        The next function will be used to break-down the URL into:
-                        <ul>
-                            <li>Protocol</li>
-                            <li>Hostname</li>
-                            <li>Port</li>
-                            <li>Path</li>
-                            <li>Query string</li>
-                        </ul>
-                        This is an example:
-                    </p>
-                    <div class="image">
-                        <img src="../../img/py/url.jpg" alt="a URL example">
-                    </div><br>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="py-code">
-                            # function for parsing the URL<br>
-                            def __parse_url__(self):<br><br>
-                        
-                            &nbsp;&nbsp;&nbsp;&nbsp;# Get the protocol,e.g http, https etc<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;# If no protocol specified we raised an exception<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;url = self.url<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;try:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.protocol, url = url.split(&apos;://&apos;)<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;except ValueError:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise Exception(&apos;Invalid URL&apos;)<br><br>
-                            
-                            &nbsp;&nbsp;&nbsp;&nbsp;# we make sure that the protocol is http<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;# otherwise we raise an exception saying protocol is not supported<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;if self.protocol != &apos;http&apos;:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise Exception(f&apos;Protocol not supported: {self.protocol}&apos;)<br><br>
-                        
-                            &nbsp;&nbsp;&nbsp;&nbsp;# Get the hostname and port, example www.google.com:80<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;hostname_port = url.split(&apos;/&apos;)[0]<br><br>
-                        
-                                
-                            &nbsp;&nbsp;&nbsp;&nbsp;# Python will raises a ValueError if there's no enough<br> 
-                            &nbsp;&nbsp;&nbsp;&nbsp;# values to unpack, which means there's no port number<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;# so we'll just default to 80<br><br>
-                                
-                            &nbsp;&nbsp;&nbsp;&nbsp;try:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.hostname, self.port = hostname_port.split(&apos;:&apos;)<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;except ValueError:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.hostname = hostname_port<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.port = 80<br><br>
-                        
-                            &nbsp;&nbsp;&nbsp;&nbsp;# get the path<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;try:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = url.split(&apos;/&apos;)[1]<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = &apos;/&apos; + self.path<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;except IndexError:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = &apos;/&apos;<br><br>
-                        
-                            &nbsp;&nbsp;&nbsp;&nbsp;# remove any query string from our path<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;if &apos;?q=&apos; in self.path:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = self.path.split(&apos;?q=&apos;)[0]<br><br>
-                        
-                            &nbsp;&nbsp;&nbsp;&nbsp;# get the query string (if available)<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;try:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.query = url.split(&apos;?q=&apos;)[1]<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;except IndexError:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.query = &apos;&apos;<br><br>
-                        
-                            &nbsp;&nbsp;&nbsp;&nbsp;# remove the &apos;#&apos; from the query string if it contains any<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;if &apos;#&apos; in self.query:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.query = self.query.split(&apos;#&apos;)[0]<br><br>
-                        
-                        </div>
-                    </div><br>
-                    <p>
-                        Next we'll define another method for establishing connection to the server.
-                    </p>
-                    <br>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="py-code">
-                            # function for connecting to the server<br>
-                            def __connect__(self):<br><br>
-                        
-                            &nbsp;&nbsp;&nbsp;&nbsp;# resolve hostname to ip<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;ip = socket.gethostbyname(self.hostname)<br><br>
-                        
-                            &nbsp;&nbsp;&nbsp;&nbsp;# we create a IPv4/IPv6 dual stack socket<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;# for connection<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;self.socket = socket.create_connection((ip, self.port), timeout=5)<br>
-                        </div>
-                    </div>
-                    <br>
-                    <p>
-                        Next we'll define our last function for sending and receiving request and response respectively.<br>
-                        This function will return the response from the server.
-                    </p><br>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="py-code">
-                            # function for sending a HTTP get request<br>
-                            def perform_request(self):<br><br>
-                        
-                            &nbsp;&nbsp;&nbsp;&nbsp;# first we connect to the server<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;self.__connect__()<br><br>
-                        
-                            &nbsp;&nbsp;&nbsp;&nbsp;# we contruct our request header<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;request_headers = \<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&quot;GET /{self.path}{self.query} HTTP/1.1\r\n&quot; \<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&quot;Host: {self.hostname}:{self.port}\r\n&quot; \<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;User-Agent: Python http/0.1\r\n&quot; \<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Connection: close\r\n&quot; \<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;\r\n&quot;<br><br>
-                        
-                            &nbsp;&nbsp;&nbsp;&nbsp;# send the request headers<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;self.socket.send(request_headers.encode())<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;self.response = ''<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;# receive response<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;while True:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data = self.socket.recv(self.buffer_size)<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if len(data) == 0:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# finished receiving data<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.response = self.response + data.decode()<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;# return the response<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;return self.response<br>
-                        </div>
-                    </div>
-                    <br>
-                    <h2>Full Source Code</h2><br>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="py-code">
-                            import socket<br><br>
-
-                            class HTTPClient:<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, url):<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.url = url<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.buffer_size = 4096<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__parse_url__()<br><br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;# function for parsing the URL<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;def __parse_url__(self):<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Get the protocol,e.g http, https etc<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# If no protocol specified we raised an exception<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url = self.url<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.protocol, url = url.split(&apos;://&apos;)<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except ValueError:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise Exception(&apos;Invalid URL&apos;)<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# we make sure that the protocol is http<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# otherwise we raise an exception ssaying protocol is not supported<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if self.protocol != &apos;http&apos;:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise Exception(f&apos;Protocol not supported: {self.protocol}&apos;)<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Get the hostname and port, example www.google.com:80<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hostname_port = url.split(&apos;/&apos;)[0]<br><br>
-
-                                
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Python will raises a ValueError if there's no enough<br> 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# values to unpack, which means there's no port number<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# so we'll just default to 80<br><br>
-                                
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.hostname, self.port = hostname_port.split(&apos;:&apos;)<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except ValueError:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.hostname = hostname_port<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.port = 80<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# get the path<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = url.split(&apos;/&apos;)[1]<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = &apos;/&apos; + self.path<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except IndexError:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = &apos;/&apos;<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# remove any query string from our path<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if &apos;?q=&apos; in self.path:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.path = self.path.split(&apos;?q=&apos;)[0]<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# get the query string (if available)<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.query = url.split(&apos;?q=&apos;)[1]<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except IndexError:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.query = &apos;&apos;<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# remove the &apos;#&apos; from the query string if it contains any<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if &apos;#&apos; in self.query:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.query = self.query.split(&apos;#&apos;)[0]<br><br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;# function for connecting to the server<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;def __connect__(self):<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# resolve hostname to ip<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ip = socket.gethostbyname(self.hostname)<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# we create a IPv4, IPv6 dual stack socket<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# for connection<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.socket = socket.create_connection((ip, self.port), timeout=5)<br><br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;# function for sending a HTTP get request<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;def perform_request(self):<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# first we connect to the server<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__connect__()<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# we contruct our request header<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request_headers = \<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&quot;GET /{self.path}{self.query} HTTP/1.1\r\n&quot; \<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f&quot;Host: {self.hostname}:{self.port}\r\n&quot; \<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;User-Agent: Python http/0.1\r\n&quot; \<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Connection: close\r\n&quot; \<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;\r\n&quot;<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# send the request headers<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.socket.send(request_headers.encode())<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.response = ''<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# receive response<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while True:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data = self.socket.recv(self.buffer_size)<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if len(data) == 0:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# finished receiving data<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.response = self.response + data.decode()<br><br>
-
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# return the response<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.response<br><br>
-
-                        </div>
-                    </div>
-                    <p>
-                        We can use our class to parse URL as a bonus:
-                    </p>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="py-code">
-                            http_client = HTTPClient(&quot;http://www.google.com/search?q=python+socket&quot;)<br><br>
-
-                            print(f&quot;protocol: {http_client.protocol}&quot;)<br>
-                            print(f&quot;hostname: {http_client.hostname}&quot;)<br>
-                            print(f&quot;port: {http_client.port}&quot;)<br>
-                            print(f&quot;path: {http_client.path}&quot;)<br>
-                            print(f&quot;query: {http_client.query}&quot;)<br>
-                            print(f&quot;url: {http_client.url}&quot;)<br>
-                        </div>
-                    </div><br>
-                    <p>Here is what I got after running the code:</p>
-                    <div class="image">
-                        <img src="../../img/py/parse_url.jpg" alt="URL break-down">
-                    </div><br>
-                    <p>
-                        It's finally time to make some request!
-                    </p>
-                    <br>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="py-code">
-                            http_client = HTTPClient(&quot;http://www.example.com/&quot;)<br>
-                            response = http_client.perform_request()<br>
-                            headers_body = response.split(&quot;\r\n\r\n&quot;)<br>
-                            print(f&quot;Response headers:\n{headers_body[0]}&quot;)<br>
-                            print(f&quot;Response body:\n{headers_body[1]}&quot;)<br>
-                        </div>
-                    </div>
-                    <br>
-                    <p>
-                        After performing the request, This is
-                        what I get. 
-                    </p><br>
-                    <div class="image">
-                        <img src="../../img/py/client_request.jpg" alt="HTTP response from http://www.example.com">
-                    </div>
-                </article>
-            </section>
-            <div class="sep"></div>
-            <footer>
-                <span class="txt">
-                    NSH is an educational platform for learning programming, ethical hacking, 
-                    networking and other related content.<br>
-                    This website is still under development!<br><br>
-                    Copyright &copy; <span id="year">2022</span>
-                </span>
-            </footer>
-        </div>
-        <script src="../../index.js"></script>
+        <!-- Script Files -->
+        <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="../../main.js"></script>
         <script src="py.js"></script>
     </body>
 </html>

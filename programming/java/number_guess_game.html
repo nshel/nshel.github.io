@@ -1,224 +1,246 @@
 <!DOCTYPE html>
 <html lang="en-us"> 
     <head> 
-        <title>How to make a number guessing game - Java</title>
+        <title>How to Make a Number Guessing Game - Java</title>
         <meta charset="utf-8">
         <meta name="author" content="Mohammed Zayyad">
         <meta name="http-equiv" content="Content-Type: text/html">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="how to make a number guessing game in java, number guess game java,
         how to code a number guessing game java">
-        <link rel="stylesheet" href="../../index.css">
-        <link rel="stylesheet" href="../../boxes.css">
+
+
+        <!-- $$$$$$$$$$$$$$$$$$$$$$ CSS Files $$$$$$$$$$$$$$$$$$$-->
+        <!-- Vendors -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+        <!-- Main CSS Files -->
+        <link rel="stylesheet" href="../../main.css">
+
+        <!-- Page Icon -->
         <link rel="icon" href="../../favicon.png">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269"      crossorigin="anonymous"></script>
+
+        <!-- Google -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269" crossorigin="anonymous"></script>
     </head>
-    <body style="margin: 0;">
-        <noscript>
-            <div class="noscript">
-                <noscript>
-                    Please enable JavaScript on your browser in order to render this page properly.
-                </noscript> 
-            </div> 
-        </noscript>
-        <!-- <div class="side-nav" id="sNav">
-            <span class="close-btn" onclick="closeNav()" title="Close" id="cl">&times;</span>
-            <a href="#calculator" id="active">Number guess game</a>
-            <a href="find_max_min.html">Find min/max array</a>
-            <a href="#ls-dir">List of files directory</a>
-            <a href="#encrypt_file">Encrypt/Decrypt file</a>
-        </div> -->
-        <div class="top-nav" id="topNav">
-            <a class="logo" href="../../index.html"><img src="../../favicon.png" alt="NSH" style="width:100%;height:100%;"></a>
-            <span class="slide-bar" 
-            onclick="openLeftNav()">&#9776;</span>
-            <div class="right-side">
-                <a href="../../index.html">Home</a>
-                <a href="index.html" id="active">Java</a>
-                <a href="../python/index.html">Python</a> 
-                <a href="../c/index.html">C</a>
-                <a href="../c++/index.html">C++</a>
-                <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
+
+    <body class="page-index">
+        <!-- Page Header -->
+        <header id="header" class="header fixed-top d-flex align-items-center">
+            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+
+                <a href="../../index.html" class="logo align-items-center d-flex">
+                    <!-- <img src="favicon.png" alt="logo"> -->
+                    <h1 class="d-flex align-items-center">NSH</h1>
+                </a>
+
+                <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+                <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+                <nav id="navbar" class="navbar">
+                    <a href="../../index.html">Home</a>
+                    <a href="index.html" class="active">Java Codes</a>
+                    <a href="../python/index.html">Python Codes</a>
+                    <a href="../c/index.html">C Codes</a>
+                    <a href="../c++/index.html">C++ Codes</a>
+                    <a href="#">About</a></li>
+                    <a href="mailto:nshell.com@gmail.com">Contact</a>
+                </nav> <!-- end navbar -->
             </div>
-        </div>
-        <nav class="left-nav" id="leftNav">
-            <span class="close-btn" 
-            onclick="closeLeftNav()" style="color:#f5f5f5;background-color:tomato;">Close &times;</span>
-            <a href="../../index.html">Home</a>
-            <a href="../java/index.html" id="active">Java</a>
-            <a href="../python/index.html">Python</a> 
-            <a href="../c/index.html">C</a>
-            <a href="../c++/index.html">C++</a>
-            <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
-        </nav>
-        <header class="head" style="background-image: url('../../img/java/guess_game_java.jpg');">
-            <div class="text"><br>
-                <span class="large-txt">How to</span><br>
-                <span class="small-txt">
-                    Code a Number Guess Game
-                </span>
-            </div>
-        </header>
-        <div class="main">             
-            <section class="content1" id="contentID"> 
-                <header>
-                    <h1><span class="howto">How to </span>Make a Number Guess Game in Java</h1>
-                </header>
-                <article>
-                    <br>
-                    <p>
-                        As a beginner it's always very common that one wants to make some small projects, A number guessing game is one of the most popular among them.
-                        This article shall give you an idea about how to do that.<br>
-                        Import this line for taking user's input.
-                    </p>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="java-code">
-                        import java.util.Scanner;
-                        </div>
-                    </div> 
-                    <p> And in the main function we declare an instance of the Scanner object for taking the user's input.
-                        And declare a variable that will hold the secret number.
-                    </p>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="java-code">
-                        Scanner inputs = new Scanner(System.in);<br>
-                        int secretNumber = 3;
+        </header> <!-- end header -->
+
+        <div class="main">           
+            
+            <!-- Breadcrumbs -->
+            <section class="breadcrumbs d-flex align-items-center" style="background-image:  url('../../assets/img/java/guess_game_java.jpg');">
+                <div class="container position-relative d-flex flex-column align-items-center">
+
+                        <h2 data-aos="fade-up">HOW TO</h2>
+                        <p data-aos="fade-up" data-aos-delay="50">
+                            Make a Number Guessing Game
+                        </p>
+
+                    </div>
+                </div>
+            </section> <!-- end section['hero'] -->
+            
+            <section id="post" class="post">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="row g-5">
+                        <div class="col-lg-9 shadow" data-aos="fade-up" data-aos-delay="200">
+
+                            <article class="post-details">
+
+                                <h2 class="title"><span class="color-primary">How To</span> Make a Number Guessing Game</h2>
+                                
+                                <div class="post-meta">
+                                    <ul>
+                                        <li class="d-flex align-items-center"><i class="bi bi-clock"><span class="text-muted"> Posted</span><time datetime="2022-06-23"> Jun, 23 2022</i></li>
+                                        <li class="d-flex align-items-center"><i class="bi bi-clock"><span class="text-muted"> Last updated</span><time datetime="2022-09-29"> Sep, 29 2022</i></li>
+                                    </ul>
+                                </div> <!-- END POST-META -->
+                                <div class="content">
+                                    <p>
+                                        As a beginner it's always very common that one wants to make some small projects, A number guessing game is one of the most popular among them.
+                                        This article shall give you an idea about how to do that.<br>
+                                        Import this line for taking user's input.
+                                    </p>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="java-code">
+                                        import java.util.Scanner;
+                                        </div>
+                                    </div> 
+                                    <p> And in the main function we declare an instance of the Scanner object for taking the user's input.
+                                        And declare a variable that will hold the secret number.
+                                    </p>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="java-code">
+                                        Scanner inputs = new Scanner(System.in);<br>
+                                        int secretNumber = 3;
+                                        </div>
+                                    </div>
+                                    <p>
+                                        We can add a little bit of describtion for the user.
+                                    </p>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="java-code">
+                                        System.out.println(&quot;&lt;&lt;&lt; Number Guessing Game &gt;&gt;&gt;&quot;);<br>
+                                        System.out.println(&quot;You have only 3 tries to get the correct number&quot;);<br>
+                                        System.out.println(&quot;The secret number is between 1 and 9, Good luck!&quot;);
+                                        </div>
+                                    </div>
+                                    <p>
+                                        declare a boolean variable that will help us identify if the user guesses the correct number. 
+                                        and another for holding the user's guess.
+                                    </p>
+                                    <div class="code-container"> 
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="java-code">
+                                        boolean isCorrect = false;<br>
+                                        int count = 0, userGuess;<br>
+                                        do {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;userGuess = inputs.nextInt();<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;if (userGuess == secretNumber) {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isCorrect = true;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;count++;<br>
+                                        } while(count &lt; 3);
+                                        </div>
+                                    </div>
+                                    <p>
+                                        The above do-while loop will only break if the user has guesses the right number or the guess limit is reached.
+                                        If the user has guessed the right number we tell him he win otherwise we tell the user that he has failed and then print out the secret number.
+                                    </p>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="java-code">
+                                        if (isCorrect)<br>&nbsp;&nbsp;
+                                        &nbsp;&nbsp;System.out.println(&quot;You win!&quot;);<br>
+                                        else<br>&nbsp;&nbsp;
+                                        &nbsp;&nbsp;System.out.printf(&quot;Game Over\nSecret number is: %d\n&quot;, secretNumber);
+                                        </div>
+                                    </div>
+                                    <h3>Full source code</h3>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="java-code">
+                                        import java.util.Scanner;   /*for taking<br> user's input int class*/<br><br>
+                                        class GuessGame {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;public static void main(String args[]) {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scanner inputs = new Scanner(System.in);<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int secretNumber = 3;  //The Secret number<br><br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;&lt;&lt;&lt; Number Guessing Game &gt;&gt;&gt;&quot;);<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;You have only 3 tries to get the correct number&quot;);<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;Hint: the secret number is between 1 and 9, Good luck!&quot;);<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean isCorrect = false;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int count = 0, userGuess;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userGuess = inputs.nextInt();<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (userGuess == secretNumber) {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isCorrect = true;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count++;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} while(count &lt; 3);<br><br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (isCorrect)<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;You win!&quot;);<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.printf(&quot;Game Over\nSecret number is: %d\n&quot;, secretNumber);<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                        }
+                                        </div>        
+                                    </div>
+                                    <p>
+                                        However the above source code is not that efficient, first the user may not like the game and everytime you'll have to edit the
+                                        source code to change the secret number. To overcome these limitations we can introduce a random number generator that will generate
+                                        the secret number in a range for us, so even you can't know the secret number.<br> 
+                                        Let's edit our source code to make the program more efficient!.
+                                    </p>
+                                    <h3>Guess Game Using a Random Number Generator</h3>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="java-code">
+                                        import java.util.Scanner;   //For taking user's input<br>
+                                        import java.util.Random;    //For generating a random number<br><br>
+                                        class GuessGame {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp; public static void main(String args[]) {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Scanner inputs = new Scanner(System.in);<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Random random = new Random();<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //generate a random between 0 and 9 number as the secret number<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int secretNumber = 1 + random.nextInt(9);<br><br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(&quot;&lt;&lt;&lt; Number Guessing Game &gt;&gt;&gt;&quot;);<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(&quot;if int You have only 3 tries to get the correct number&quot;);<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(&quot;Hint: the secret number is between 1 and 9, Good luck!&quot;);<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; boolean isCorrect = false;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int count = 0, userGuess;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; userGuess = inputs.nextInt();<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (userGuess == secretNumber) {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isCorrect = true;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count++;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} while(count &lt; 3);<br><br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (isCorrect)<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;You win!&quot;);<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.printf(&quot;Game Over\nSecret number is: %d\n&quot;, secretNumber);<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                        }
+                                        </div>
+                                    </div>
+                                </div> <!-- END Content-->
+
+                            </article> <!-- End POST details -->
+
                         </div>
                     </div>
-                    <p>
-                        We can add a little bit of describtion for the user.
-                    </p>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="java-code">
-                        System.out.println(&quot;&lt;&lt;&lt; Number Guessing Game &gt;&gt;&gt;&quot;);<br>
-                        System.out.println(&quot;You have only 3 tries to get the correct number&quot;);<br>
-                        System.out.println(&quot;The secret number is between 1 and 9, Good luck!&quot;);
-                        </div>
-                    </div>
-                    <p>
-                        declare a boolean variable that will help us identify if the user guesses the correct number. 
-                        and another for holding the user's guess.
-                    </p>
-                    <div class="code"> 
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="java-code">
-                        boolean isCorrect = false;<br>
-                        int count = 0, userGuess;<br>
-                        do {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;userGuess = inputs.nextInt();<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;if (userGuess == secretNumber) {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isCorrect = true;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;count++;<br>
-                        } while(count &lt; 3);
-                        </div>
-                    </div>
-                    <p>
-                        The above do-while loop will only break if the user has guesses the right number or the guess limit is reached.
-                        If the user has guessed the right number we tell him he win otherwise we tell the user that he has failed and then print out the secret number.
-                    </p>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="java-code">
-                        if (isCorrect)<br>&nbsp;&nbsp;
-                        &nbsp;&nbsp;System.out.println(&quot;You win!&quot;);<br>
-                        else<br>&nbsp;&nbsp;
-                        &nbsp;&nbsp;System.out.printf(&quot;Game Over\nSecret number is: %d\n&quot;, secretNumber);
-                        </div>
-                    </div>
-                    <h2>Full source code</h2>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="java-code">
-                        import java.util.Scanner;   /*for taking<br> user's input int class*/<br><br>
-                        class GuessGame {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;public static void main(String args[]) {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scanner inputs = new Scanner(System.in);<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int secretNumber = 3;  //The Secret number<br><br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;&lt;&lt;&lt; Number Guessing Game &gt;&gt;&gt;&quot;);<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;You have only 3 tries to get the correct number&quot;);<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;Hint: the secret number is between 1 and 9, Good luck!&quot;);<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean isCorrect = false;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int count = 0, userGuess;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userGuess = inputs.nextInt();<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (userGuess == secretNumber) {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isCorrect = true;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count++;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} while(count &lt; 3);<br><br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (isCorrect)<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;You win!&quot;);<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.printf(&quot;Game Over\nSecret number is: %d\n&quot;, secretNumber);<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                        }
-                        </div>        
-                    </div>
-                    <p>
-                        However the above source code is not that efficient, first the user may not like the game and everytime you'll have to edit the
-                        source code to change the secret number. To overcome these limitations we can introduce a random number generator that will generate
-                        the secret number in a range for us, so even you can't know the secret number.<br> 
-                        Let's edit our source code to make the program more efficient!.
-                    </p>
-                    <h2>Guess Game Using a Random Number Generator</h2>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="java-code">
-                        import java.util.Scanner;   //For taking user's input<br>
-                        import java.util.Random;    //For generating a random number<br><br>
-                        class GuessGame {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp; public static void main(String args[]) {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Scanner inputs = new Scanner(System.in);<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Random random = new Random();<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //generate a random between 0 and 9 number as the secret number<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int secretNumber = 1 + random.nextInt(9);<br><br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(&quot;&lt;&lt;&lt; Number Guessing Game &gt;&gt;&gt;&quot;);<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(&quot;if int You have only 3 tries to get the correct number&quot;);<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(&quot;Hint: the secret number is between 1 and 9, Good luck!&quot;);<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; boolean isCorrect = false;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int count = 0, userGuess;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; userGuess = inputs.nextInt();<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (userGuess == secretNumber) {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isCorrect = true;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count++;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} while(count &lt; 3);<br><br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (isCorrect)<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(&quot;You win!&quot;);<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.printf(&quot;Game Over\nSecret number is: %d\n&quot;, secretNumber);<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                        }
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <div class="sep"></div>
-            <footer>
-                <span class="txt">
-                    NSH is an educational platform for learning programming, ethical hacking, 
-                    networking and other related content.<br>
-                    This website is still under development!<br><br>
-                    Copyright &copy; <span id="year">2022</span>
-                </span>
-            </footer>
-        </div>
-        <script src="../../index.js"></script>
+
+                </div> <!-- Container -->
+
+            </section> <!-- Section POST -->
+        
+        </div> <!-- Main -->
+
+        <!-- Script Files -->
+        <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="../../main.js"></script>
         <script src="java.js"></script>
     </body>
 </html>

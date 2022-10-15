@@ -10,189 +10,221 @@
         how to code ssl/tls client server app python, python ssl module, ssl module python, ssl python module,
         how to make a secure connection using socket in python, how to make a secure server program in python, 
         python openssl library, ssl, tls, python, module">
-        <link rel="stylesheet" href="../../index.css">
+
+
+        <!-- $$$$$$$$$$$$$$$$$$$$$$ CSS Files $$$$$$$$$$$$$$$$$$$-->
+        <!-- Vendors -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+        <!-- Main CSS Files -->
+        <link rel="stylesheet" href="../../main.css">
         <link rel="stylesheet" href="../../boxes.css">
+
+        <!-- Page Icon -->
         <link rel="icon" href="../../favicon.png">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269"      crossorigin="anonymous"></script>
+
+        <!-- Google -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269" crossorigin="anonymous"></script>
     </head>
-    <body style="margin: 0;">
-        <noscript>
-            <div class="noscript">
-                <noscript>
-                    Please enable JavaScript on your browser in order to render this page properly.
-                </noscript> 
-            </div> 
-        </noscript>
-        <div class="top-nav" id="topNav">
-            <a class="logo" href="../../index.html"><img src="../../favicon.png" alt="NSH" style="width:100%;height:100%;"></a>
-            <span class="slide-bar" 
-            onclick="openLeftNav()">&#9776;</span>
-            <div class="right-side">
-                <a href="../../index.html">Home</a>
-                <a href="index.html" id="active">Python</a> 
-                <a href="../c/index.html">C</a>
-                <a href="../c++/index.html">C++</a>
-                <a href="../java/index.html">Java</a>
-                <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
+
+    <body class="page-index">
+        <!-- Page Header -->
+        <header id="header" class="header fixed-top d-flex align-items-center">
+            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+
+                <a href="../../index.html" class="logo align-items-center d-flex">
+                    <!-- <img src="favicon.png" alt="logo"> -->
+                    <h1 class="d-flex align-items-center">NSH</h1>
+                </a>
+
+                <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+                <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+                <nav id="navbar" class="navbar">
+                    <a href="../../index.html">Home</a>
+                    <a href="index.html" class="active">Python Codes</a>
+                    <a href="../c/index.html">C Codes</a>
+                    <a href="../c++/index.html">C++ Codes</a>
+                    <a href="../java/index.html">Java Codes</a>
+                    <a href="#">About</a></li>
+                    <a href="mailto:nshell.com@gmail.com">Contact</a>
+                </nav> <!-- end navbar -->
             </div>
-        </div>
-        <nav class="left-nav" id="leftNav">
-            <span class="close-btn" 
-            onclick="closeLeftNav()" style="color:#f5f5f5;background-color:tomato;">Close &times;</span>
-            <a href="../../index.html">Home</a>
-            <a href="index.html" id="active">Python</a> 
-            <a href="../c/index.html">C</a>
-            <a href="../c++/index.html">C++</a>
-            <a href="../java/index.html">Java</a>
-            <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
-        </nav>
-        <header class="head" style="background-image: url('../../img/py/tls_client.jpg');">
-            <div class="text"><br>
-                <span class="large-txt">How to</span><br>
-                <span class="small-txt">
-                    Code SSL/TLS Client-Server - Python
-                </span>
-            </div>
-        </header>
+        </header> <!-- end header -->
+
+        <div class="main">           
+            
+            <!-- Breadcrumbs -->
+            <section class="breadcrumbs d-flex align-items-center" style="background-image:  url('../../assets/img/py/tls_client.jpg');">
+                <div class="container position-relative d-flex flex-column align-items-center">
+
+                        <h2 data-aos="fade-up">HOW TO</h2>
+                        <p data-aos="fade-up" data-aos-delay="50">
+                            Code SSL/TLS Client-Server - Python
+                        </p>
+
+                    </div>
+                </div>
+            </section> <!-- end section['hero'] -->
+            
+            <section id="post" class="post">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="row g-5">
+                        <div class="col-lg-9 shadow" data-aos="fade-up" data-aos-delay="200">
+
+                            <article class="post-details">
+
+                                <h2 class="title"><span class="color-primary">How To</span> Code SSL/TLS Client-Server - Python</h2>
+                                
+                                <div class="post-meta">
+                                    <ul>
+                                        <li class="d-flex align-items-center"><i class="bi bi-clock"><span class="text-muted"> Posted</span><time datetime="2022-06-14"> Jun, 14 2022</i></li>
+                                        <li class="d-flex align-items-center"><i class="bi bi-clock"><span class="text-muted"> Last updated</span><time datetime="2022-06-14"> Jun, 14 2022</i></li>
+                                    </ul>
+                                </div> <!-- END POST-META -->
+
+                                <div class="content">
+                                    <p>
+                                        <b>SSL/TLS(Secure Socket Layer/Transport Layer Security)</b> are used in establishing secure connection between a client and the server
+                                        . <b>SSL/TLS</b> are build on top of the <b>TCP</b> protocol, in order to secure a plain TCP conenction one needs
+                                        <b>SSL/TLS</b> which provides Algorithms for Encrypting and Decrypting the data shared between the client and the server.<br>
+                                    </p>
+                                    <div class="alert alert-danger alert-dismissible">
+                                        <span class="mark">&#10069;</span><br><br>
+                                        SSL version 2 and 3 is insecure. Its use is highly discouraged, its recommended 
+                                        to use TLS.
+                                    </div><br>
+                                    <p>
+                                        In this tutorial we'll be creating SSL/TLS client and server program using the ssl module,
+                                        first we'll start with the client.
+                                    </p><br>
+                                    <div class="alert alert-info alert-dismissible">
+                                        <h4>Suggested</h4>
+                                        <a href="tcp_udp_client_server.html">How to code a TCP and UDP client-server - Python</a>
+                                    </div><br>
+                                    <h2>Client</h2>
+                                    <p>We'll start by defining some varaibles and then create our socket</p>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            import socket<br>
+                                            import ssl<br><br>
+
+                                            # host to connect to<br>
+                                            hostname = &apos;127.0.0.1&apos;<br>
+                                            # port number to connect on<br>
+                                            port = 8080<br>
+                                            # create the client context<br>
+                                            context = ssl.create_default_context()<br><br>
+
+                                            print(f&apos;[$] Connecting {hostname}:{port}...&apos;)<br>
+                                            # create a dual stack IPv4/IPv6 socket<br>
+                                            with socket.create_connection((hostname, port)) as connection_socket:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;# Create the ssl socket<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;ssl_socket = context.wrap_socket(connection_socket, server_hostname=hostname)<br><br>
+
+                                            print(&apos;[$] Connected&apos;)<br>
+                                            print(f&apos;[$] SSL/TLS using cipher: {ssl_socket.cipher()}&apos;)<br><br>
+                                        </div>
+                                    </div><br>
+                                    <p>
+                                        The <b>ssl.create_default_context()</b> function creates a SSL context with the recommended 
+                                        security settings for client sockets, including automatic certificate verification.<br>
+                                        You can create a custom context from scratch (but beware that you might not get the settings right)<br>
+                                        <b><i>Example:</i></b>
+                                    </p>   
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)<br>
+                                            context.load_verify_locations("/etc/ssl/certs/ca-bundle.crt")<br>
+                                        </div>
+                                    </div> <br>
+                                    <p>
+                                        Note that you need to specify where your operating system places a bundle of all CA certificates
+                                        in the <b>load_verify_locations()</b> function argument.<br>
+                                        Back to our client socket, the <b>socket.create_connection()</b> function is used to 
+                                        create a dual stack IPv4/IPv6, which means it chooses between IPv4 and IPv6(depending
+                                        on which the server is using).<br>
+                                        Next we used the <b>wrap_socket()</b> which takes an instance <i>sock</i> of <b>socket.socket</b>,
+                                        and returns an instance of <b>ssl.SSLSocket</b>, a subtype of socket.socket, which wraps the 
+                                        underlying socket in an SSL context. <i>sock</i> must be a <b>SOCK_STREAM</b> socket; other socket types 
+                                        are unsupported.<br>
+                                        Next we used the <b>cipher()</b> method of <b>ssl.SSLSocket</b> to returns a three-value tuple containing
+                                        the name of the cipher being used.<br>
+                                        Next we send a receive data.
+                                    </p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            # send some data to the server<br>
+                                            data = &apos;Hello World&apos;<br>
+                                            ssl_socket.write(data.encode())<br><br>
+
+                                            # receive data from the server<br>
+                                            buffer_size = 4096<br>
+                                            data_received = ssl_socket.read(buffer_size)<br><br>
+
+                                            print(f&apos;[#] Data received: {data_received.decode()}&apos;)<br>
+                                        </div>
+                                    </div><br>
+                                    <p>
+                                        We use the <b>write()</b> and <b>read()</b> methods of <b>ssl.SSLSocket</b>
+                                        to send and receive data respectively.<br>
+                                    </p>
+                                    <h2>Server</h2>
+                                    <p>
+                                        If we are going to create a server that provides SSL-encrypted connection services, 
+                                        we will need to acquire a certificate for that service. There are many ways of acquiring 
+                                        appropriate certificates, such as buying one from a certification authority. Another common 
+                                        practice is to generate a self-signed certificate. The simplest way to do this is with the 
+                                        OpenSSL package, using something like the following on your terminal(This requires OpenSSL installed):
+                                    </p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        openssl req -x509 -newkey rsa:2048 -nodes -sha256 -keyout key.pem \-out cert.pem -days 365
+                                    </div><br>
+                                    <p>
+                                        After running these commands, you should have two  new files in our directory:
+                                        <i>key.pem</i> and <i>cert.pem</i>, we'll be using these files to create our server.<br>
+                                        The <i>key.pem</i> contains a private key for our server, and the <i>cert.pem</i> 
+                                        file contains our certificate.<br>
+                                        The disadvantage of a self-signed certificate is that it is its own root certificate, 
+                                        and no one else will have it in their cache of known (and trusted) root certificates.<br>
+                                        Let's start coding the server.<br>
+                                    </p><br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                        </div>
+                                    </div><br>
+                       
+                                </div> <!-- END Content-->
+
+                            </article> <!-- End POST details -->
+
+                        </div>
+                    </div>
+
+                </div> <!-- Container -->
+
+            </section> <!-- Section POST -->
         
-        <div class="main">             
-            <section class="content1" id="contentID"> 
-                <header>
-                    <h1><span class="howto">How to </span>Code SSL/TLS Client-Server - Python</h1>
-                </header>
-                <article>
-                    <p>
-                        <b>SSL/TLS(Secure Socket Layer/Transport Layer Security)</b> are used in establishing secure connection between a client and the server
-                        . <b>SSL/TLS</b> are build on top of the <b>TCP</b> protocol, in order to secure a plain TCP conenction one needs
-                        <b>SSL/TLS</b> which provides Algorithms for Encrypting and Decrypting the data shared between the client and the server.<br>
-                    </p>
-                    <div class="note">
-                        <span class="mark">&#10069;</span><br><br>
-                        SSL version 2 and 3 is insecure. Its use is highly discouraged, its recommended 
-                        to use TLS.
-                    </div><br>
-                    <p>
-                        In this tutorial we'll be creating SSL/TLS client and server program using the ssl module,
-                        first we'll start with the client.
-                    </p><br>
-                    <div class="suggested">
-                        <h3>Suggested</h3>
-                        <a href="tcp_udp_client_server.html">How to code a TCP and UDP client-server - Python</a>
-                    </div><br>
-                    <h2>Client</h2>
-                    <p>We'll start by defining some varaibles and then create our socket</p>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="py-code">
-                            import socket<br>
-                            import ssl<br><br>
+        </div> <!-- Main -->
 
-                            # host to connect to<br>
-                            hostname = &apos;127.0.0.1&apos;<br>
-                            # port number to connect on<br>
-                            port = 8080<br>
-                            # create the client context<br>
-                            context = ssl.create_default_context()<br><br>
-
-                            print(f&apos;[$] Connecting {hostname}:{port}...&apos;)<br>
-                            # create a dual stack IPv4/IPv6 socket<br>
-                            with socket.create_connection((hostname, port)) as connection_socket:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;# Create the ssl socket<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;ssl_socket = context.wrap_socket(connection_socket, server_hostname=hostname)<br><br>
-
-                            print(&apos;[$] Connected&apos;)<br>
-                            print(f&apos;[$] SSL/TLS using cipher: {ssl_socket.cipher()}&apos;)<br><br>
-                        </div>
-                    </div><br>
-                    <p>
-                        The <b>ssl.create_default_context()</b> function creates a SSL context with the recommended 
-                        security settings for client sockets, including automatic certificate verification.<br>
-                        You can create a custom context from scratch (but beware that you might not get the settings right)<br>
-                        <b><i>Example:</i></b>
-                    </p>   
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="py-code">
-                            context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)<br>
-                            context.load_verify_locations("/etc/ssl/certs/ca-bundle.crt")<br>
-                        </div>
-                    </div>
-                    <p>
-                        Note that you need to specify where your operating system places a bundle of all CA certificates
-                        in the <b>load_verify_locations()</b> function argument.<br>
-                        Back to our client socket, the <b>socket.create_connection()</b> function is used to 
-                        create a dual stack IPv4/IPv6, which means it chooses between IPv4 and IPv6(depending
-                        on which the server is using).<br>
-                        Next we used the <b>wrap_socket()</b> which takes an instance <i>sock</i> of <b>socket.socket</b>,
-                        and returns an instance of <b>ssl.SSLSocket</b>, a subtype of socket.socket, which wraps the 
-                        underlying socket in an SSL context. <i>sock</i> must be a <b>SOCK_STREAM</b> socket; other socket types 
-                        are unsupported.<br>
-                        Next we used the <b>cipher()</b> method of <b>ssl.SSLSocket</b> to returns a three-value tuple containing
-                        the name of the cipher being used.<br>
-                        Next we send a receive data.
-                    </p>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="py-code">
-                            # send some data to the server<br>
-                            data = &apos;Hello World&apos;<br>
-                            ssl_socket.write(data.encode())<br><br>
-
-                            # receive data from the server<br>
-                            buffer_size = 4096<br>
-                            data_received = ssl_socket.read(buffer_size)<br><br>
-
-                            print(f&apos;[#] Data received: {data_received.decode()}&apos;)<br>
-                        </div>
-                    </div>
-                    <p>
-                        We use the <b>write()</b> and <b>read()</b> methods of <b>ssl.SSLSocket</b>
-                        to send and receive data respectively.<br>
-                    </p>
-                    <h2>Server</h2>
-                    <p>
-                        If we are going to create a server that provides SSL-encrypted connection services, 
-                        we will need to acquire a certificate for that service. There are many ways of acquiring 
-                        appropriate certificates, such as buying one from a certification authority. Another common 
-                        practice is to generate a self-signed certificate. The simplest way to do this is with the 
-                        OpenSSL package, using something like the following on your terminal(This requires OpenSSL installed):
-                    </p>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        openssl req -x509 -newkey rsa:2048 -nodes -sha256 -keyout key.pem \-out cert.pem -days 365
-                    </div>
-                    <p>
-                        After running these commands, you should have two  new files in our directory:
-                        <i>key.pem</i> and <i>cert.pem</i>, we'll be using these files to create our server.<br>
-                        The <i>key.pem</i> contains a private key for our server, and the <i>cert.pem</i> 
-                        file contains our certificate.<br>
-                        The disadvantage of a self-signed certificate is that it is its own root certificate, 
-                        and no one else will have it in their cache of known (and trusted) root certificates.<br>
-                        Let's start coding the server.<br>
-                    </p>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="py-code">
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <div class="sep"></div>
-            <footer>
-                <span class="txt">
-                    NSH is an educational platform for learning programming, ethical hacking, 
-                    networking and other related content.<br>
-                    This website is still under development!<br><br>
-                    Copyright &copy; <span id="year">2022</span>
-                </span>
-            </footer>
-        </div>
-        <script src="../../index.js"></script>
+        <!-- Script Files -->
+        <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="../../main.js"></script>
         <script src="py.js"></script>
     </body>
 </html>

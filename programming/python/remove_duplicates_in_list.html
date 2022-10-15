@@ -9,109 +9,134 @@
         <meta name="description" content="Remove duplicates in a list, python duplicate, duplicates python, python duplicates, python duplicates list, rm duplicate list in python,
         duplicate list, python, list, get unique values, get unique values in a list, how to remove duplicates in a list, how to get unique values in a list,
         how to get unique values in a python list, python3 list duplicate, python, list, duplicate, duplicates">
-        <link rel="stylesheet" href="../../index.css">
+
+
+        <!-- $$$$$$$$$$$$$$$$$$$$$$ CSS Files $$$$$$$$$$$$$$$$$$$-->
+        <!-- Vendors -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+        <!-- Main CSS Files -->
+        <link rel="stylesheet" href="../../main.css">
         <link rel="stylesheet" href="../../boxes.css">
+
+        <!-- Page Icon -->
         <link rel="icon" href="../../favicon.png">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269"      crossorigin="anonymous"></script>
+
+        <!-- Google -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405758737390269" crossorigin="anonymous"></script>
     </head>
-    <body style="margin: 0;">
-        <noscript>
-            <div class="noscript">
-                <noscript>
-                    Please enable JavaScript on your browser in order to render this page properly.
-                </noscript> 
-            </div> 
-        </noscript>
-        <div class="top-nav" id="topNav">
-            <a class="logo" href="../../index.html"><img src="../../favicon.png" alt="NSH" style="width:100%;height:100%;"></a>
-            <span class="slide-bar" 
-            onclick="openLeftNav()">&#9776;</span>
-            <div class="right-side">
-                <a href="../../index.html">Home</a>
-                <a href="index.html" id="active">Python</a> 
-                <a href="../c/index.html">C</a>
-                <a href="../c++/index.html">C++</a>
-                <a href="../java/index.html">Java</a>
-                <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
+
+    <body class="page-index">
+        <!-- Page Header -->
+        <header id="header" class="header fixed-top d-flex align-items-center">
+            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+
+                <a href="../../index.html" class="logo align-items-center d-flex">
+                    <!-- <img src="favicon.png" alt="logo"> -->
+                    <h1 class="d-flex align-items-center">NSH</h1>
+                </a>
+
+                <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+                <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+                <nav id="navbar" class="navbar">
+                    <a href="../.../index.html">Home</a>
+                    <a href="index.html" class="active">Python Codes</a>
+                    <a href="../c/index.html">C Codes</a>
+                    <a href="../c++/index.html">C++ Codes</a>
+                    <a href="../java/index.html">Java Codes</a>
+                    <a href="#">About</a></li>
+                    <a href="mailto:nshell.com@gmail.com">Contact</a>
+                </nav> <!-- end navbar -->
             </div>
-        </div>
-        <nav class="left-nav" id="leftNav">
-            <span class="close-btn" 
-            onclick="closeLeftNav()" style="color:#f5f5f5;background-color:tomato;">Close &times;</span>
-            <a href="../../index.html">Home</a>
-            <a href="index.html" id="active">Python</a> 
-            <a href="../c/index.html">C</a>
-            <a href="../c++/index.html">C++</a>
-            <a href="../java/index.html">Java</a>
-            <a href="mailto:nshell.com@gmail.com" id="contact">Contact</a>
-        </nav>
-        <header class="head" style="background-image: url('../../img/py/remove_duplicate.jpg');">
-            <div class="text"><br>
-                <span class="large-txt">How to</span><br>
-                <span class="small-txt">
-                    Remove duplicates in a list - Python
-                </span>
-            </div>
-        </header>
-        <div class="main">             
-            <section class="content1" id="contentID"> 
-                <header>
-                    <h1><span class="howto">How to </span>Remove Duplicates in a List - Python</h1>
-                </header>
-                <article>
+        </header> <!-- end header -->
 
-                    <p>
-                        In this article you'll learn how to remove duplicate values
-                        in a python list.
-                    </p>
-                    <br>
-                    <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="py-code">
-                            # x is a list that contains many duplicates<br>
-                            x = [12, 2, 5, 65, 2, 9, 5, 2, 9, 12]<br>
-                            # a variable that'll hold the unique values<br>
-                            uniques = []<br><br>
+        <div class="main">           
+            
+            <!-- Breadcrumbs -->
+            <section class="breadcrumbs d-flex align-items-center" style="background-image:  url('../../assets/img/py/remove_duplicate.jpg');">
+                <div class="container position-relative d-flex flex-column align-items-center">
 
-                            # loop through all the lists checking to make sure<br>
-                            # that a specific value is not present in uniques variable,<br>
-                            # if not append the value otherwise continue looping through<br>
+                        <h2 data-aos="fade-up">HOW TO</h2>
+                        <p data-aos="fade-up" data-aos-delay="50">
+                            Remove duplicates in a list - Python
+                        </p>
 
-                            for i in x:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;if i not in uniques:<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uniques.append(i)<br><br>
+                    </div>
+                </div>
+            </section> <!-- end section['hero'] -->
+            
+            <section id="post" class="post">
+                <div class="container" data-aos="fade-up">
 
-                            print(f&quot;Duplicate list: {x}&quot;)<br>
-                            print(f&quot;Unique values: {uniques}&quot;)<br>
+                    <div class="row g-5">
+                        <div class="col-lg-9 shadow" data-aos="fade-up" data-aos-delay="200">
+
+                            <article class="post-details">
+
+                                <h2 class="title"><span class="color-primary">How To</span> Remove duplicates in a list - Python</h2>
+                                
+                                <div class="post-meta">
+                                    <ul>
+                                        <li class="d-flex align-items-center"><i class="bi bi-clock"><span class="text-muted"> Posted</span><time datetime="2022-06-14"> Jun, 14 2022</i></li>
+                                        <li class="d-flex align-items-center"><i class="bi bi-clock"><span class="text-muted"> Last updated</span><time datetime="2022-06-14"> Jun, 14 2022</i></li>
+                                    </ul>
+                                </div> <!-- END POST-META -->
+
+                                <div class="content">
+                                    <p>
+                                        In this article you'll learn how to remove duplicate values
+                                        in a python list.
+                                    </p>
+                                    <br>
+                                    <div class="code-container">
+                                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
+                                        </div><br><div class="line"></div><br>
+                                        <div id="py-code">
+                                            # x is a list that contains many duplicates<br>
+                                            x = [12, 2, 5, 65, 2, 9, 5, 2, 9, 12]<br>
+                                            # a variable that'll hold the unique values<br>
+                                            uniques = []<br><br>
+
+                                            # loop through all the lists checking to make sure<br>
+                                            # that a specific value is not present in uniques variable,<br>
+                                            # if not append the value otherwise continue looping through<br>
+
+                                            for i in x:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;if i not in uniques:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uniques.append(i)<br><br>
+
+                                            print(f&quot;Duplicate list: {x}&quot;)<br>
+                                            print(f&quot;Unique values: {uniques}&quot;)<br>
+
+                                        </div>
+                                    </div> <br>
+                                    <p>
+                                        You can see how easy that was, we just define two varaibles, the 1st one we set it
+                                        to a list that has many duplicates, and the 2nd one, we use it to store the List
+                                        of unique values in <b>x</b>. Then we use for loop, to check all the values,
+                                        if a specific value is not in the varaible <b>uniques</b> then we append the value.
+                                    </p>
+                                </div> <!-- END Content-->
+
+                            </article> <!-- End POST details -->
 
                         </div>
                     </div>
-                    <p>
-                        You can see how easy that was, we just define two varaibles, the 1st one we set it
-                        to a list that has many duplicates, and the 2nd one, we use it to store the List
-                        of unique values in <b>x</b>. Then we use for loop, to check all the values,
-                        if a specific value is not in the varaible <b>uniques</b> then we append the value.
-                    </p>
-                    <!-- <div class="code">
-                        <div class="top"><span class="a"></span>&nbsp;<span class="b"></span>&nbsp;<span class="c"></span>
-                        </div><br><div class="line"></div><br>
-                        <div id="py-code">
-                        </div>
-                    </div> -->
-                </article>
-            </section>
-            <div class="sep"></div>
-            <footer>
-                <span class="txt">
-                    NSH is an educational platform for learning programming, ethical hacking, 
-                    networking and other related content.<br>
-                    This website is still under development!<br><br>
-                    Copyright &copy; <span id="year">2022</span>
-                </span>
-            </footer>
-        </div>
-        <script src="../../index.js"></script>
+
+                </div> <!-- Container -->
+
+            </section> <!-- Section POST -->
+        
+        </div> <!-- Main -->
+
+        <!-- Script Files -->
+        <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="../../main.js"></script>
         <script src="py.js"></script>
     </body>
 </html>
